@@ -58,6 +58,20 @@
     .no-results { grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--text-mute); }
     .page-footer { max-width:1200px; margin:64px auto 0; padding:24px 32px 0; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:var(--text-mute); font-size:12px; }
     .page-footer a { color:var(--text-mute); text-decoration:underline; text-underline-offset:3px; }
+    @media(max-width:640px) {
+      .nav { padding:16px 16px; }
+      .wrap { padding:0 16px; }
+      .hero { padding:28px 0 16px; gap:12px; }
+      .hero-left h1 { margin-bottom:4px; }
+      .hero-left p { font-size:13px; }
+      .grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+      .book-card { border-radius:12px; }
+      .book-card-body { padding:8px 10px 10px; }
+      .book-title { font-size:12px; }
+      .book-author { font-size:10px; }
+      .book-thumb-placeholder { font-size:28px; }
+      .page-footer { padding:24px 16px 0; flex-direction:column; gap:8px; }
+    }
   </style>
 </head>
 <body>
