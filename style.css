@@ -51,6 +51,9 @@ body { overflow-x: hidden; }
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* taste-skill: max 1 eyebrow per 3 sections — hide section-head labels */
+.section-head > .eyebrow { display: none; }
+
 .lora { font-family: 'Lora', serif; font-style: italic; font-weight: 400; }
 
 /* ----- Layout ----- */

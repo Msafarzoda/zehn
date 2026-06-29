@@ -208,6 +208,8 @@
             font-weight: 600;
             font-family: 'JetBrains Mono', monospace
         }
+
+        .section-head > .eyebrow { display: none; }
         
         .lora {
             font-family: 'Lora', serif;
@@ -2130,7 +2132,7 @@ function Hero() {
   return /*#__PURE__*/React.createElement("section", {
     style: {
       position: "relative",
-      paddingTop: 180,
+      paddingTop: 100,
       paddingBottom: 80,
       overflow: "hidden"
     }
@@ -2449,7 +2451,14 @@ function Hero() {
   }, "systems"), ", not your goals.\""))))));
 } /* ── LOGO / PRESS STRIP ── */
 function PressStrip() {
-  const logos = ["TechCrunch", "Product Hunt", "The Verge", "Wired", "AppAdvice", "MakeUseOf"];
+  const logos = [
+    {n:"TechCrunch",s:"techcrunch"},
+    {n:"Product Hunt",s:"producthunt"},
+    {n:"The Verge",s:"theverge"},
+    {n:"Wired",s:"wired"},
+    {n:"AppAdvice",s:null},
+    {n:"MakeUseOf",s:null}
+  ];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "32px 0 64px",
@@ -2472,17 +2481,28 @@ function PressStrip() {
     className: "marquee-wrap"
   }, /*#__PURE__*/React.createElement("div", {
     className: "marquee-track"
-  }, [...logos, ...logos].map((n, i) => /*#__PURE__*/React.createElement("div", {
+  }, [...logos, ...logos].map((l, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
+    style: {
+      opacity: .45,
+      whiteSpace: "nowrap",
+      display: "flex",
+      alignItems: "center",
+      height: 28
+    }
+  }, l.s ? /*#__PURE__*/React.createElement("img", {
+    src: "https://cdn.simpleicons.org/" + l.s + "/EAF3F8",
+    alt: l.n,
+    height: 22,
+    style: {display:"block"}
+  }) : /*#__PURE__*/React.createElement("span", {
     style: {
       fontWeight: 700,
       fontSize: 18,
-      opacity: .45,
       letterSpacing: "-0.02em",
-      color: "var(--text)",
-      whiteSpace: "nowrap"
+      color: "var(--text)"
     }
-  }, n))))));
+  }, l.n)))))));
 } /* ── HOW IT WORKS ── */
 function HowItWorks() {
   const steps = [{
@@ -2647,14 +2667,14 @@ function Features() {
     title: "تحدّث مع أي كتاب.",
     body: "فضولي حول مفهوم؟ اسأل زن AI. يجيب باستخدام أفكار المؤلف الفعلية — مستند إلى الكتاب، لا الإنترنت المفتوح. كل إجابة هي باب نحو فهم أعمق.",
     render: () => /*#__PURE__*/React.createElement(ChatScreen, null),
-    accent: "var(--cream)",
+    accent: "var(--green)",
     tags: ["إجابات فورية", "مستند إلى المصدر", "أي كتاب"]
   }, {
     eyebrow: "تتبع نموّك",
     title: "أهداف يومية. عادات دائمة.",
     body: "حدّد هدفاً تعليمياً يومياً — حتى 5 دقائق تُحسب. ابنِ سلاسل انتظام واكسب إنجازات وشاهد مكتبتك المعرفية الشخصية تنمو كتاباً تلو كتاب.",
     render: () => /*#__PURE__*/React.createElement(GoalsScreen, null),
-    accent: "#6EC1D6",
+    accent: "var(--green)",
     tags: ["سلاسل الانتظام", "أهداف يومية", "مكتبة التقدم"]
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -2677,7 +2697,7 @@ function Features() {
     style: {
       padding: 0,
       display: "grid",
-      gridTemplateColumns: i % 2 ? "1fr 1.05fr" : "1.05fr 1fr",
+      gridTemplateColumns: i === 1 ? "1fr 1.05fr" : i === 2 ? "1fr 1fr" : "1.05fr 1fr",
       gap: 0,
       alignItems: "stretch",
       minHeight: 440
@@ -3058,7 +3078,7 @@ function Testimonials() {
     width: "14",
     height: "14",
     viewBox: "0 0 24 24",
-    fill: "var(--cream)",
+    fill: "var(--green)",
     stroke: "none"
   }, /*#__PURE__*/React.createElement("polygon", {
     points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
@@ -3855,7 +3875,7 @@ function Footer() {
   }, "SafariGroup")))));
 } /* ── APP ── */
 function App() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>
