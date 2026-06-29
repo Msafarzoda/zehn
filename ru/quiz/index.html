@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Что изучить дальше? — Zehn</title>
+  <meta name="description" content="Ответьте на 5 быстрых вопросов и узнайте, какие книги Zehn рекомендует вам прямо сейчас." />
+    <meta property="og:title" content="Что мне изучить дальше? — Zehn" />
+  <meta property="og:description" content="Ответьте на 5 вопросов и узнайте, какие книги рекомендует Zehn." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thezehnapp.com/ru/quiz" />
+  <meta property="og:image" content="https://thezehnapp.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thezehnapp" />
+  <meta name="twitter:title" content="Что мне изучить дальше? — Zehn" />
+  <meta name="twitter:description" content="Ответьте на 5 вопросов и узнайте, какие книги рекомендует Zehn." />
+  <meta name="twitter:image" content="https://thezehnapp.com/og-image.png" />
+  <link rel="canonical" href="https://thezehnapp.com/ru/quiz" />
+  <link rel="alternate" hreflang="en"        href="https://thezehnapp.com/en/quiz" />
+  <link rel="alternate" hreflang="ar"        href="https://thezehnapp.com/ar/quiz" />
+  <link rel="alternate" hreflang="ru"        href="https://thezehnapp.com/ru/quiz" />
+  <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/tj/quiz" />
+  <link rel="alternate" hreflang="x-default" href="https://thezehnapp.com/en/quiz" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EK4PL0CGRY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EK4PL0CGRY');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #03212E; --ink-2: #052A3B; --ink-3: #063349;
+      --line: rgba(255,255,255,.08); --line-2: rgba(255,255,255,.14);
+      --text: #EAF3F8; --text-dim: rgba(234,243,248,.66); --text-mute: rgba(234,243,248,.42);
+      --green: #82FF7F; --green-dim: rgba(130,255,127,.12); --green-mid: rgba(130,255,127,.22);
+      --cream: #FBF2A8; --radius: 16px;
+    }
+
+    html, body, main {
+      height: 100%; background: var(--ink);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text); -webkit-font-smoothing: antialiased; overflow: hidden;
+    }
+    .skip-link { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    #app { position: relative; width: 100%; height: 100%; max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; overflow: hidden; }
+    #app::before {
+      content: ""; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(130,255,127,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(130,255,127,.025) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+
+    .app-header { position: relative; z-index: 1; padding: 20px 24px 0; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; }
+    .zehn-logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); text-decoration: none; }
+    .zehn-logo span { color: var(--green); }
+
+    .progress-wrap { position: relative; z-index: 1; padding: 16px 24px 0; flex-shrink: 0; }
+    .progress-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .progress-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mute); }
+    .progress-pct { font-size: 11px; font-weight: 700; color: var(--green); }
+    .progress-track { height: 2px; background: var(--line-2); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--green); border-radius: 99px; transition: width 0.45s cubic-bezier(.4,0,.2,1); box-shadow: 0 0 12px rgba(130,255,127,.5); }
+
+    .stage { position: relative; z-index: 1; flex: 1; overflow: hidden; }
+
+    .slide { position: absolute; inset: 0; padding: 28px 24px 40px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; transition: transform 0.42s cubic-bezier(.4,0,.2,1), opacity 0.42s ease; }
+    .slide::-webkit-scrollbar { display: none; }
+    .slide.hidden-left { transform: translateX(-100%); opacity: 0; pointer-events: none; }
+    .slide.hidden-right { transform: translateX(100%); opacity: 0; pointer-events: none; }
+    .slide.active { transform: translateX(0); opacity: 1; }
+
+    .slide-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .slide-question { font-size: 26px; font-weight: 800; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 28px; color: var(--text); }
+
+    .options { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .option { position: relative; background: rgba(255,255,255,.03); border: 1.5px solid var(--line-2); border-radius: var(--radius); padding: 16px 18px; cursor: pointer; transition: background 0.18s, border-color 0.18s, transform 0.12s; -webkit-tap-highlight-color: transparent; user-select: none; }
+    .option:hover { background: var(--green-dim); border-color: rgba(130,255,127,.3); }
+    .option:active { transform: scale(0.975); }
+    .option-text { font-size: 15px; font-weight: 600; color: var(--text-dim); line-height: 1.4; }
+    .option.selected { background: var(--green-dim); border-color: var(--green); }
+    .option.selected .option-text { color: var(--green); }
+
+    #intro { justify-content: center; align-items: center; text-align: center; padding: 40px 32px 60px; }
+    .intro-logo-text { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; color: var(--text); margin-bottom: 6px; }
+    .intro-logo-text span { color: var(--green); }
+    .intro-tagline { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mute); margin-bottom: 44px; }
+    .intro-heading { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 14px; }
+    .intro-sub { font-size: 15px; font-weight: 400; color: var(--text-dim); line-height: 1.65; margin-bottom: 40px; }
+    .start-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; background: var(--green); color: var(--ink); font-size: 15px; font-weight: 800; letter-spacing: -0.2px; border: none; border-radius: 999px; cursor: pointer; transition: opacity 0.18s, transform 0.12s, box-shadow 0.18s; box-shadow: 0 10px 30px rgba(130,255,127,.25); -webkit-tap-highlight-color: transparent; }
+    .start-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(130,255,127,.35); }
+    .start-btn:active { opacity: 0.88; transform: scale(0.97); }
+    .intro-meta { margin-top: 18px; font-size: 12px; color: var(--text-mute); font-weight: 500; }
+
+    #results { padding: 28px 24px 60px; }
+    .results-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .results-label { font-size: 14px; font-weight: 500; color: var(--text-mute); margin-bottom: 4px; }
+    .profile-name { font-size: 34px; font-weight: 900; letter-spacing: -1px; line-height: 1.1; color: var(--text); margin-bottom: 16px; }
+    .profile-desc { font-size: 15px; font-weight: 400; line-height: 1.65; color: var(--text-dim); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .books-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mute); margin-bottom: 12px; }
+    .book-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+    /* ─── Result book card with cover ─── */
+    .book-card {
+      background: rgba(255,255,255,.03); border: 1.5px solid var(--line-2);
+      border-radius: var(--radius); padding: 14px;
+      display: flex; align-items: stretch; gap: 14px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      opacity: 0; transform: translateX(-24px);
+    }
+    .book-card.reveal-in { opacity: 1; transform: translateX(0); transition: opacity 0.55s cubic-bezier(.34,1.2,.64,1), transform 0.55s cubic-bezier(.34,1.2,.64,1), border-color 0.2s, background 0.2s; }
+    .book-card:hover { border-color: rgba(130,255,127,.25); background: var(--green-dim); }
+    .book-card-cover {
+      flex-shrink: 0; width: 64px; height: 92px;
+      border-radius: 3px 6px 6px 3px;
+      overflow: hidden; position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35), 0 3px 6px rgba(0,0,0,0.2);
+      transform: perspective(400px) rotateY(0deg);
+    }
+    .book-card-cover svg { display: block; width: 100%; height: 100%; }
+    .book-card-cover::after {
+      content: ""; position: absolute; inset: 0;
+      border-radius: 3px 6px 6px 3px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .book-card-body { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+    .book-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+    .book-title { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
+    .book-badge { flex-shrink: 0; background: var(--green-dim); border: 1px solid rgba(130,255,127,.25); color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 7px; border-radius: 99px; white-space: nowrap; }
+    .book-desc { font-size: 12px; font-weight: 500; color: var(--text-mute); line-height: 1.45; }
+
+    .time-callout { background: rgba(251,242,168,.06); border: 1px solid rgba(251,242,168,.15); border-radius: var(--radius); padding: 14px 18px; text-align: center; font-size: 14px; font-weight: 600; color: var(--text-dim); margin-bottom: 24px; }
+    .time-callout strong { color: var(--cream); }
+    .cta-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 16px 24px; background: var(--green); color: var(--ink); font-size: 15px; font-weight: 800; letter-spacing: -0.2px; border: none; border-radius: 999px; cursor: pointer; text-decoration: none; transition: opacity 0.18s, transform 0.12s, box-shadow 0.18s; box-shadow: 0 10px 30px rgba(130,255,127,.25); -webkit-tap-highlight-color: transparent; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(130,255,127,.35); }
+    .cta-btn:active { opacity: 0.88; transform: scale(0.98); }
+    .store-links { display: flex; gap: 10px; margin-top: 10px; }
+    .store-link { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; background: rgba(255,255,255,.03); border: 1.5px solid var(--line-2); border-radius: var(--radius); font-size: 13px; font-weight: 700; color: var(--text-dim); text-decoration: none; transition: border-color 0.18s, color 0.18s, background 0.18s; -webkit-tap-highlight-color: transparent; gap: 2px; }
+    .store-link .store-os { font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-mute); }
+    .store-link:hover { border-color: rgba(130,255,127,.3); color: var(--green); background: var(--green-dim); }
+    .store-link:active { opacity: 0.85; }
+    .retake-btn { display: block; width: 100%; margin-top: 14px; padding: 13px; background: transparent; border: 1.5px solid var(--line); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--text-mute); cursor: pointer; text-align: center; font-family: inherit; transition: border-color 0.18s, color 0.18s; -webkit-tap-highlight-color: transparent; }
+    .retake-btn:hover { border-color: rgba(130,255,127,.3); color: var(--green); }
+
+    @media (min-width: 481px) {
+      #app { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+    }
+
+    /* ═══ LOGO REVEAL ANIMATION ═══ */
+    #logo-reveal {
+      position: fixed; inset: 0; z-index: 100;
+      background: radial-gradient(circle at center, #0a3045 0%, var(--ink) 70%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    }
+    #logo-reveal.active { opacity: 1; pointer-events: all; }
+    #logo-reveal.fade-out { opacity: 0; pointer-events: none; transition: opacity 0.6s ease; }
+    #logo-reveal::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(130,255,127,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(130,255,127,.03) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none;
+    }
+
+    .reveal-status {
+      position: absolute; top: 15%;
+      font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--text-mute); opacity: 0;
+      transition: opacity 0.4s ease, color 0.4s ease; text-align: center;
+    }
+    .reveal-status.visible { opacity: 1; }
+    .reveal-status.complete { color: var(--green); }
+
+    .reveal-scene { position: relative; width: 300px; height: 380px; }
+
+    .slot-svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; }
+
+    .slot-shape {
+      fill: none; stroke: var(--green); stroke-width: 2;
+      stroke-dasharray: 6 4; opacity: 0.35;
+      animation: slotPulse 1.6s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(130,255,127,0.5));
+    }
+    .slot-shape.filled { animation: none; opacity: 0; }
+
+    @keyframes slotPulse {
+      0%, 100% { opacity: 0.25; filter: drop-shadow(0 0 6px rgba(130,255,127,0.4)); }
+      50% { opacity: 0.6; filter: drop-shadow(0 0 14px rgba(130,255,127,0.7)); }
+    }
+
+    .final-z-part { opacity: 0; transition: opacity 0.2s ease; }
+    .final-z-part.show { opacity: 1; }
+
+    .anim-book {
+      position: absolute; top: 50%; left: 50%;
+      width: 150px; height: 210px;
+      margin-left: -75px; margin-top: -105px;
+      border-radius: 4px 10px 10px 4px;
+      opacity: 0; will-change: transform, opacity;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 8px 16px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .anim-book svg { display: block; width: 100%; height: 100%; }
+    .anim-book::after {
+      content: ""; position: absolute; inset: 0;
+      border-radius: 4px 10px 10px 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      pointer-events: none; z-index: 3;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 40%);
+    }
+
+    .reveal-wordmark {
+      position: absolute; bottom: 20%;
+      font-size: 34px; font-weight: 800; letter-spacing: -1px; color: var(--text);
+      opacity: 0; transform: translateY(10px);
+    }
+    .reveal-wordmark span { color: var(--green); }
+
+    .reveal-tagline {
+      position: absolute; bottom: 15%;
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--text-mute); opacity: 0; transform: translateY(8px);
+    }
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main id="main-content">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ══ LOGO REVEAL ══ -->
+<div id="logo-reveal">
+  <div class="reveal-status" id="reveal-status">Создаём ваш Z</div>
+
+  <div class="reveal-scene" id="reveal-scene">
+
+    <svg class="slot-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+      <!-- SLOTS (glowing dashed outlines) -->
+      <rect class="slot-shape" id="slot-top" x="50" y="50" width="160" height="42" rx="6"/>
+      <polygon class="slot-shape" id="slot-diag" points="190,92 74,168 50,168 166,92"/>
+      <rect class="slot-shape" id="slot-bot" x="50" y="168" width="160" height="42" rx="6"/>
+
+      <!-- FINAL Z PARTS (appear when filled) -->
+      <rect class="final-z-part" id="final-top" x="50" y="50" width="160" height="42" rx="6" fill="white"/>
+      <rect class="final-z-part" id="final-top-accent" x="54" y="54" width="160" height="42" rx="6" fill="#82FF7F" opacity="0.35"/>
+      <polygon class="final-z-part" id="final-diag" points="190,92 74,168 50,168 166,92" fill="white"/>
+      <polygon class="final-z-part" id="final-diag-accent" points="194,96 78,172 54,172 170,96" fill="#82FF7F" opacity="0.35"/>
+      <rect class="final-z-part" id="final-bot" x="50" y="168" width="160" height="42" rx="6" fill="white"/>
+      <rect class="final-z-part" id="final-bot-accent" x="54" y="172" width="160" height="42" rx="6" fill="#82FF7F" opacity="0.35"/>
+    </svg>
+
+    <!-- Dynamic cover containers (filled at runtime) -->
+    <div class="anim-book" id="book1"></div>
+    <div class="anim-book" id="book2"></div>
+    <div class="anim-book" id="book3"></div>
+
+  </div>
+
+  <div class="reveal-wordmark" id="reveal-wordmark">zehn<span>.</span></div>
+  <div class="reveal-tagline" id="reveal-tagline">Ваши результаты готовы</div>
+</div>
+
+<!-- ══ MAIN APP ══ -->
+<div id="app">
+  <div class="app-header" id="app-header" style="display:none;">
+    <a href="/" class="zehn-logo">zehn<span>.</span></a>
+  </div>
+
+  <div class="progress-wrap" id="progress-wrap" style="display:none;">
+    <div class="progress-meta">
+      <div class="progress-label" id="progress-label">Вопрос 1 из 5</div>
+      <div class="progress-pct" id="progress-pct">20%</div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:20%"></div>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+
+    <div class="slide active" id="intro">
+      <svg width="64" height="64" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:12px;">
+        <defs>
+          <linearGradient id="zehn-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#82FF7F"/>
+            <stop offset="100%" stop-color="#92F090"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="400" rx="108" fill="url(#zehn-bg)"/>
+        <g transform="translate(85, 85) scale(9.58)">
+          <rect x="3" y="4" width="18" height="2.6" rx="1.3" fill="#03212E"/>
+          <rect x="3" y="10.7" width="18" height="2.6" rx="1.3" fill="#03212E" transform="rotate(-32 12 12)"/>
+          <rect x="3" y="17.4" width="18" height="2.6" rx="1.3" fill="#03212E"/>
+        </g>
+      </svg>
+      <div class="intro-logo-text">zehn<span>.</span></div>
+      <div class="intro-tagline">Микрообучение · 15 мин на книгу</div>
+      <div class="intro-heading">Что вам стоит<br>изучить дальше?</div>
+      <div class="intro-sub">Ответьте на 5 быстрых вопросов, и мы подберём книги, идеально подходящие вашей жизни прямо сейчас.</div>
+      <button class="start-btn" onclick="startQuiz()">
+        Найти мои книги
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="intro-meta">Менее 60 секунд · Бесплатно</div>
+    </div>
+
+    <div class="slide hidden-right" id="q1">
+      <div class="slide-eyebrow">Вопрос 1 из 5</div>
+      <div class="slide-question">Какова ваша главная цель прямо сейчас?</div>
+      <div class="options">
+        <div class="option" onclick="answer(1,'career')"><div class="option-text">Продвинуться в карьере</div></div>
+        <div class="option" onclick="answer(1,'habits')"><div class="option-text">Сформировать полезные привычки</div></div>
+        <div class="option" onclick="answer(1,'money')"><div class="option-text">Разобраться в деньгах и инвестициях</div></div>
+        <div class="option" onclick="answer(1,'relationships')"><div class="option-text">Улучшить отношения</div></div>
+        <div class="option" onclick="answer(1,'think')"><div class="option-text">Мыслить яснее и креативнее</div></div>
+      </div>
+    </div>
+
+    <div class="slide hidden-right" id="q2">
+      <div class="slide-eyebrow">Вопрос 2 из 5</div>
+      <div class="slide-question">Сколько времени у вас есть для обучения каждый день?</div>
+      <div class="options">
+        <div class="option" onclick="answer(2,'under15')"><div class="option-text">Менее 15 минут</div></div>
+        <div class="option" onclick="answer(2,'15to30')"><div class="option-text">15–30 минут</div></div>
+        <div class="option" onclick="answer(2,'over30')"><div class="option-text">Более 30 минут</div></div>
+      </div>
+    </div>
+
+    <div class="slide hidden-right" id="q3">
+      <div class="slide-eyebrow">Вопрос 3 из 5</div>
+      <div class="slide-question">Каков ваш стиль обучения?</div>
+      <div class="options">
+        <div class="option" onclick="answer(3,'practical')"><div class="option-text">Мне нравятся быстрые, практические советы, которые можно применить сегодня</div></div>
+        <div class="option" onclick="answer(3,'deep')"><div class="option-text">Мне нравятся глубокие идеи, меняющие мышление</div></div>
+        <div class="option" onclick="answer(3,'stories')"><div class="option-text">Мне нравятся истории и реальные примеры</div></div>
+      </div>
+    </div>
+
+    <div class="slide hidden-right" id="q4">
+      <div class="slide-eyebrow">Вопрос 4 из 5</div>
+      <div class="slide-question">Что мешает вам учиться?</div>
+      <div class="options">
+        <div class="option" onclick="answer(4,'neverfinish')"><div class="option-text">Начинаю книги, но никогда не заканчиваю</div></div>
+        <div class="option" onclick="answer(4,'forget')"><div class="option-text">Быстро забываю прочитанное</div></div>
+        <div class="option" onclick="answer(4,'notime')"><div class="option-text">Нет времени</div></div>
+        <div class="option" onclick="answer(4,'bored')"><div class="option-text">Быстро теряю интерес</div></div>
+      </div>
+    </div>
+
+    <div class="slide hidden-right" id="q5">
+      <div class="slide-eyebrow">Вопрос 5 из 5</div>
+      <div class="slide-question">Выберите слово, которое вас описывает:</div>
+      <div class="options">
+        <div class="option" onclick="answer(5,'ambitious')"><div class="option-text">Амбициозный</div></div>
+        <div class="option" onclick="answer(5,'curious')"><div class="option-text">Любопытный</div></div>
+        <div class="option" onclick="answer(5,'overwhelmed')"><div class="option-text">Перегруженный</div></div>
+        <div class="option" onclick="answer(5,'focused')"><div class="option-text">Сосредоточенный</div></div>
+      </div>
+    </div>
+
+    <div class="slide hidden-right" id="results">
+      <div class="results-eyebrow">Ваш профиль обучения</div>
+      <div class="results-label">Вы —</div>
+      <div class="profile-name" id="profile-name"></div>
+      <div class="profile-desc" id="profile-desc"></div>
+
+      <div class="books-label">Ваши 3 книги</div>
+      <div class="book-cards" id="book-cards"></div>
+
+      <div class="time-callout">Это всего <strong>45 минут</strong>, чтобы освоить 3 полные книги.</div>
+
+      <a href="https://play.google.com/store/apps/details?id=com.audiobook.zehn" target="_blank" rel="noopener" class="cta-btn">
+        Начать учиться бесплатно на Zehn
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <div class="store-links">
+        <a href="https://play.google.com/store/apps/details?id=com.audiobook.zehn" target="_blank" rel="noopener" class="store-link">
+          <span class="store-os">Скачать на</span>Google Play
+        </a>
+        <a href="https://apps.apple.com/app/id6759160035" target="_blank" rel="noopener" class="store-link" id="ios-link">
+          <span class="store-os">Загрузить из</span>App Store
+        </a>
+      </div>
+
+      <button class="retake-btn" onclick="retake()">↩ Пройти тест снова</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const answers = {};
+  let current = 'intro';
+  const ORDER = ['intro','q1','q2','q3','q4','q5','results'];
+
+  const AUTHORS = {
+    'Атомные привычки': 'James Clear',
+    'Самое главное': 'Gary Keller',
+    'Нет компромиссу': 'Chris Voss',
+    'Думай медленно... решай быстро': 'Daniel Kahneman',
+    'Искусство ясного мышления': 'Rolf Dobelli',
+    'Sapiens': 'Yuval Noah Harari',
+    'Сила привычки': 'Charles Duhigg',
+    'Нация дофамина': 'Dr. Anna Lembke',
+    'Психология денег': 'Morgan Housel',
+    'Богатый папа, бедный папа': 'Robert Kiyosaki',
+    'Миллионер по соседству': 'Thomas Stanley',
+    'Как завоевать друзей': 'Dale Carnegie',
+    'Переключатель симпатии': 'Jack Schafer',
+    'Глубокая работа': 'Cal Newport',
+  };
+
+  /* ════════════════════════════════════════════════
+     BOOK COVER DATA — 15 book slots, 13 unique covers
+     Each cover is a complete viewBox 150×210 SVG.
+     ════════════════════════════════════════════════ */
+  const BOOK_COVERS = {
+
+    'Атомные привычки': {
+      bgA: '#1a5c42', bgB: '#041a11',
+      accent: '#82FF7F', textColor: '#EDFFEC', authorColor: '#82FF7F',
+      title: ['АТОМНЫЕ', 'ПРИВЫЧКИ'],
+      sub: 'МАЛЕНЬКИЕ ШАГИ · БОЛЬШИЕ РЕЗУЛЬТАТЫ',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.95">
+          <ellipse rx="38" ry="13" fill="none" stroke="#82FF7F" stroke-width="1.4" opacity="0.75"/>
+          <ellipse rx="38" ry="13" fill="none" stroke="#82FF7F" stroke-width="1.4" opacity="0.55" transform="rotate(60)"/>
+          <ellipse rx="38" ry="13" fill="none" stroke="#82FF7F" stroke-width="1.4" opacity="0.4" transform="rotate(-60)"/>
+          <circle r="4" fill="#82FF7F"/>
+          <circle r="2.2" cx="36" cy="5" fill="#82FF7F" opacity="0.85"/>
+          <circle r="1.8" cx="-20" cy="-16" fill="#82FF7F" opacity="0.7"/>
+          <circle r="1.5" cx="-17" cy="15" fill="#82FF7F" opacity="0.6"/>
+        </g>`
+    },
+
+    'Самое главное': {
+      bgA: '#7a1515', bgB: '#1a0404',
+      accent: '#FFD54F', textColor: '#FFF6E0', authorColor: '#FFD54F',
+      title: ['САМОЕ', 'ГЛАВНОЕ'],
+      sub: 'УДИВИТЕЛЬНО ПРОСТАЯ ИСТИНА',
+      graphic: `
+        <g transform="translate(105,62)">
+          <circle r="44" fill="none" stroke="#FFD54F" stroke-width="1" opacity="0.25"/>
+          <circle r="34" fill="none" stroke="#FFD54F" stroke-width="1.1" opacity="0.4"/>
+          <circle r="24" fill="none" stroke="#FFD54F" stroke-width="1.2" opacity="0.55"/>
+          <circle r="14" fill="none" stroke="#FFD54F" stroke-width="1.4" opacity="0.75"/>
+          <circle r="6" fill="#FFD54F"/>
+        </g>`
+    },
+
+    'Нет компромиссу': {
+      bgA: '#4a0d14', bgB: '#0a0204',
+      accent: '#FF5A5F', textColor: '#FFE6E6', authorColor: '#FF8A8F',
+      title: ['НЕТ', 'КОМПРОМИССУ'],
+      sub: 'ПЕРЕГОВОРЫ КАК ИСКУССТВО ЖИЗНИ',
+      graphic: `
+        <g opacity="0.95">
+          <path d="M 150 10 L 70 75 L 110 75 L 60 70" fill="none" stroke="#FF5A5F" stroke-width="2" opacity="0.8"/>
+          <path d="M 150 10 L 70 75 L 110 75 L 60 70" fill="none" stroke="#FF5A5F" stroke-width="5" opacity="0.25"/>
+          <circle cx="70" cy="75" r="2.5" fill="#FF5A5F"/>
+          <circle cx="110" cy="75" r="2.5" fill="#FF5A5F"/>
+        </g>`
+    },
+
+    'Думай медленно... решай быстро': {
+      bgA: '#1e3a6b', bgB: '#050d1a',
+      accent: '#FFB347', textColor: '#EAF3F8', authorColor: '#FFB347',
+      title: ['ДУМАЙ', 'МЕДЛЕННО...', 'РЕШАЙ БЫСТРО'],
+      sub: 'DANIEL KAHNEMAN',
+      graphic: `
+        <g transform="translate(105,62)">
+          <circle r="36" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <path d="M 0 -36 A 36 36 0 0 1 0 36 Z" fill="#FFB347" opacity="0.85"/>
+          <path d="M 0 -36 A 36 36 0 0 0 0 36 Z" fill="#4FA3FF" opacity="0.75"/>
+          <circle r="36" fill="none" stroke="#FFF" stroke-width="1.5" opacity="0.4"/>
+          <line x1="-12" y1="-6" x2="-4" y2="-6" stroke="#EAF3F8" stroke-width="1.2"/>
+          <line x1="4" y1="-6" x2="12" y2="-6" stroke="#EAF3F8" stroke-width="1.2"/>
+          <line x1="-16" y1="6" x2="-4" y2="6" stroke="#2a1608" stroke-width="1.2"/>
+          <line x1="4" y1="6" x2="16" y2="6" stroke="#2a1608" stroke-width="1.2"/>
+        </g>`
+    },
+
+    'Искусство ясного мышления': {
+      bgA: '#2c3e5c', bgB: '#0a1020',
+      accent: '#82C8FF', textColor: '#EAF3F8', authorColor: '#82C8FF',
+      title: ['ИСКУССТВО', 'ЯСНОГО', 'МЫШЛЕНИЯ'],
+      sub: 'ROLF DOBELLI',
+      graphic: `
+        <g transform="translate(60,28)" opacity="0.9">
+          <g stroke="#82C8FF" stroke-width="1" fill="none" opacity="0.55">
+            <line x1="0" y1="0" x2="70" y2="0"/>
+            <line x1="0" y1="14" x2="70" y2="14"/>
+            <line x1="0" y1="28" x2="70" y2="28"/>
+            <line x1="0" y1="42" x2="70" y2="42"/>
+            <line x1="0" y1="56" x2="70" y2="56"/>
+            <line x1="0" y1="0" x2="0" y2="56"/>
+            <line x1="14" y1="0" x2="14" y2="56"/>
+            <line x1="28" y1="0" x2="28" y2="56"/>
+            <line x1="42" y1="0" x2="42" y2="56"/>
+            <line x1="56" y1="0" x2="56" y2="56"/>
+            <line x1="70" y1="0" x2="70" y2="56"/>
+          </g>
+          <circle cx="42" cy="28" r="7" fill="#82C8FF"/>
+          <circle cx="42" cy="28" r="14" fill="none" stroke="#82C8FF" stroke-width="1" opacity="0.5"/>
+        </g>`
+    },
+
+    'Sapiens': {
+      bgA: '#8a5725', bgB: '#2a1608',
+      accent: '#FFB347', textColor: '#FFEBCC', authorColor: '#FFB347',
+      title: ['SAPIENS'],
+      sub: 'КРАТКАЯ ИСТОРИЯ ЧЕЛОВЕЧЕСТВА',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.9">
+          <g fill="none" stroke="#FFEBCC" stroke-width="1.3" opacity="0.75">
+            <path d="M -30 0 Q -22 -18 0 -18 Q 22 -18 30 0"/>
+            <path d="M -24 6 Q -18 -10 0 -10 Q 18 -10 24 6"/>
+            <path d="M -18 12 Q -14 -2 0 -2 Q 14 -2 18 12"/>
+            <path d="M -10 18 Q -8 6 0 6 Q 8 6 10 18"/>
+          </g>
+          <circle r="2.5" fill="#FFB347"/>
+        </g>`
+    },
+
+    'Сила привычки': {
+      bgA: '#3a2a5c', bgB: '#150823',
+      accent: '#C4A8FF', textColor: '#EEE3FF', authorColor: '#C4A8FF',
+      title: ['СИЛА', 'ПРИВЫЧКИ'],
+      sub: 'CHARLES DUHIGG',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.95">
+          <path d="M 0 -34 A 34 34 0 1 1 -24 24" fill="none" stroke="#C4A8FF" stroke-width="2.5" opacity="0.85"/>
+          <polygon points="-28,20 -14,16 -20,30" fill="#C4A8FF"/>
+          <circle r="4" fill="#C4A8FF"/>
+          <circle r="12" fill="none" stroke="#C4A8FF" stroke-width="1" opacity="0.4"/>
+        </g>`
+    },
+
+    'Нация дофамина': {
+      bgA: '#a81b5c', bgB: '#2a0820',
+      accent: '#FF6BAE', textColor: '#FFE3F0', authorColor: '#FFB3D4',
+      title: ['НАЦИЯ', 'ДОФАМИНА'],
+      sub: 'БАЛАНС В ЭПОХУ ВСЕДОЗВОЛЕННОСТИ',
+      graphic: `
+        <g transform="translate(105,58)" opacity="0.95">
+          <circle r="6" fill="#FF6BAE"/>
+          <g stroke="#FF6BAE" stroke-width="1.5" fill="none" opacity="0.85">
+            <line x1="0" y1="0" x2="30" y2="-22"/>
+            <line x1="0" y1="0" x2="-26" y2="-18"/>
+            <line x1="0" y1="0" x2="-30" y2="8"/>
+            <line x1="0" y1="0" x2="-20" y2="26"/>
+            <line x1="0" y1="0" x2="14" y2="30"/>
+            <line x1="0" y1="0" x2="32" y2="10"/>
+          </g>
+          <circle cx="30" cy="-22" r="2.5" fill="#FF6BAE"/>
+          <circle cx="-26" cy="-18" r="2" fill="#FF6BAE"/>
+          <circle cx="-30" cy="8" r="2.2" fill="#FF6BAE"/>
+          <circle cx="-20" cy="26" r="1.8" fill="#FF6BAE"/>
+          <circle cx="14" cy="30" r="2.2" fill="#FF6BAE"/>
+          <circle cx="32" cy="10" r="2" fill="#FF6BAE"/>
+        </g>`
+    },
+
+    'Психология денег': {
+      bgA: '#0f5c3a', bgB: '#031a10',
+      accent: '#FFD54F', textColor: '#E6FFED', authorColor: '#FFD54F',
+      title: ['ПСИХОЛОГИЯ', 'ДЕНЕГ'],
+      sub: 'MORGAN HOUSEL',
+      graphic: `
+        <g transform="translate(30,40)" opacity="0.9">
+          <path d="M 0 30 Q 22 5, 45 20 T 90 15" fill="none" stroke="#FFD54F" stroke-width="2" opacity="0.85"/>
+          <path d="M 0 40 Q 22 15, 45 30 T 90 25" fill="none" stroke="#FFD54F" stroke-width="1.5" opacity="0.5"/>
+          <path d="M 0 50 Q 22 25, 45 40 T 90 35" fill="none" stroke="#FFD54F" stroke-width="1" opacity="0.3"/>
+          <circle cx="0" cy="30" r="2.5" fill="#FFD54F"/>
+          <circle cx="45" cy="20" r="2.5" fill="#FFD54F"/>
+          <circle cx="90" cy="15" r="2.5" fill="#FFD54F"/>
+        </g>`
+    },
+
+    'Богатый папа, бедный папа': {
+      bgA: '#1a1a1a', bgB: '#050505',
+      accent: '#FFD54F', textColor: '#FFF6E0', authorColor: '#FFD54F',
+      title: ['БОГАТЫЙ ПАПА', 'БЕДНЫЙ ПАПА'],
+      sub: 'ROBERT KIYOSAKI',
+      graphic: `
+        <g transform="translate(105,62)" opacity="0.95">
+          <circle r="38" fill="none" stroke="#FFD54F" stroke-width="1.5" opacity="0.35"/>
+          <text x="0" y="18" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="72" font-weight="900" fill="#FFD54F" opacity="0.95">$</text>
+          <circle r="38" fill="none" stroke="#FFD54F" stroke-width="0.8" opacity="0.6" stroke-dasharray="3 3"/>
+        </g>`
+    },
+
+    'Миллионер по соседству': {
+      bgA: '#2a2317', bgB: '#0d0a05',
+      accent: '#D4AF37', textColor: '#F5E8C8', authorColor: '#D4AF37',
+      title: ['МИЛЛИОНЕР', 'ПО СОСЕДСТВУ'],
+      sub: 'THOMAS J. STANLEY',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.9">
+          <polygon points="-30,6 0,-28 30,6" fill="none" stroke="#D4AF37" stroke-width="1.6"/>
+          <rect x="-24" y="6" width="48" height="28" fill="none" stroke="#D4AF37" stroke-width="1.6"/>
+          <rect x="-8" y="18" width="16" height="16" fill="#D4AF37" opacity="0.85"/>
+          <line x1="-40" y1="38" x2="40" y2="38" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+        </g>`
+    },
+
+    'Как завоевать друзей': {
+      bgA: '#8a4a1f', bgB: '#2a1608',
+      accent: '#FFCF99', textColor: '#FFE8CC', authorColor: '#FFCF99',
+      title: ['КАК ЗАВОЕВАТЬ', 'ДРУЗЕЙ'],
+      sub: 'И ВЛИЯТЬ НА ЛЮДЕЙ',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.95">
+          <g stroke="#FFCF99" stroke-width="1.2" opacity="0.6" fill="none">
+            <line x1="-30" y1="-20" x2="0" y2="0"/>
+            <line x1="30" y1="-20" x2="0" y2="0"/>
+            <line x1="-30" y1="20" x2="0" y2="0"/>
+            <line x1="30" y1="20" x2="0" y2="0"/>
+            <line x1="-30" y1="-20" x2="30" y2="-20"/>
+            <line x1="-30" y1="20" x2="30" y2="20"/>
+          </g>
+          <circle cx="-30" cy="-20" r="5" fill="#FFCF99"/>
+          <circle cx="30" cy="-20" r="5" fill="#FFCF99"/>
+          <circle cx="-30" cy="20" r="5" fill="#FFCF99"/>
+          <circle cx="30" cy="20" r="5" fill="#FFCF99"/>
+          <circle r="6" fill="#FFE8CC"/>
+        </g>`
+    },
+
+    'Переключатель симпатии': {
+      bgA: '#0d3a6b', bgB: '#03121f',
+      accent: '#7ED9FF', textColor: '#E3F5FF', authorColor: '#7ED9FF',
+      title: ['ПЕРЕКЛЮЧАТЕЛЬ', 'СИМПАТИИ'],
+      sub: 'JACK SCHAFER',
+      graphic: `
+        <g transform="translate(105,60)" opacity="0.95">
+          <rect x="-40" y="-14" width="80" height="28" rx="14" fill="none" stroke="#7ED9FF" stroke-width="1.8" opacity="0.8"/>
+          <rect x="-40" y="-14" width="80" height="28" rx="14" fill="#7ED9FF" opacity="0.15"/>
+          <circle cx="22" cy="0" r="10" fill="#7ED9FF"/>
+          <circle cx="22" cy="0" r="10" fill="none" stroke="#FFF" stroke-width="0.8" opacity="0.5"/>
+          <text x="-20" y="4" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="800" fill="#7ED9FF" opacity="0.65" letter-spacing="1">ВКЛ</text>
+        </g>`
+    },
+
+    'Глубокая работа': {
+      bgA: '#111111', bgB: '#000000',
+      accent: '#EAF3F8', textColor: '#FFFFFF', authorColor: '#9FB3BF',
+      title: ['ГЛУБОКАЯ', 'РАБОТА'],
+      sub: 'CAL NEWPORT',
+      graphic: `
+        <g transform="translate(18,44)" opacity="0.9">
+          <line x1="0" y1="0" x2="114" y2="0" stroke="#EAF3F8" stroke-width="2"/>
+          <line x1="0" y1="10" x2="80" y2="10" stroke="#EAF3F8" stroke-width="1" opacity="0.4"/>
+          <line x1="0" y1="20" x2="50" y2="20" stroke="#EAF3F8" stroke-width="1" opacity="0.25"/>
+        </g>`
+    },
+  };
+
+  function renderCover(title) {
+    const c = BOOK_COVERS[title];
+    if (!c) return '';
+    const author = (AUTHORS[title] || '').toUpperCase();
+    const gid = 'g' + title.replace(/[^a-z]/gi, '').toLowerCase();
+    const lineGap = 18;
+    const titleStartY = 122;
+    const titleLines = c.title.map((line, i) =>
+      `<text x="18" y="${titleStartY + i * lineGap}" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="900" letter-spacing="-0.3" fill="${c.textColor}">${line}</text>`
+    ).join('');
+
+    return `<svg viewBox="0 0 150 210" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="${c.bgA}"/>
+          <stop offset="100%" stop-color="${c.bgB}"/>
+        </linearGradient>
+      </defs>
+      <rect width="150" height="210" fill="url(#${gid})"/>
+      <!-- spine darken -->
+      <rect x="0" y="0" width="12" height="210" fill="rgba(0,0,0,0.35)"/>
+      <rect x="12" y="0" width="1" height="210" fill="rgba(255,255,255,0.06)"/>
+      <!-- graphic -->
+      ${c.graphic}
+      <!-- top badge -->
+      <text x="18" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="6.5" font-weight="800" letter-spacing="1.8" fill="${c.accent}">ZEHN · 15 МИН</text>
+      <!-- accent rule -->
+      <rect x="18" y="104" width="22" height="2" fill="${c.accent}"/>
+      <!-- title lines -->
+      ${titleLines}
+      <!-- subtitle -->
+      <text x="18" y="${titleStartY + c.title.length * lineGap + 6}" font-family="Plus Jakarta Sans, sans-serif" font-size="5.2" font-weight="700" letter-spacing="1.1" fill="${c.textColor}" opacity="0.55">${c.sub}</text>
+      <!-- author at bottom -->
+      <text x="18" y="198" font-family="Plus Jakarta Sans, sans-serif" font-size="6.5" font-weight="800" letter-spacing="1.4" fill="${c.authorColor}">${author}</text>
+    </svg>`;
+  }
+
+  const PROFILES = {
+    fastMover: {
+      name: 'Быстрый Деятель',
+      desc: "Вы амбициозны и ограничены во времени. Вам нужны идеи, которые можно применить прямо сейчас — не теория. Эти три книги дадут вам преимущество, и быстро.",
+      books: [
+        { title: 'Атомные привычки',  desc: 'Постройте систему, которая сделает успех автоматическим.' },
+        { title: 'Самое главное',     desc: 'Отсеките лишнее и сосредоточьтесь на том, что действительно важно.' },
+        { title: 'Нет компромиссу',   desc: 'Освойте переговоры и получайте больше желаемого.' },
+      ]},
+    deepThinker: {
+      name: 'Глубокий Мыслитель',
+      desc: "Вы ищете не просто советы — вы хотите идеи, которые изменят ваш взгляд на мир. Эти книги сделают именно это.",
+      books: [
+        { title: 'Думай медленно... решай быстро', desc: 'Поймите две системы, управляющие каждым вашим решением.' },
+        { title: 'Искусство ясного мышления',      desc: 'Распознайте и устраните когнитивные искажения, мешающие вам.' },
+        { title: 'Sapiens',                        desc: 'Широкий взгляд на то, как люди стали доминировать на планете.' },
+      ]},
+    habitBuilder: {
+      name: 'Строитель Привычек',
+      desc: "Вы знаете, что постоянство — это ключ. Вам просто нужна правильная система. Эти книги помогут вам создать привычки, которые действительно закрепятся.",
+      books: [
+        { title: 'Атомные привычки', desc: 'Небольшие изменения, замечательные результаты — наука долгосрочных привычек.' },
+        { title: 'Сила привычки',    desc: 'Поймите петлю привычки и перепрограммируйте её навсегда.' },
+        { title: 'Нация дофамина',   desc: 'Найдите баланс в эпоху вседозволенности и бесконечных отвлечений.' },
+      ]},
+    moneyMinded: {
+      name: 'Финансово Грамотный',
+      desc: "Вы серьёзно настроены на создание богатства и принятие более умных финансовых решений. Начните здесь и заложите фундамент, который будет служить долго.",
+      books: [
+        { title: 'Психология денег',          desc: 'Почему богатство — это больше о поведении, чем о цифрах.' },
+        { title: 'Богатый папа, бедный папа', desc: 'Смена мышления, отделяющая создателей богатства от остальных.' },
+        { title: 'Миллионер по соседству',    desc: 'Что на самом деле объединяет состоятельных людей — это не то, что вы думаете.' },
+      ]},
+    peoplePerson: {
+      name: 'Человек Людей',
+      desc: "Отношения — личные и профессиональные — ваше преимущество. Эти книги заточат вашу способность устанавливать связи, влиять и вести за собой.",
+      books: [
+        { title: 'Как завоевать друзей',      desc: 'Вечная инструкция по человеческому общению и влиянию.' },
+        { title: 'Нет компромиссу',            desc: 'Используйте тактику переговоров ФБР в любом разговоре.' },
+        { title: 'Переключатель симпатии',     desc: 'Руководство бывшего агента ФБР по превращению незнакомцев в союзников.' },
+      ]},
+  };
+
+  function computeProfile() {
+    const q1 = answers[1], q2 = answers[2], q3 = answers[3], q4 = answers[4], q5 = answers[5];
+    if (q1 === 'career' && (q2 === 'under15' || q4 === 'notime' || q5 === 'ambitious')) return PROFILES.fastMover;
+    if (q1 === 'think' || q3 === 'deep' || q5 === 'curious') return PROFILES.deepThinker;
+    if (q1 === 'habits' || q4 === 'neverfinish' || q5 === 'overwhelmed') return PROFILES.habitBuilder;
+    if (q1 === 'money' || (q5 === 'ambitious' && q1 !== 'career')) return PROFILES.moneyMinded;
+    if (q1 === 'relationships' || q3 === 'stories' || (q5 === 'focused' && q1 === 'relationships')) return PROFILES.peoplePerson;
+    return PROFILES.fastMover;
+  }
+
+  function goTo(next) {
+    const prevEl = document.getElementById(current);
+    const nextEl = document.getElementById(next);
+    const forward = ORDER.indexOf(next) > ORDER.indexOf(current);
+    prevEl.classList.remove('active');
+    prevEl.classList.add(forward ? 'hidden-left' : 'hidden-right');
+    nextEl.classList.remove('hidden-left','hidden-right');
+    nextEl.classList.add('active');
+    current = next;
+    nextEl.scrollTop = 0;
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const header = document.getElementById('app-header');
+    const wrap = document.getElementById('progress-wrap');
+    const fill = document.getElementById('progress-fill');
+    const label = document.getElementById('progress-label');
+    const pct = document.getElementById('progress-pct');
+    const qSlides = ['q1','q2','q3','q4','q5'];
+    const idx = qSlides.indexOf(current);
+    if (idx === -1) { header.style.display = 'none'; wrap.style.display = 'none'; return; }
+    header.style.display = 'flex'; wrap.style.display = 'block';
+    const num = idx + 1;
+    const p = Math.round((num / 5) * 100);
+    label.textContent = `Вопрос ${num} из 5`;
+    pct.textContent = `${p}%`;
+    fill.style.width = `${p}%`;
+  }
+
+  function startQuiz() { goTo('q1'); }
+
+  function answer(qNum, value) {
+    answers[qNum] = value;
+    const slide = document.getElementById('q' + qNum);
+    slide.querySelectorAll('.option').forEach(opt => {
+      opt.classList.remove('selected');
+      if (opt.getAttribute('onclick') === `answer(${qNum},'${value}')`)
+        opt.classList.add('selected');
+    });
+    setTimeout(() => {
+      if (qNum < 5) { goTo('q' + (qNum + 1)); }
+      else { playRevealThenResults(); }
+      slide.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    }, 260);
+  }
+
+  /* ════ LOGO REVEAL ANIMATION ════ */
+  function playRevealThenResults() {
+    const profile = computeProfile();
+    const books = profile.books;
+
+    // Populate each animated book with its unique cover SVG
+    document.getElementById('book1').innerHTML = renderCover(books[0].title);
+    document.getElementById('book2').innerHTML = renderCover(books[1].title);
+    document.getElementById('book3').innerHTML = renderCover(books[2].title);
+
+    const overlay = document.getElementById('logo-reveal');
+    const status = document.getElementById('reveal-status');
+    const b1 = document.getElementById('book1');
+    const b2 = document.getElementById('book2');
+    const b3 = document.getElementById('book3');
+    const slotTop = document.getElementById('slot-top');
+    const slotDiag = document.getElementById('slot-diag');
+    const slotBot = document.getElementById('slot-bot');
+    const finalTop = document.getElementById('final-top');
+    const finalTopA = document.getElementById('final-top-accent');
+    const finalDiag = document.getElementById('final-diag');
+    const finalDiagA = document.getElementById('final-diag-accent');
+    const finalBot = document.getElementById('final-bot');
+    const finalBotA = document.getElementById('final-bot-accent');
+    const wordmark = document.getElementById('reveal-wordmark');
+    const tagline = document.getElementById('reveal-tagline');
+
+    // Reset
+    [b1, b2, b3].forEach(b => {
+      b.style.transition = 'none';
+      b.style.opacity = '0';
+      b.style.transform = 'translate(0,60px) scale(0.7) rotate(0deg)';
+    });
+    [slotTop, slotDiag, slotBot].forEach(s => s.classList.remove('filled'));
+    [finalTop, finalTopA, finalDiag, finalDiagA, finalBot, finalBotA].forEach(f => f.classList.remove('show'));
+    status.classList.remove('visible', 'complete');
+    status.textContent = 'Создаём ваш Z';
+    wordmark.style.transition = 'none';
+    wordmark.style.opacity = '0';
+    wordmark.style.transform = 'translateY(10px)';
+    tagline.style.transition = 'none';
+    tagline.style.opacity = '0';
+    tagline.style.transform = 'translateY(8px)';
+
+    overlay.classList.add('active');
+
+    setTimeout(() => {
+      status.style.transition = 'opacity 0.5s ease, color 0.4s ease';
+      status.classList.add('visible');
+    }, 400);
+
+    // BOOK 1 in
+    setTimeout(() => {
+      b1.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+      b1.style.opacity = '1';
+      b1.style.transform = 'translate(0, 0) scale(1) rotate(0deg)';
+    }, 700);
+
+    // BOOK 1 fly to top slot
+    setTimeout(() => {
+      b1.style.transition = 'opacity 0.35s ease 0.2s, transform 0.6s cubic-bezier(0.5,0,0.3,1)';
+      b1.style.transform = 'translate(0, -85px) scale(0.18) rotate(-3deg)';
+      b1.style.opacity = '0';
+    }, 1700);
+
+    setTimeout(() => {
+      slotTop.classList.add('filled');
+      finalTop.classList.add('show');
+      finalTopA.classList.add('show');
+    }, 2200);
+
+    // BOOK 2 in
+    setTimeout(() => {
+      b2.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+      b2.style.opacity = '1';
+      b2.style.transform = 'translate(0, 0) scale(1) rotate(0deg)';
+    }, 2500);
+
+    setTimeout(() => {
+      b2.style.transition = 'opacity 0.35s ease 0.2s, transform 0.6s cubic-bezier(0.5,0,0.3,1)';
+      b2.style.transform = 'translate(8px, 0) scale(0.18) rotate(-44deg)';
+      b2.style.opacity = '0';
+    }, 3500);
+
+    setTimeout(() => {
+      slotDiag.classList.add('filled');
+      finalDiag.classList.add('show');
+      finalDiagA.classList.add('show');
+    }, 4000);
+
+    // BOOK 3 in
+    setTimeout(() => {
+      b3.style.transition = 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+      b3.style.opacity = '1';
+      b3.style.transform = 'translate(0, 0) scale(1) rotate(0deg)';
+    }, 4300);
+
+    setTimeout(() => {
+      b3.style.transition = 'opacity 0.35s ease 0.2s, transform 0.6s cubic-bezier(0.5,0,0.3,1)';
+      b3.style.transform = 'translate(0, 85px) scale(0.18) rotate(3deg)';
+      b3.style.opacity = '0';
+    }, 5300);
+
+    setTimeout(() => {
+      slotBot.classList.add('filled');
+      finalBot.classList.add('show');
+      finalBotA.classList.add('show');
+    }, 5800);
+
+    // Logo complete — glow pulse + text
+    setTimeout(() => {
+      status.classList.add('complete');
+      status.textContent = 'Логотип готов';
+
+      const svg = document.querySelector('.slot-svg');
+      svg.style.transition = 'filter 0.5s ease';
+      svg.style.filter = 'drop-shadow(0 0 35px rgba(130,255,127,0.85))';
+      setTimeout(() => {
+        svg.style.filter = 'drop-shadow(0 0 12px rgba(130,255,127,0.4))';
+      }, 550);
+
+      setTimeout(() => {
+        wordmark.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.34,1.2,0.64,1)';
+        wordmark.style.opacity = '1';
+        wordmark.style.transform = 'translateY(0)';
+      }, 300);
+
+      setTimeout(() => {
+        tagline.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        tagline.style.opacity = '1';
+        tagline.style.transform = 'translateY(0)';
+      }, 550);
+    }, 6100);
+
+    // Transition to results
+    setTimeout(() => {
+      showResults(profile); // Render results page before fade so no flash of previous slide
+      overlay.classList.add('fade-out');
+      setTimeout(() => {
+        overlay.classList.remove('active', 'fade-out');
+      }, 650);
+    }, 7500);
+  }
+
+  function showResults(profile) {
+    document.getElementById('profile-name').textContent = profile.name;
+    document.getElementById('profile-desc').textContent = profile.desc;
+    const cardsEl = document.getElementById('book-cards');
+    cardsEl.innerHTML = '';
+
+    profile.books.forEach((book, i) => {
+      const card = document.createElement('div');
+      card.className = 'book-card';
+      card.innerHTML = `
+        <div class="book-card-cover">${renderCover(book.title)}</div>
+        <div class="book-card-body">
+          <div class="book-card-top">
+            <div class="book-title">${book.title}</div>
+            <div class="book-badge">15 мин</div>
+          </div>
+          <div class="book-desc">${book.desc}</div>
+        </div>`;
+      cardsEl.appendChild(card);
+    });
+
+    goTo('results');
+
+    // Staggered reveal animation for each card
+    const cards = cardsEl.querySelectorAll('.book-card');
+    cards.forEach((card, i) => {
+      setTimeout(() => card.classList.add('reveal-in'), 320 + i * 160);
+    });
+  }
+
+  function retake() {
+    for (const k in answers) delete answers[k];
+    ['q1','q2','q3','q4','q5','results'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('active','hidden-left');
+      el.classList.add('hidden-right');
+    });
+    const intro = document.getElementById('intro');
+    intro.classList.remove('hidden-left','hidden-right');
+    intro.classList.add('active');
+    current = 'intro';
+  }
+</script>
+</main>
+</body>
+</html>

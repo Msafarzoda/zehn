@@ -1,0 +1,130 @@
+/* ============================================================
+   Zehn – shared design tokens & base styles
+   Loaded by every page for consistent look & caching benefit
+   ============================================================ */
+
+/* ----- Design tokens ----- */
+:root {
+  --ink:       #03212E;
+  --ink-2:     #052A3B;
+  --ink-3:     #063349;
+  --line:      rgba(255,255,255,.08);
+  --line-2:    rgba(255,255,255,.14);
+  --text:      #EAF3F8;
+  --text-dim:  rgba(234,243,248,.70);   /* raised from .66 → .70 for WCAG AA */
+  --text-mute: rgba(234,243,248,.55);   /* raised from .42 → .55 for WCAG AA */
+  --green:     #82FF7F;
+  --green-2:   #92F090;
+  --cream:     #FBF2A8;
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+}
+
+/* ----- Reset ----- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01","cv11";
+}
+
+body { overflow-x: hidden; }
+
+/* ----- Typography ----- */
+::selection { background: var(--green); color: var(--ink); }
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.lora { font-family: 'Lora', serif; font-style: italic; font-weight: 400; }
+
+/* ----- Layout ----- */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+@media(max-width:720px) { .wrap { padding: 0 20px; } }
+
+/* ----- Accessibility: focus ring (WCAG 2.1 AA) ----- */
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+input:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+/* ----- Skip-to-content link (CSS-only reveal on focus) ----- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  z-index: 9999;
+  padding: 10px 18px;
+  background: var(--green);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+
+/* ----- Reduced motion ----- */
+@media(prefers-reduced-motion:reduce) {
+  * { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+}
+
+/* ----- Shared button token ----- */
+a, button { color: inherit; text-decoration: none; cursor: pointer; }
+
+/* ----- Inner-page shared styles ----- */
+.page-body { padding: 96px 0 80px; }
+
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s;
+}
+.nav-back:hover { border-bottom-color: var(--green); }
+
+.page-footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--text-mute);
+  font-size: 12px;
+}
+.page-footer a {
+  color: var(--text-mute);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.page-footer a:hover { color: var(--text-dim); }

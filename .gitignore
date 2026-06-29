@@ -1,0 +1,13 @@
+# Entire scraper folder — contains admin URL, scraping logic, session paths, raw data
+scraper/
+
+# In case books_data.json ends up in public dir again
+books/books_data.json
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# macOS
+.DS_Store
