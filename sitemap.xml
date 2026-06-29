@@ -6,6 +6,17 @@
   <url><loc>https://thezehnapp.com/ru/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://thezehnapp.com/tj/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://thezehnapp.com/books</loc><changefreq>daily</changefreq><priority>0.9</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/en/about</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/ar/about</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/ru/about</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/tj/about</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/en/support</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/ar/support</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/ru/support</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/tj/support</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/en/faq</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/en/privacy</loc><changefreq>monthly</changefreq><priority>0.4</priority><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://thezehnapp.com/en/terms</loc><changefreq>monthly</changefreq><priority>0.4</priority><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://thezehnapp.com/tg/books/book-15</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://thezehnapp.com/tg/books/book-16</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-29</lastmod></url>
   <url><loc>https://thezehnapp.com/tg/books/xxi</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-29</lastmod></url>

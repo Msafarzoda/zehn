@@ -32,11 +32,11 @@
 - [ЧАРО Ӯ ЧУНИН МЕКУНАД? (Tajik)](https://thezehnapp.com/tg/books/book-33): 14 min audio summary by Лунди Бэнкрофт
 - [РОХБАРОНИ ХУБ (Tajik)](https://thezehnapp.com/tg/books/book-34): 20 min audio summary by Чон Максвелл
 - [ОДАТҲОИ АТОМӢ (Tajik)](https://thezehnapp.com/tg/books/book-35): 29 min audio summary by Чеймс Клир
-- [High Performance Habits (English)](https://thezehnapp.com/en/books/high-performance-habits): 15 min audio summary by ake Knapp, John Zeratsky, Braden Kowitz
+- [High Performance Habits (English)](https://thezehnapp.com/en/books/high-performance-habits): 15 min audio summary by Brendon Burchard
 - [How Brands Grow (English)](https://thezehnapp.com/en/books/how-brands-grow): 13 min audio summary by Prof. Byron Sharp
 - [Innovator&#x27;s DNA (English)](https://thezehnapp.com/en/books/innovator-s-dna): 15 min audio summary by Jeff H. Dyer, Hal B. Gregersen, Clayton M. Christensen
 - [Just Work (English)](https://thezehnapp.com/en/books/just-work): 22 min audio summary by Kim Scott
-- [Leadership Strategy and Tactics (English)](https://thezehnapp.com/en/books/leadership-strategy-and-tactics): 21 min audio summary by Jocko Willing
+- [Leadership Strategy and Tactics (English)](https://thezehnapp.com/en/books/leadership-strategy-and-tactics): 21 min audio summary by Jocko Willink
 - [LinkedIn for Personal Branding (English)](https://thezehnapp.com/en/books/linkedin-for-personal-branding): 19 min audio summary by Sandra Long
 - [Moneyball (English)](https://thezehnapp.com/en/books/moneyball): 13 min audio summary by Michael Lewis
 - [Good Strategy, Bad Strategy. (English)](https://thezehnapp.com/en/books/good-strategy-bad-strategy): 14 min audio summary by Richard Rumelt
@@ -388,7 +388,7 @@
 - [Будда и бунтарь (Russian)](https://thezehnapp.com/ru/books/book-758): 19 min audio summary by Вишен Лакьяни
 - [Продажи в стиле Челленджер (Russian)](https://thezehnapp.com/ru/books/book-759): 22 min audio summary by Мэттью Диксон, Брент Адамсон
 - [Speed Reading (English)](https://thezehnapp.com/en/books/speed-reading): 14 min audio summary by Kam Knight
-- [Sprint (English)](https://thezehnapp.com/en/books/sprint): 15 min audio summary by Jake Knapp, John Zeratsky, Braden Kowitz
+- [Sprint (English)](https://thezehnapp.com/en/books/sprint): 15 min audio summary by JBrendon Burchard
 - [Superforecasting (English)](https://thezehnapp.com/en/books/superforecasting): 14 min audio summary by Philip E. Tetlock, PhD, Ten Gardner
 - [Switch (English)](https://thezehnapp.com/en/books/switch): 17 min audio summary by Dan Heath, Chip Heath
 - [The 5 Love Languages of Children (English)](https://thezehnapp.com/en/books/the-5-love-languages-of-children): 19 min audio summary by Gary Chapman
@@ -1067,7 +1067,7 @@
 - [هذا لن ينجح أبداً (Arabic)](https://thezehnapp.com/ar/books/book-1444): 16 min audio summary by Marc Randolf
 - [أسطورة الكاريزما (Arabic)](https://thezehnapp.com/ar/books/book-1445): 21 min audio summary by Olivia Fox Cabane
 - [رمز الثقافة (Arabic)](https://thezehnapp.com/ar/books/book-1446): 17 min audio summary by Daniel Coyle
-- [ثنائية القيادة (Arabic)](https://thezehnapp.com/ar/books/book-1447): 23 min audio summary by Jocko Willing
+- [ثنائية القيادة (Arabic)](https://thezehnapp.com/ar/books/book-1447): 23 min audio summary by Jocko Willink
 - [المدير الفعال (Arabic)](https://thezehnapp.com/ar/books/book-1448): 19 min audio summary by Peter F. Drucker
 - [المنظمة الخالية من الخوف (Arabic)](https://thezehnapp.com/ar/books/book-1449): 18 min audio summary by Amy C. Edmondson
 - [مدير الإدارة للمرة الأولى (Arabic)](https://thezehnapp.com/ar/books/book-1450): 32 min audio summary by Loren B. Belker, Jim McCormick, Gary S. Topchik
@@ -1812,7 +1812,7 @@
 - [دليل هارفارد بزنس ريفيو للتفكير الاستراتيجي (Arabic)](https://thezehnapp.com/ar/books/book-2267): 22 min audio summary by Harvard Business Review
 - [الإمكانات الخفية (Arabic)](https://thezehnapp.com/ar/books/book-2268): 19 min audio summary by Adam grant
 - [إدارة الإنتاجية العالية (Arabic)](https://thezehnapp.com/ar/books/book-2269): 25 min audio summary by Andrew S. Grove
-- [عادات الأداء العالي (Arabic)](https://thezehnapp.com/ar/books/book-2270): 24 min audio summary by ake Knapp, John Zeratsky, Braden Kowitz
+- [عادات الأداء العالي (Arabic)](https://thezehnapp.com/ar/books/book-2270): 24 min audio summary by Brendon Burchard
 - [صنّاع النجاح (Arabic)](https://thezehnapp.com/ar/books/book-2271): 20 min audio summary by Derek Thompson
 - [مُدمَن (Arabic)](https://thezehnapp.com/ar/books/book-2272): 21 min audio summary by Nir Eyal
 - [كيف بنيت هذا (Arabic)](https://thezehnapp.com/ar/books/book-2273): 18 min audio summary by Guy Raz, Nils Parker
@@ -1824,7 +1824,7 @@
 - [علاج وظيفي (Arabic)](https://thezehnapp.com/ar/books/book-2280): 18 min audio summary by Tessa West
 - [فقط اعمل بشكل عادل (Arabic)](https://thezehnapp.com/ar/books/book-2281): 24 min audio summary by Kim Scott
 - [الكتابة في العالم الحقيقي (Arabic)](https://thezehnapp.com/ar/books/book-2282): 25 min audio summary by Matthew Salesses
-- [استراتيجية القيادة والتكتيكات (Arabic)](https://thezehnapp.com/ar/books/book-2283): 21 min audio summary by Jocko Willing
+- [استراتيجية القيادة والتكتيكات (Arabic)](https://thezehnapp.com/ar/books/book-2283): 21 min audio summary by Jocko Willink
 - [مونيبول (Arabic)](https://thezehnapp.com/ar/books/book-2284): 19 min audio summary by Michael Lewis
 - [أسرار النساء ذوات الدخل السداسي (Arabic)](https://thezehnapp.com/ar/books/book-2285): 21 min audio summary by Barbara Stanny
 - [العمالقة الصغار (Arabic)](https://thezehnapp.com/ar/books/book-2286): 22 min audio summary by Bo Burlingham
@@ -1981,7 +1981,7 @@
 - [الإنتاجية البطيئة (Arabic)](https://thezehnapp.com/ar/books/book-2437): 17 min audio summary by Cal Newport
 - [أذكى وأسرع وأفضل (Arabic)](https://thezehnapp.com/ar/books/book-2438): 20 min audio summary by Charles Duhigg
 - [القراءة السريعة (Arabic)](https://thezehnapp.com/ar/books/book-2439): 23 min audio summary by Kam Knight
-- [سبرينت (Arabic)](https://thezehnapp.com/ar/books/book-2440): 24 min audio summary by Jake Knapp, John Zeratsky, Braden Kowitz
+- [سبرينت (Arabic)](https://thezehnapp.com/ar/books/book-2440): 24 min audio summary by JBrendon Burchard
 - [التنبؤ الخارق (Arabic)](https://thezehnapp.com/ar/books/book-2441): 21 min audio summary by Philip E. Tetlock, PhD, Ten Gardner
 - [التحول (Arabic)](https://thezehnapp.com/ar/books/book-2442): 25 min audio summary by Dan Heath, Chip Heath
 - [فريق الفرق (Arabic)](https://thezehnapp.com/ar/books/book-2443): 18 min audio summary by Gen. Stanley McChrystal, Tantum Collins, et al.
