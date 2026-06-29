@@ -2775,7 +2775,7 @@ function Library() {
   const langCounts = meta ? meta.lang_counts : {};
   const langDisplay = meta ? meta.lang_display || {} : {};
   const cats = meta ? meta.categories.slice(0, 8) : [];
-  const featured = meta ? meta.featured : [];
+  const featured = meta ? (meta.featured_by_lang?.["ru"] || meta.featured || []) : [];
   const CAT_NAMES = {
     'Personal Development': 'Саморазвитие',
     'Family': 'Семья',
@@ -2967,7 +2967,7 @@ function Library() {
       fontSize: 18
     }
   }, "Рекомендуемые книги"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/",
+    href: "/books/?lang=Russian",
     style: {
       fontSize: 13,
       color: "var(--green)",

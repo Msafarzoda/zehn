@@ -2776,7 +2776,7 @@ function Library() {
   const langCounts = meta ? meta.lang_counts : {};
   const langDisplay = meta ? meta.lang_display || {} : {};
   const cats = meta ? meta.categories.slice(0, 8) : [];
-  const featured = meta ? meta.featured : [];
+  const featured = meta ? (meta.featured_by_lang?.["en"] || meta.featured || []) : [];
   const CAT_DISPLAY_COUNT = {
     'Family': 1100,
     'Career & Business': 1050,
@@ -2946,7 +2946,7 @@ function Library() {
       fontSize: 18
     }
   }, "Featured Books"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/",
+    href: "/books/?lang=English",
     style: {
       fontSize: 13,
       color: "var(--green)",

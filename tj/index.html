@@ -2775,7 +2775,7 @@ function Library() {
   const langCounts = meta ? meta.lang_counts : {};
   const langDisplay = meta ? meta.lang_display || {} : {};
   const cats = meta ? meta.categories.slice(0, 8) : [];
-  const featured = meta ? meta.featured : [];
+  const featured = meta ? (meta.featured_by_lang?.["tg"] || meta.featured || []) : [];
   const CAT_NAMES = {
     'Personal Development': 'Рушди шахсӣ',
     'Family': 'Оила',
@@ -2967,7 +2967,7 @@ function Library() {
       fontSize: 18
     }
   }, "Китобҳои барҷаста"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/",
+    href: "/books/?lang=Tajik",
     style: {
       fontSize: 13,
       color: "var(--green)",

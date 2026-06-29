@@ -1,1 +1,827 @@
-{"total":2398,"lang_counts":{"tg":37,"en":834,"ru":737,"ar":788,"urdu":2},"lang_display":{"tg":"Tajik","en":"English","ru":"Russian","ar":"Arabic","urdu":"Urdu"},"categories":[{"name":"Personal Development","count":269,"covers":["/books/covers/books129.jpg","/books/covers/books9.png","/books/covers/35.png"]},{"name":"Career & Business","count":263,"covers":["/books/covers/Moneyball.jpeg","/books/covers/Generated_Image_January_01_2026_-_7_21PM.jpeg","/books/covers/This_is_Strategy.jpeg"]},{"name":"Productivity","count":250,"covers":["/books/covers/books130.jpg","/books/covers/22.png","/books/covers/Screenshot_2025-12-25_120000.png"]},{"name":"Biography & Memoir","count":211,"covers":["/books/covers/books126.jpg","/books/covers/Generated_Image_January_03_2026_-_1_03PM.jpeg","/books/covers/The_Third_Door.jpeg"]},{"name":"Psychology","count":208,"covers":["/books/covers/books-47.png","/books/covers/books-48.png","/books/covers/books-40.png"]},{"name":"Leadership","count":182,"covers":["/books/covers/books5.png","/books/covers/Generated_Image_December_30_2025_-_8_21PM.jpeg","/books/covers/Generated_Image_December_30_2025_-_7_14PM.jpeg"]},{"name":"Marketing & Sales","count":170,"covers":["/books/covers/Generated_Image_January_01_2026_-_1_24PM.jpeg","/books/covers/Generated_Image_December_30_2025_-_6_59PM.jpeg","/books/covers/This_Is_Strategy.jpeg"]},{"name":"Money & Investments","count":145,"covers":["/books/covers/books128.jpg","/books/covers/books6.png","/books/covers/books4.png"]},{"name":"Entrepreneurship","count":143,"covers":["/books/covers/books120.png","/books/covers/Generated_Image_December_30_2025_-_9_06PM.jpeg","/books/covers/Generated_Image_January_04_2026_-_5_55PM.jpeg"]},{"name":"Health & Nutrition","count":101,"covers":["/books/covers/Sweating_Together.jpeg","/books/covers/Outlive.jpeg","/books/covers/Sleep_Smarter.jpeg"]},{"name":"Society & Culture","count":89,"covers":["/books/covers/Design_for_the_Real_World.jpeg","/books/covers/Bullshit_Jobs.jpeg","/books/covers/The_War_for_Reality.jpeg"]},{"name":"Mindfulness & Happiness","count":85,"covers":["/books/covers/books111.png","/books/covers/The_Fun_Habit.jpeg","/books/covers/Breathe_to_Succeed.jpeg"]},{"name":"Family","count":63,"covers":["/books/covers/books-42.png","/books/covers/books-39.png","/books/covers/books-45_2.png"]},{"name":"Science","count":61,"covers":["/books/covers/Naked_Statistics_Cu0Xo2T.jpeg","/books/covers/The_Black_Swan.jpeg","/books/covers/Superforecasting.jpeg"]},{"name":"Relationships","count":58,"covers":["/books/covers/books-49.png","/books/covers/books-43.png","/books/covers/4_Essential_Keys.jpeg"]},{"name":"Negotiation","count":43,"covers":["/books/covers/Difficult_Conversations.jpeg","/books/covers/Doesnt_Hurt_to_Ask.jpeg","/books/covers/Engaging_Conversations_Talk_With_not_To.jpeg"]},{"name":"History","count":17,"covers":["/books/covers/Chip_War.jpeg","/books/covers/The_Radium_Girls_wK5YCSc.jpeg","/books/covers/cda44e33-e1af-4f8e-a0de-def15fd7b095.jpg"]},{"name":"Fiction","count":16,"covers":["/books/covers/books124.jpg","/books/covers/Call_of_the_Wild.png","/books/covers/The_Alchemist.png"]},{"name":"Technology","count":16,"covers":["/books/covers/Automate_the_Boring_Stuff_with_Python_2nd_Edition.jpeg","/books/covers/Blood_Sweat_and_Pixels_BgV8X2E.jpeg","/books/covers/Co-Intelligence.jpeg"]},{"name":"Spirituality","count":8,"covers":["/books/covers/The_Road_Back_to_You.jpeg","/books/covers/The_Sacred_Search.jpeg","/books/covers/cover_mOIp4JI.png"]}],"featured":[{"id":"15","title":"ҚУДРАТИ БАЁН","slug":"book-15","language":"tg","cover_url":"/books/covers/books129.jpg"},{"id":"16","title":"ҚУДРАТИ МУСБАТАНДЕШӢ","slug":"book-16","language":"tg","cover_url":"/books/covers/books9.png"},{"id":"17","title":"ТИҶОРАТИ АСРИ XXI","slug":"xxi","language":"tg","cover_url":"/books/covers/books120.png"},{"id":"18","title":"ОРЗУҲОРО БА ҲАДАФ ТАБДИЛ ДИҲЕД","slug":"book-18","language":"tg","cover_url":"/books/covers/35.png"},{"id":"19","title":"ДЕР НАКУН, АНҶОМАШ БИДЕҲ!","slug":"book-19","language":"tg","cover_url":"/books/covers/books126.jpg"},{"id":"20","title":"АНДЕШААТРО ИВАЗ НАМО ТО ЗИНДАГИЯТ ТАҒЙИР КУНАД","slug":"book-20","language":"tg","cover_url":"/books/covers/books10.png"},{"id":"21","title":"21 РОЗИ МУВАФФАҚИЯТИ МИЛЛИОНЕРҲО","slug":"21","language":"tg","cover_url":"/books/covers/books128.jpg"},{"id":"22","title":"ЧӢ ТАВР ТАШВИШУ ҲАЯҶОНРО ПУШТИ САР КУНЕМ","slug":"book-22","language":"tg","cover_url":"/books/covers/books111.png"},{"id":"23","title":"КИМИЁГАР","slug":"book-23","language":"tg","cover_url":"/books/covers/books124.jpg"},{"id":"24","title":"ҚУРБОҚҚАРО ҚУРТ БИДЕҲ!","slug":"book-24","language":"tg","cover_url":"/books/covers/books130.jpg"},{"id":"25","title":"ИҶОЗАТ БА ЭҲСОС КАРДАН","slug":"book-25","language":"tg","cover_url":"/books/covers/books-47.png"},{"id":"26","title":"ЧӢ ГУНА ЯК ШАХСИ КОМИЛРО ТАРБИЯ КАРД","slug":"book-26","language":"tg","cover_url":"/books/covers/books-42.png"},{"id":"28","title":"ҲАМА ШОДӢ ВА ҲЕҶ ДИЛГИРӢ НЕСТ","slug":"book-28","language":"tg","cover_url":"/books/covers/books-39.png"},{"id":"29","title":"365 рӯзи бе экран","slug":"365","language":"tg","cover_url":"/books/covers/books-38.png"},{"id":"31","title":"ЧӢ ГУНА БО КӮДАКОНИ ХУРДСОЛ ГАП ЗАНЕМ, ТО ОНҲО ГӮШ КУНАНД","slug":"book-31","language":"tg","cover_url":"/books/covers/books-45_2.png"},{"id":"32","title":"ИН ТАВР ИЗДИВОҶИ ШУМО БА ПОЁН МЕРАСАД","slug":"book-32","language":"tg","cover_url":"/books/covers/books-49.png"},{"id":"33","title":"ЧАРО Ӯ ЧУНИН МЕКУНАД?","slug":"book-33","language":"tg","cover_url":"/books/covers/books-48.png"},{"id":"34","title":"РОХБАРОНИ ХУБ","slug":"book-34","language":"tg","cover_url":"/books/covers/books5.png"},{"id":"35","title":"ОДАТҲОИ АТОМӢ","slug":"book-35","language":"tg","cover_url":"/books/covers/22.png"},{"id":"87","title":"High Performance Habits","slug":"high-performance-habits","language":"en","cover_url":"/books/covers/Screenshot_2025-12-25_120000.png"},{"id":"90","title":"How Brands Grow","slug":"how-brands-grow","language":"en","cover_url":"/books/covers/Generated_Image_January_01_2026_-_1_24PM.jpeg"},{"id":"97","title":"Innovator's DNA","slug":"innovator-s-dna","language":"en","cover_url":"/books/covers/Generated_Image_December_30_2025_-_9_06PM.jpeg"},{"id":"101","title":"Just Work","slug":"just-work","language":"en","cover_url":"/books/covers/Generated_Image_December_30_2025_-_8_21PM.jpeg"},{"id":"105","title":"Leadership Strategy and Tactics","slug":"leadership-strategy-and-tactics","language":"en","cover_url":"/books/covers/Generated_Image_December_30_2025_-_7_14PM.jpeg"}]}
+{
+  "total": 2398,
+  "lang_counts": {
+    "tg": 37,
+    "en": 834,
+    "ru": 737,
+    "ar": 788,
+    "urdu": 2
+  },
+  "lang_display": {
+    "tg": "Tajik",
+    "en": "English",
+    "ru": "Russian",
+    "ar": "Arabic",
+    "urdu": "Urdu"
+  },
+  "categories": [
+    {
+      "name": "Personal Development",
+      "count": 269,
+      "covers": [
+        "/books/covers/books129.jpg",
+        "/books/covers/books9.png",
+        "/books/covers/35.png"
+      ]
+    },
+    {
+      "name": "Career & Business",
+      "count": 263,
+      "covers": [
+        "/books/covers/Moneyball.jpeg",
+        "/books/covers/Generated_Image_January_01_2026_-_7_21PM.jpeg",
+        "/books/covers/This_is_Strategy.jpeg"
+      ]
+    },
+    {
+      "name": "Productivity",
+      "count": 250,
+      "covers": [
+        "/books/covers/books130.jpg",
+        "/books/covers/22.png",
+        "/books/covers/Screenshot_2025-12-25_120000.png"
+      ]
+    },
+    {
+      "name": "Biography & Memoir",
+      "count": 211,
+      "covers": [
+        "/books/covers/books126.jpg",
+        "/books/covers/Generated_Image_January_03_2026_-_1_03PM.jpeg",
+        "/books/covers/The_Third_Door.jpeg"
+      ]
+    },
+    {
+      "name": "Psychology",
+      "count": 208,
+      "covers": [
+        "/books/covers/books-47.png",
+        "/books/covers/books-48.png",
+        "/books/covers/books-40.png"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "count": 182,
+      "covers": [
+        "/books/covers/books5.png",
+        "/books/covers/Generated_Image_December_30_2025_-_8_21PM.jpeg",
+        "/books/covers/Generated_Image_December_30_2025_-_7_14PM.jpeg"
+      ]
+    },
+    {
+      "name": "Marketing & Sales",
+      "count": 170,
+      "covers": [
+        "/books/covers/Generated_Image_January_01_2026_-_1_24PM.jpeg",
+        "/books/covers/Generated_Image_December_30_2025_-_6_59PM.jpeg",
+        "/books/covers/This_Is_Strategy.jpeg"
+      ]
+    },
+    {
+      "name": "Money & Investments",
+      "count": 145,
+      "covers": [
+        "/books/covers/books128.jpg",
+        "/books/covers/books6.png",
+        "/books/covers/books4.png"
+      ]
+    },
+    {
+      "name": "Entrepreneurship",
+      "count": 143,
+      "covers": [
+        "/books/covers/books120.png",
+        "/books/covers/Generated_Image_December_30_2025_-_9_06PM.jpeg",
+        "/books/covers/Generated_Image_January_04_2026_-_5_55PM.jpeg"
+      ]
+    },
+    {
+      "name": "Health & Nutrition",
+      "count": 101,
+      "covers": [
+        "/books/covers/Sweating_Together.jpeg",
+        "/books/covers/Outlive.jpeg",
+        "/books/covers/Sleep_Smarter.jpeg"
+      ]
+    },
+    {
+      "name": "Society & Culture",
+      "count": 89,
+      "covers": [
+        "/books/covers/Design_for_the_Real_World.jpeg",
+        "/books/covers/Bullshit_Jobs.jpeg",
+        "/books/covers/The_War_for_Reality.jpeg"
+      ]
+    },
+    {
+      "name": "Mindfulness & Happiness",
+      "count": 85,
+      "covers": [
+        "/books/covers/books111.png",
+        "/books/covers/The_Fun_Habit.jpeg",
+        "/books/covers/Breathe_to_Succeed.jpeg"
+      ]
+    },
+    {
+      "name": "Family",
+      "count": 63,
+      "covers": [
+        "/books/covers/books-42.png",
+        "/books/covers/books-39.png",
+        "/books/covers/books-45_2.png"
+      ]
+    },
+    {
+      "name": "Science",
+      "count": 61,
+      "covers": [
+        "/books/covers/Naked_Statistics_Cu0Xo2T.jpeg",
+        "/books/covers/The_Black_Swan.jpeg",
+        "/books/covers/Superforecasting.jpeg"
+      ]
+    },
+    {
+      "name": "Relationships",
+      "count": 58,
+      "covers": [
+        "/books/covers/books-49.png",
+        "/books/covers/books-43.png",
+        "/books/covers/4_Essential_Keys.jpeg"
+      ]
+    },
+    {
+      "name": "Negotiation",
+      "count": 43,
+      "covers": [
+        "/books/covers/Difficult_Conversations.jpeg",
+        "/books/covers/Doesnt_Hurt_to_Ask.jpeg",
+        "/books/covers/Engaging_Conversations_Talk_With_not_To.jpeg"
+      ]
+    },
+    {
+      "name": "History",
+      "count": 17,
+      "covers": [
+        "/books/covers/Chip_War.jpeg",
+        "/books/covers/The_Radium_Girls_wK5YCSc.jpeg",
+        "/books/covers/cda44e33-e1af-4f8e-a0de-def15fd7b095.jpg"
+      ]
+    },
+    {
+      "name": "Fiction",
+      "count": 16,
+      "covers": [
+        "/books/covers/books124.jpg",
+        "/books/covers/Call_of_the_Wild.png",
+        "/books/covers/The_Alchemist.png"
+      ]
+    },
+    {
+      "name": "Technology",
+      "count": 16,
+      "covers": [
+        "/books/covers/Automate_the_Boring_Stuff_with_Python_2nd_Edition.jpeg",
+        "/books/covers/Blood_Sweat_and_Pixels_BgV8X2E.jpeg",
+        "/books/covers/Co-Intelligence.jpeg"
+      ]
+    },
+    {
+      "name": "Spirituality",
+      "count": 8,
+      "covers": [
+        "/books/covers/The_Road_Back_to_You.jpeg",
+        "/books/covers/The_Sacred_Search.jpeg",
+        "/books/covers/cover_mOIp4JI.png"
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "id": "15",
+      "title": "ҚУДРАТИ БАЁН",
+      "slug": "book-15",
+      "language": "tg",
+      "cover_url": "/books/covers/books129.jpg"
+    },
+    {
+      "id": "16",
+      "title": "ҚУДРАТИ МУСБАТАНДЕШӢ",
+      "slug": "book-16",
+      "language": "tg",
+      "cover_url": "/books/covers/books9.png"
+    },
+    {
+      "id": "17",
+      "title": "ТИҶОРАТИ АСРИ XXI",
+      "slug": "xxi",
+      "language": "tg",
+      "cover_url": "/books/covers/books120.png"
+    },
+    {
+      "id": "18",
+      "title": "ОРЗУҲОРО БА ҲАДАФ ТАБДИЛ ДИҲЕД",
+      "slug": "book-18",
+      "language": "tg",
+      "cover_url": "/books/covers/35.png"
+    },
+    {
+      "id": "19",
+      "title": "ДЕР НАКУН, АНҶОМАШ БИДЕҲ!",
+      "slug": "book-19",
+      "language": "tg",
+      "cover_url": "/books/covers/books126.jpg"
+    },
+    {
+      "id": "20",
+      "title": "АНДЕШААТРО ИВАЗ НАМО ТО ЗИНДАГИЯТ ТАҒЙИР КУНАД",
+      "slug": "book-20",
+      "language": "tg",
+      "cover_url": "/books/covers/books10.png"
+    },
+    {
+      "id": "21",
+      "title": "21 РОЗИ МУВАФФАҚИЯТИ МИЛЛИОНЕРҲО",
+      "slug": "21",
+      "language": "tg",
+      "cover_url": "/books/covers/books128.jpg"
+    },
+    {
+      "id": "22",
+      "title": "ЧӢ ТАВР ТАШВИШУ ҲАЯҶОНРО ПУШТИ САР КУНЕМ",
+      "slug": "book-22",
+      "language": "tg",
+      "cover_url": "/books/covers/books111.png"
+    },
+    {
+      "id": "23",
+      "title": "КИМИЁГАР",
+      "slug": "book-23",
+      "language": "tg",
+      "cover_url": "/books/covers/books124.jpg"
+    },
+    {
+      "id": "24",
+      "title": "ҚУРБОҚҚАРО ҚУРТ БИДЕҲ!",
+      "slug": "book-24",
+      "language": "tg",
+      "cover_url": "/books/covers/books130.jpg"
+    },
+    {
+      "id": "25",
+      "title": "ИҶОЗАТ БА ЭҲСОС КАРДАН",
+      "slug": "book-25",
+      "language": "tg",
+      "cover_url": "/books/covers/books-47.png"
+    },
+    {
+      "id": "26",
+      "title": "ЧӢ ГУНА ЯК ШАХСИ КОМИЛРО ТАРБИЯ КАРД",
+      "slug": "book-26",
+      "language": "tg",
+      "cover_url": "/books/covers/books-42.png"
+    },
+    {
+      "id": "28",
+      "title": "ҲАМА ШОДӢ ВА ҲЕҶ ДИЛГИРӢ НЕСТ",
+      "slug": "book-28",
+      "language": "tg",
+      "cover_url": "/books/covers/books-39.png"
+    },
+    {
+      "id": "29",
+      "title": "365 рӯзи бе экран",
+      "slug": "365",
+      "language": "tg",
+      "cover_url": "/books/covers/books-38.png"
+    },
+    {
+      "id": "31",
+      "title": "ЧӢ ГУНА БО КӮДАКОНИ ХУРДСОЛ ГАП ЗАНЕМ, ТО ОНҲО ГӮШ КУНАНД",
+      "slug": "book-31",
+      "language": "tg",
+      "cover_url": "/books/covers/books-45_2.png"
+    },
+    {
+      "id": "32",
+      "title": "ИН ТАВР ИЗДИВОҶИ ШУМО БА ПОЁН МЕРАСАД",
+      "slug": "book-32",
+      "language": "tg",
+      "cover_url": "/books/covers/books-49.png"
+    },
+    {
+      "id": "33",
+      "title": "ЧАРО Ӯ ЧУНИН МЕКУНАД?",
+      "slug": "book-33",
+      "language": "tg",
+      "cover_url": "/books/covers/books-48.png"
+    },
+    {
+      "id": "34",
+      "title": "РОХБАРОНИ ХУБ",
+      "slug": "book-34",
+      "language": "tg",
+      "cover_url": "/books/covers/books5.png"
+    },
+    {
+      "id": "35",
+      "title": "ОДАТҲОИ АТОМӢ",
+      "slug": "book-35",
+      "language": "tg",
+      "cover_url": "/books/covers/22.png"
+    },
+    {
+      "id": "87",
+      "title": "High Performance Habits",
+      "slug": "high-performance-habits",
+      "language": "en",
+      "cover_url": "/books/covers/Screenshot_2025-12-25_120000.png"
+    },
+    {
+      "id": "90",
+      "title": "How Brands Grow",
+      "slug": "how-brands-grow",
+      "language": "en",
+      "cover_url": "/books/covers/Generated_Image_January_01_2026_-_1_24PM.jpeg"
+    },
+    {
+      "id": "97",
+      "title": "Innovator's DNA",
+      "slug": "innovator-s-dna",
+      "language": "en",
+      "cover_url": "/books/covers/Generated_Image_December_30_2025_-_9_06PM.jpeg"
+    },
+    {
+      "id": "101",
+      "title": "Just Work",
+      "slug": "just-work",
+      "language": "en",
+      "cover_url": "/books/covers/Generated_Image_December_30_2025_-_8_21PM.jpeg"
+    },
+    {
+      "id": "105",
+      "title": "Leadership Strategy and Tactics",
+      "slug": "leadership-strategy-and-tactics",
+      "language": "en",
+      "cover_url": "/books/covers/Generated_Image_December_30_2025_-_7_14PM.jpeg"
+    }
+  ],
+  "featured_by_lang": {
+    "en": [
+      {
+        "slug": "never-split-the-difference",
+        "title": "Never Split The Difference",
+        "language": "en",
+        "cover_url": "/books/covers/Never_Split_the_Difference.jpeg",
+        "href": "/en/books/never-split-the-difference"
+      },
+      {
+        "slug": "crucial-conversations",
+        "title": "Crucial Conversations",
+        "language": "en",
+        "cover_url": "/books/covers/Crucial_Conversations2.jpeg",
+        "href": "/en/books/crucial-conversations"
+      },
+      {
+        "slug": "shoe-dog",
+        "title": "Shoe Dog",
+        "language": "en",
+        "cover_url": "/books/covers/cover_tV9ibfu.png",
+        "href": "/en/books/shoe-dog"
+      },
+      {
+        "slug": "100m-offers",
+        "title": "$100M Offers",
+        "language": "en",
+        "cover_url": "/books/covers/cover_JMQ2Z2t.png",
+        "href": "/en/books/100m-offers"
+      },
+      {
+        "slug": "the-48-laws-of-power",
+        "title": "The 48 Laws Of Power",
+        "language": "en",
+        "cover_url": "/books/covers/cover_lTmlysf.png",
+        "href": "/en/books/the-48-laws-of-power"
+      },
+      {
+        "slug": "hooked",
+        "title": "Hooked",
+        "language": "en",
+        "cover_url": "/books/covers/cover_9bbT3zb.png",
+        "href": "/en/books/hooked"
+      },
+      {
+        "slug": "give-and-take",
+        "title": "Give And Take",
+        "language": "en",
+        "cover_url": "/books/covers/cover_vrpTSdp.png",
+        "href": "/en/books/give-and-take"
+      },
+      {
+        "slug": "this-is-strategy",
+        "title": "This Is Strategy",
+        "language": "en",
+        "cover_url": "/books/covers/This_Is_Strategy.jpeg",
+        "href": "/en/books/this-is-strategy"
+      },
+      {
+        "slug": "turning-the-flywheel",
+        "title": "Turning The Flywheel",
+        "language": "en",
+        "cover_url": "/books/covers/Turning_the_Flywheel.jpeg",
+        "href": "/en/books/turning-the-flywheel"
+      },
+      {
+        "slug": "co-intelligence",
+        "title": "Co-Intelligence",
+        "language": "en",
+        "cover_url": "/books/covers/cover_Vq2pd2p.png",
+        "href": "/en/books/co-intelligence"
+      },
+      {
+        "slug": "surrounded-by-idiots",
+        "title": "Surrounded By Idiots",
+        "language": "en",
+        "cover_url": "/books/covers/cover_N3FzgZ0.png",
+        "href": "/en/books/surrounded-by-idiots"
+      },
+      {
+        "slug": "million-dollar-weekend",
+        "title": "Million Dollar Weekend",
+        "language": "en",
+        "cover_url": "/books/covers/cover_ITcjGAn.png",
+        "href": "/en/books/million-dollar-weekend"
+      },
+      {
+        "slug": "high-performance-habits",
+        "title": "High Performance Habits",
+        "language": "en",
+        "cover_url": "/books/covers/Screenshot_2025-12-25_120000.png",
+        "href": "/en/books/high-performance-habits"
+      },
+      {
+        "slug": "contagious",
+        "title": "Contagious",
+        "language": "en",
+        "cover_url": "/books/covers/cover_K7OeuQf.png",
+        "href": "/en/books/contagious"
+      },
+      {
+        "slug": "never-eat-alone",
+        "title": "Never Eat Alone",
+        "language": "en",
+        "cover_url": "/books/covers/cover_S1hykij.png",
+        "href": "/en/books/never-eat-alone"
+      },
+      {
+        "slug": "masters-of-scale",
+        "title": "Masters Of Scale",
+        "language": "en",
+        "cover_url": "/books/covers/cover_WisiGZ6.png",
+        "href": "/en/books/masters-of-scale"
+      }
+    ],
+    "ru": [
+      {
+        "slug": "book-278",
+        "title": "Верни Своё Время",
+        "language": "ru",
+        "cover_url": "/books/covers/Buy_Back_Your_Time_Update.jpeg",
+        "href": "/ru/books/book-278"
+      },
+      {
+        "slug": "book-429",
+        "title": "Первопроходцы",
+        "language": "ru",
+        "cover_url": "/books/covers/Pioneers.jpeg",
+        "href": "/ru/books/book-429"
+      },
+      {
+        "slug": "book-438",
+        "title": "Процесс",
+        "language": "ru",
+        "cover_url": "/books/covers/Process.jpeg",
+        "href": "/ru/books/book-438"
+      },
+      {
+        "slug": "rework",
+        "title": "Rework: Манифест Современного Бизнеса",
+        "language": "ru",
+        "cover_url": "/books/covers/Rework_%D0%9C%D0%B0%D0%BD%D0%B8%D1%84%D0%B5%D1%81%D1%82_%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0.jpeg",
+        "href": "/ru/books/rework"
+      },
+      {
+        "slug": "xxi-440",
+        "title": "Бизнес Xxi Века",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Business_Of_The_21st_Century.jpeg",
+        "href": "/ru/books/xxi-440"
+      },
+      {
+        "slug": "book-441",
+        "title": "Генеральный Директор На Обходном Пути",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Detour_CEO.jpeg",
+        "href": "/ru/books/book-441"
+      },
+      {
+        "slug": "book-442",
+        "title": "Дилемма Инноватора",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Innovators_Dilemma.jpeg",
+        "href": "/ru/books/book-442"
+      },
+      {
+        "slug": "book-446",
+        "title": "История Марути",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Maruti_Story.jpeg",
+        "href": "/ru/books/book-446"
+      },
+      {
+        "slug": "book-447",
+        "title": "Наука Масштабирования",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Science_of_Scaling.jpeg",
+        "href": "/ru/books/book-447"
+      },
+      {
+        "slug": "book-448",
+        "title": "Эффект Миллиардера: Как Создаются Великие Империи",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Self-Made_Billionaire_Effect.jpeg",
+        "href": "/ru/books/book-448"
+      },
+      {
+        "slug": "book-449",
+        "title": "Шесть Дисциплин Стратегического Мышления",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Six_Disciplines_of_Strategic_Thinking.jpeg",
+        "href": "/ru/books/book-449"
+      },
+      {
+        "slug": "book-450",
+        "title": "Безработный Миллионер",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Unemployed_Millionaire.jpeg",
+        "href": "/ru/books/book-450"
+      },
+      {
+        "slug": "book-451",
+        "title": "Богатый Консультант",
+        "language": "ru",
+        "cover_url": "/books/covers/The_Wealthy_Consultant.jpeg",
+        "href": "/ru/books/book-451"
+      },
+      {
+        "slug": "book-452",
+        "title": "Это, Стратегия",
+        "language": "ru",
+        "cover_url": "/books/covers/This_Is_Strategy.jpeg",
+        "href": "/ru/books/book-452"
+      },
+      {
+        "slug": "book-453",
+        "title": "Команда Единорогов",
+        "language": "ru",
+        "cover_url": "/books/covers/Unicorn_Team.jpeg",
+        "href": "/ru/books/book-453"
+      },
+      {
+        "slug": "eos",
+        "title": "Что Это Вообще Такое, Eos?",
+        "language": "ru",
+        "cover_url": "/books/covers/What_the_Heck_Is_EOS.jpeg",
+        "href": "/ru/books/eos"
+      }
+    ],
+    "ar": [
+      {
+        "slug": "book-790",
+        "title": "العادات السبع للأسر الأكثر فعالية",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_12_2026_-_2_10PM.jpeg",
+        "href": "/ar/books/book-790"
+      },
+      {
+        "slug": "book-792",
+        "title": "لغات الحب الخمس للأطفال",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_12_2026_-_2_35PM.jpeg",
+        "href": "/ar/books/book-792"
+      },
+      {
+        "slug": "book-797",
+        "title": "أسباب أنانية لإنجاب المزيد من الأطفال",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_12_2026_-_7_57PM.jpeg",
+        "href": "/ar/books/book-797"
+      },
+      {
+        "slug": "book-817",
+        "title": "أخوة بلا خصام",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_13_2026_-_1_04PM.jpeg",
+        "href": "/ar/books/book-817"
+      },
+      {
+        "slug": "book-818",
+        "title": ".العنوان التربية بلا صراخ",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_13_2026_-_12_50PM.jpeg",
+        "href": "/ar/books/book-818"
+      },
+      {
+        "slug": "book-819",
+        "title": "تربية أطفال يتمتعون بارتباط آمن",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_13_2026_-_1_27PM.jpeg",
+        "href": "/ar/books/book-819"
+      },
+      {
+        "slug": "book-820",
+        "title": "تربية بشر صالحين",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_13_2026_-_2_08PM.jpeg",
+        "href": "/ar/books/book-820"
+      },
+      {
+        "slug": "book-844",
+        "title": "الإذن بالشعور",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_14_2026_-_11_57AM.jpeg",
+        "href": "/ar/books/book-844"
+      },
+      {
+        "slug": "book-846",
+        "title": "تربية المراهق الجديد في عصر القلق",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_14_2026_-_1_33PM.jpeg",
+        "href": "/ar/books/book-846"
+      },
+      {
+        "slug": "book-847",
+        "title": "التربية من الداخل إلى الخارج",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_14_2026_-_2_10PM.jpeg",
+        "href": "/ar/books/book-847"
+      },
+      {
+        "slug": "book-874",
+        "title": "تأديب بلا دراما",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_15_2026_-_12_12PM.jpeg",
+        "href": "/ar/books/book-874"
+      },
+      {
+        "slug": "book-875",
+        "title": "لا يوجد أطفال سيئون",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_15_2026_-_12_44PM.jpeg",
+        "href": "/ar/books/book-875"
+      },
+      {
+        "slug": "book-877",
+        "title": "كيف تتحدث فيصغي الصغار إليك وتصغي إليهم فيتحدثون إليك",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_18_2026_-_9_22PM_ICMF50C.jpeg",
+        "href": "/ar/books/book-877"
+      },
+      {
+        "slug": "book-878",
+        "title": "الحمقى",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_15_2026_-_1_51PM.jpeg",
+        "href": "/ar/books/book-878"
+      },
+      {
+        "slug": "book-879",
+        "title": "كيف تتحدث فيصغي إليك المراهقون، وتصغي فيتحدث إليك المراهقون",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_15_2026_-_2_30PM.jpeg",
+        "href": "/ar/books/book-879"
+      },
+      {
+        "slug": "book-894",
+        "title": "كيف تتوقف عن \"الانفجار\" في وجه أطفالك",
+        "language": "ar",
+        "cover_url": "/books/covers/Generated_Image_February_16_2026_-_12_30PM.jpeg",
+        "href": "/ar/books/book-894"
+      }
+    ],
+    "tg": [
+      {
+        "slug": "book-15",
+        "title": "Қудрати Баён",
+        "language": "tg",
+        "cover_url": "/books/covers/books129.jpg",
+        "href": "/tg/books/book-15"
+      },
+      {
+        "slug": "book-16",
+        "title": "Қудрати Мусбатандешӣ",
+        "language": "tg",
+        "cover_url": "/books/covers/books9.png",
+        "href": "/tg/books/book-16"
+      },
+      {
+        "slug": "xxi",
+        "title": "Тиҷорати Асри Xxi",
+        "language": "tg",
+        "cover_url": "/books/covers/books120.png",
+        "href": "/tg/books/xxi"
+      },
+      {
+        "slug": "book-18",
+        "title": "Орзуҳоро Ба Ҳадаф Табдил Диҳед",
+        "language": "tg",
+        "cover_url": "/books/covers/35.png",
+        "href": "/tg/books/book-18"
+      },
+      {
+        "slug": "book-19",
+        "title": "Дер Накун, Анҷомаш Бидеҳ!",
+        "language": "tg",
+        "cover_url": "/books/covers/books126.jpg",
+        "href": "/tg/books/book-19"
+      },
+      {
+        "slug": "book-20",
+        "title": "Андешаатро Иваз Намо То Зиндагият Тағйир Кунад",
+        "language": "tg",
+        "cover_url": "/books/covers/books10.png",
+        "href": "/tg/books/book-20"
+      },
+      {
+        "slug": "21",
+        "title": "21 Рози Муваффақияти Миллионерҳо",
+        "language": "tg",
+        "cover_url": "/books/covers/books128.jpg",
+        "href": "/tg/books/21"
+      },
+      {
+        "slug": "book-22",
+        "title": "Чӣ Тавр Ташвишу Ҳаяҷонро Пушти Сар Кунем",
+        "language": "tg",
+        "cover_url": "/books/covers/books111.png",
+        "href": "/tg/books/book-22"
+      },
+      {
+        "slug": "book-23",
+        "title": "Кимиёгар",
+        "language": "tg",
+        "cover_url": "/books/covers/books124.jpg",
+        "href": "/tg/books/book-23"
+      },
+      {
+        "slug": "book-24",
+        "title": "Қурбоққаро Қурт Бидеҳ!",
+        "language": "tg",
+        "cover_url": "/books/covers/books130.jpg",
+        "href": "/tg/books/book-24"
+      },
+      {
+        "slug": "book-25",
+        "title": "Иҷозат Ба Эҳсос Кардан",
+        "language": "tg",
+        "cover_url": "/books/covers/books-47.png",
+        "href": "/tg/books/book-25"
+      },
+      {
+        "slug": "book-26",
+        "title": "Чӣ Гуна Як Шахси Комилро Тарбия Кард",
+        "language": "tg",
+        "cover_url": "/books/covers/books-42.png",
+        "href": "/tg/books/book-26"
+      },
+      {
+        "slug": "book-28",
+        "title": "Ҳама Шодӣ Ва Ҳеҷ Дилгирӣ Нест",
+        "language": "tg",
+        "cover_url": "/books/covers/books-39.png",
+        "href": "/tg/books/book-28"
+      },
+      {
+        "slug": "365",
+        "title": "365 Рӯзи Бе Экран",
+        "language": "tg",
+        "cover_url": "/books/covers/books-38.png",
+        "href": "/tg/books/365"
+      },
+      {
+        "slug": "book-31",
+        "title": "Чӣ Гуна Бо Кӯдакони Хурдсол Гап Занем, То Онҳо Гӯш Кунанд",
+        "language": "tg",
+        "cover_url": "/books/covers/books-45_2.png",
+        "href": "/tg/books/book-31"
+      },
+      {
+        "slug": "book-32",
+        "title": "Ин Тавр Издивоҷи Шумо Ба Поён Мерасад",
+        "language": "tg",
+        "cover_url": "/books/covers/books-49.png",
+        "href": "/tg/books/book-32"
+      }
+    ]
+  }
+}
