@@ -1,6 +1,6 @@
 # Zehn
 
-> Zehn is an audio microlearning app with 2398+ book summaries in English, Russian, Tajik, and more. Each summary is 15–30 minutes of professionally narrated audio with live subtitles, chapter previews, and Ask AI.
+> Zehn is an audio microlearning app with 8,000+ book summaries in English, Russian, Tajik, and more. Each summary is 15–30 minutes of professionally narrated audio with live subtitles, chapter previews, and Ask AI.
 
 ## App
 
@@ -9,7 +9,7 @@
 
 ## Book Catalog
 
-- [All Books](https://thezehnapp.com/books): Browse all 2398+ audio book summaries
+- [All Books](https://thezehnapp.com/books): Browse all 8,000+ audio book summaries
 
 ## Books
 

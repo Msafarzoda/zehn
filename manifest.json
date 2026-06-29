@@ -45,7 +45,7 @@
     {
       "name": "Browse Lessons",
       "short_name": "Browse",
-      "description": "Browse our library of 5000+ audio lessons",
+      "description": "Browse our library of 8,000+ audio lessons",
       "url": "/?mode=browse",
       "icons": [
         {

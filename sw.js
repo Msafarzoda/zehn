@@ -3,7 +3,6 @@ const CACHE = 'zehn-v1';
 const PRECACHE = [
   '/',
   '/index.html',
-  '/about.html',
   '/favicon.svg',
   '/favicon.ico',
   '/favicon-192.png',
