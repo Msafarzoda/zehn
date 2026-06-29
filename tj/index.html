@@ -15,26 +15,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Zehn — Китобро дар 15 дақиқа омӯзед</title>
-    <meta name="description" content="Zehn беҳтарин китобҳои ҷаҳонро ба китобҳои аудиои 15-дақиқагӣ табдил медиҳад. Дар роҳ ё дар варзишгоҳ омӯзед. 5,000+ китоб." />
-    <meta name="keywords" content="барномаи омӯзиш, хулосаи китоб, омӯзиши аудио, китобҳои кӯтоҳ, такмили худ" />
+    <meta name="description" content="Zehn беҳтарин китобҳои ҷаҳонро ба аудиокитобҳои 15-дақиқагӣ табдил медиҳад. Дар роҳ, дар варзишгоҳ ё ҳар ҷо бошед зиракона омӯзед. 5,000+ китоб." />
+    <meta name="keywords" content="microlearning app, audio book summaries, learn on the go, bite-sized learning, self improvement app, books" />
     <meta property="og:title" content="Zehn — Китобро дар 15 дақиқа омӯзед" />
-    <meta property="og:description" content="Дарсҳои аудиои кӯтоҳ аз беҳтарин китобҳои ҷаҳон. Дар ҳама ҷо омӯзед." />
+    <meta property="og:description" content="Zehn беҳтарин китобҳои ҷаҳонро ба аудиокитобҳои 15-дақиқагӣ табдил медиҳад. Дар роҳ, дар варзишгоҳ ё ҳар ҷо бошед зиракона омӯзед. 5,000+ китоб." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thezehnapp.com/tj/" />
     <meta property="og:image" content="https://thezehnapp.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zehn — Китобро дар 15 дақиқа омӯзед" />
+    <meta name="twitter:description" content="Zehn беҳтарин китобҳои ҷаҳонро ба аудиокитобҳои 15-дақиқагӣ табдил медиҳад. Дар роҳ, дар варзишгоҳ ё ҳар ҷо бошед зиракона омӯзед. 5,000+ китоб." />
     <meta name="twitter:site" content="@thezehnapp" />
     <meta name="twitter:image" content="https://thezehnapp.com/og-image.png" />
     <meta name="twitter:creator" content="@thezehnapp" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://thezehnapp.com/tj/" />
-    <link rel="alternate" hreflang="en"        href="https://thezehnapp.com/en/" />
-    <link rel="alternate" hreflang="ar"        href="https://thezehnapp.com/ar/" />
-    <link rel="alternate" hreflang="ru"        href="https://thezehnapp.com/ru/" />
-    <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/tj/" />
-    <link rel="alternate" hreflang="x-default" href="https://thezehnapp.com/en/" />
+    <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/" />
+    <link rel="alternate" hreflang="ar"        href="https://thezehnapp.com/ar" />
+    <link rel="alternate" hreflang="ru"        href="https://thezehnapp.com/ru" />
+    <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/tj" />
+    <link rel="alternate" hreflang="x-default" href="https://thezehnapp.com/" />
 
     <!-- Icons & Manifest -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -60,9 +62,17 @@
         return m[l] || '/en/quiz';
       })();
     </script>
-    <!-- Quiz URL for this locale -->
-    <script>window.__quizUrl = '/tj/quiz';</script>
-    <!-- "View in English" — sets session flag so redirect doesn't loop -->
+    <!-- ② Redirect non-English browsers to their localized home page -->
+    <script>
+      (function(){
+        var q = new URLSearchParams(location.search);
+        if (q.get('lang') === 'en') { sessionStorage.setItem('zehn-lang','en'); return; }
+        if (sessionStorage.getItem('zehn-lang') === 'en') return;
+        var m = {ar:'/ar', ru:'/ru', tg:'/tj'};
+        var l = (navigator.language || '').split('-')[0].toLowerCase();
+        if (m[l]) window.location.replace(m[l]);
+      })();
+    </script>
     <link rel="stylesheet" href="/style.css" />
     <style>
       .lang-picker{position:fixed;bottom:20px;right:20px;z-index:9999;font-family:inherit}
@@ -82,9 +92,9 @@
       .lp-chevron{transition:transform .2s;flex-shrink:0}
       .lang-picker.open .lp-chevron{transform:rotate(180deg)}
     </style>
-    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+    <script src="/js/react.production.min.js"></script>
+    <script src="/js/react-dom.production.min.js"></script>
 
     <!-- JSON-LD Structured Data for Search Engines -->
     <script type="application/ld+json">
@@ -127,11 +137,12 @@
       "name": "Zehn",
       "url": "https://thezehnapp.com",
       "logo": "https://thezehnapp.com/og-image.png",
-      "description": "AI-powered microlearning audio app with 5000+ books",
+      "description": "AI-powered microlearning audio app with 5000+ bite-sized books",
       "sameAs": [
-        "https://www.instagram.com/thezehnapp/",
+        "https://www.instagram.com/thezehnapp",
         "https://x.com/thezehnapp",
         "https://www.linkedin.com/company/thezehnapp",
+        "https://www.facebook.com/thezehnapp",
         "https://youtube.com/@thezehnapp"
       ],
       "contactPoint": {
@@ -619,746 +630,3252 @@
             }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://thezehnapp.com",
+      "name": "Zehn",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://thezehnapp.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script>
+/* ──────────────────────────────────────────
+   EDIT YOUR SOCIAL LINKS HERE
+────────────────────────────────────────── */
+const SOCIAL_LINKS = {
+  twitter: "https://x.com/thezehnapp",
+  linkedin: "https://www.linkedin.com/company/thezehnapp",
+  instagram: "https://www.instagram.com/thezehnapp",
+  facebook: "https://www.facebook.com/thezehnapp",
+  youtube: "https://youtube.com/@thezehnapp"
+};
+/* ──────────────────────────────────────── */
 
-        /* ──────────────────────────────────────────
-           EDIT YOUR SOCIAL LINKS HERE
-        ────────────────────────────────────────── */
-        const SOCIAL_LINKS = {
-            twitter:   "https://x.com/thezehnapp",
-            linkedin:  "https://www.linkedin.com/company/thezehnapp",
-            instagram: "https://www.instagram.com/thezehnapp/",
-            youtube:   "https://youtube.com/@thezehnapp",
-        };
-        /* ──────────────────────────────────────── */
-
-        /* ── LOGO ── */ function ZehnLogo({ size = 34 }) { return (
-        <svg width={size} height={size} viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"
-          style={{borderRadius:size*0.27,display:"block",flexShrink:0,boxShadow:"0 4px 16px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08)"}}>
-          <rect x="0" y="0" width="400" height="400" rx="108" fill="#03212E"/>
-          <g transform="translate(60, 60) scale(11.6)">
-            <rect x="3" y="4" width="18" height="3.4" rx="1.7" fill="#ffffff"/>
-            <rect x="3" y="10.3" width="18" height="3.4" rx="1.7" fill="#ffffff" transform="rotate(-32 12 12)"/>
-            <rect x="3" y="16.6" width="18" height="3.4" rx="1.7" fill="#ffffff"/>
-          </g>
-        </svg>
-        ); } /* ── PHONE SHARED ── */ const ph = { frame:{width:280,aspectRatio:"280/580",background:"#000",borderRadius:44,padding:9,position:"relative",boxShadow:"0 40px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)",flexShrink:0}, screen:{width:"100%",height:"100%",borderRadius:36,background:"#03212E",position:"relative",overflow:"hidden",fontFamily:"'Plus Jakarta Sans',sans-serif",color:"#EAF3F8"}, notch:{position:"absolute",top:8,left:"50%",transform:"translateX(-50%)",width:86,height:22,background:"#000",borderRadius:12,zIndex:3}, status:{display:"flex",justifyContent:"space-between",padding:"14px 22px 0",fontSize:11,fontWeight:600,color:"#fff",position:"relative",zIndex:4}, }; function BottomNav({active}){ const items=[ {l:"Home",i:
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>},
-        {l:"Lessons",i:
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>},
-        {l:"Ask AI",i:<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>},
-        {l:"Goals",i:
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>},
-        {l:"Profile",i:
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>}, ]; return
-        (
-        <div style={{position: "absolute",bottom:0,left:0,right:0,background: "#052A3B",borderTop: "1px solid rgba(255,255,255,.06)",padding: "8px 12px 14px",display: "flex",justifyContent: "space-between"}}>
-            {items.map(it=>{ const on=it.l===active; return
-            <div key={it.l} style={{flex:1,display: "flex",flexDirection: "column",alignItems: "center",gap:3,color:on? "#82FF7F": "rgba(255,255,255,.45)"}}>
-                {it.i}
-                <span style={{fontSize:8,fontWeight:600}}>{it.l}</span>
-            </div>; })}
-        </div>
-        ); } /* ── BOOK COVER ART ── */ function CoverArt({type}){ if(type==="atomic") return (
-        <svg viewBox="0 0 100 100" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <radialGradient id="ahDot" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#FF7A3D"/><stop offset="100%" stopColor="#C94310"/>
-        </radialGradient>
-      </defs>
-      <rect width="100" height="100" fill="#F5EFE3"/>
-      {[42,34,26,18,10].map((r,i)=><circle key={i} cx="50" cy="56" r={r} fill="none" stroke="#1F3A4A" strokeWidth=".5" opacity={0.4-i*.04}/>)}
-      <circle cx="50" cy="56" r="8" fill="url(#ahDot)"/>
-      <ellipse cx="47" cy="53" rx="3" ry="2" fill="#FFD0A8" opacity=".5"/>
-      <text x="50" y="16" fontSize="10" fontWeight="800" fill="#1F3A4A" textAnchor="middle" fontFamily="sans-serif" letterSpacing="-0.5">ATOMIC</text>
-      <text x="50" y="27" fontSize="10" fontWeight="800" fill="#1F3A4A" textAnchor="middle" fontFamily="sans-serif" letterSpacing="-0.5">HABITS</text>
-      <line x1="32" y1="88" x2="68" y2="88" stroke="#E85B1F" strokeWidth=".5"/>
-      <text x="50" y="94" fontSize="4" fill="#E85B1F" textAnchor="middle" fontFamily="sans-serif" fontWeight="700" letterSpacing="0.8">JAMES CLEAR</text>
-    </svg> ); if(type==="ikigai") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <rect width="90" height="120" fill="#F0E6C8"/>
-      <path d="M10 100 Q 25 70 45 75 Q 65 80 80 50" stroke="#2C4A1E" strokeWidth="1.6" fill="none"/>
-      {[[28,78],[42,74],[58,72],[70,62]].map(([x,y],i)=><circle key={i} cx={x} cy={y} r="2" fill="#E88B9B"/>)}
-      <text x="45" y="26" fontSize="11" fontWeight="800" fill="#C13A28" textAnchor="middle" fontFamily="serif">IKIGAI</text>
-      <text x="45" y="111" fontSize="3.2" fontWeight="700" fill="#2C4A1E" textAnchor="middle">H. GARCÍA</text>
-    </svg> ); if(type==="deepwork") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <rect width="90" height="120" fill="#1A1F2E"/>
-      <text x="45" y="52" fontSize="12" fontWeight="900" fill="#E8C964" textAnchor="middle" fontFamily="serif">DEEP</text>
-      <text x="45" y="68" fontSize="12" fontWeight="900" fill="#E8C964" textAnchor="middle" fontFamily="serif">WORK</text>
-      <text x="45" y="106" fontSize="3.5" fontWeight="700" fill="#E8C964" textAnchor="middle">CAL NEWPORT</text>
-    </svg> ); if(type==="money") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <rect width="90" height="120" fill="#0D2535"/>
-      <path d="M15 90 Q 30 40 45 55 Q 60 70 75 20" stroke="#82FF7F" strokeWidth="2" fill="none"/>
-      <circle cx="75" cy="20" r="4" fill="#82FF7F"/>
-      <text x="45" y="106" fontSize="4" fontWeight="700" fill="rgba(255,255,255,.7)" textAnchor="middle">MORGAN HOUSEL</text>
-      <text x="45" y="20" fontSize="6.5" fontWeight="800" fill="#fff" textAnchor="middle">PSYCHOLOGY</text>
-      <text x="45" y="29" fontSize="5" fill="#82FF7F" textAnchor="middle">OF MONEY</text>
-    </svg> ); if(type==="mindset") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="mindsetGradSmall" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{stopColor:"#1a4d3e"}}/>
-          <stop offset="100%" style={{stopColor:"#0d2818"}}/>
-        </linearGradient>
-      </defs>
-      <rect width="90" height="120" fill="url(#mindsetGradSmall)"/>
-      <circle cx="15" cy="25" r="10" fill="none" stroke="#82FF7F" strokeWidth="1.2" opacity="0.6"/>
-      <circle cx="15" cy="25" r="7" fill="none" stroke="#82FF7F" strokeWidth="0.8" opacity="0.4"/>
-      <g transform="translate(45, 40)">
-        <path d="M -10 0 Q -12 -8 -8 -12 Q -2 -15 2 -14 Q 8 -15 12 -12 Q 16 -8 14 0" fill="none" stroke="#82FF7F" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="-6" cy="2" r="1.2" fill="#82FF7F"/>
-        <circle cx="0" cy="3" r="1.2" fill="#82FF7F"/>
-        <circle cx="6" cy="2" r="1.2" fill="#82FF7F"/>
-        <path d="M -4 8 L -4 14 M 0 8 L 0 15 M 4 8 L 4 14" stroke="#82FF7F" strokeWidth="1" strokeLinecap="round"/>
-      </g>
-      <text x="45" y="95" fontSize="7" fontWeight="800" fill="#82FF7F" textAnchor="middle">MINDSET</text>
-      <text x="45" y="107" fontSize="3.2" fontWeight="600" fill="#82FF7F" opacity="0.7" textAnchor="middle">CAROL DWECK</text>
-    </svg> ); if(type==="thinkagain") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <rect width="90" height="120" fill="#1a2e3d"/>
-      <circle cx="45" cy="40" r="28" fill="none" stroke="#82FF7F" strokeWidth="0.8" opacity="0.2"/>
-      <g transform="translate(45, 42)">
-        <circle cx="0" cy="-4" r="14" fill="none" stroke="#82FF7F" strokeWidth="2.2" strokeLinecap="round"/>
-        <line x1="-6" y1="11" x2="6" y2="11" stroke="#82FF7F" strokeWidth="2" strokeLinecap="round"/>
-        <line x1="-4" y1="15" x2="4" y2="15" stroke="#82FF7F" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M -4 5 Q 0 1 4 5" fill="none" stroke="#82FF7F" strokeWidth="1.4" opacity="0.85"/>
-      </g>
-      <text x="45" y="96" fontSize="7" fontWeight="800" fill="#82FF7F" textAnchor="middle">THINK AGAIN</text>
-      <text x="45" y="108" fontSize="3.2" fontWeight="600" fill="#82FF7F" opacity="0.7" textAnchor="middle">ADAM GRANT</text>
-    </svg> ); if(type==="zerotoone") return (
-        <svg viewBox="0 0 90 120" style={{display: "block",width: "100%",height: "100%"}} preserveAspectRatio="none">
-      <rect width="90" height="120" fill="#1a0f05"/>
-      <g transform="translate(20, 50)">
-        <circle cx="0" cy="0" r="11" fill="none" stroke="#82FF7F" strokeWidth="2"/>
-        <circle cx="0" cy="0" r="6" fill="none" stroke="#82FF7F" strokeWidth="1.4"/>
-        <circle cx="0" cy="0" r="3" fill="#82FF7F"/>
-      </g>
-      <path d="M 35 49 L 55 49" stroke="#82FF7F" strokeWidth="2.4" strokeLinecap="round" opacity="0.9"/>
-      <g transform="translate(70, 50)">
-        <path d="M -8 -8 L 0 0 L -8 8 M 8 -8 L 0 0 L 8 8" stroke="#82FF7F" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-      </g>
-      <text x="45" y="95" fontSize="8" fontWeight="900" fill="#82FF7F" textAnchor="middle">ZERO TO</text>
-      <text x="45" y="104" fontSize="8" fontWeight="900" fill="#82FF7F" textAnchor="middle">ONE</text>
-      <text x="45" y="115" fontSize="3" fontWeight="600" fill="#82FF7F" opacity="0.6" textAnchor="middle">PETER THIEL</text>
-    </svg> ); return null; } /* ── PLAYER SCREEN ── */ function PlayerScreen(){ return (
-        <div style={ph.frame}>
-            <div style={ph.notch}/>
-            <div style={ph.screen}>
-                <div style={ph.status}><span>9:41</span><span>◼◼ ▶</span></div>
-                <div style={{padding: "28px 18px 0",display: "flex",alignItems: "center",justifyContent: "space-between"}}>
-                    <div style={{display: "flex",alignItems: "center",gap:10}}>
-                        <span style={{color: "#fff",display:"flex",alignItems:"center"}}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg></span>
-                        <span style={{fontWeight:700,fontSize:14}}>Atomic Habits</span>
-                    </div>
-                    <div style={{display: "flex",gap:8}}>
-                        <div style={{width:26,height:24,borderRadius:6,background: "rgba(130,255,127,.15)",display: "grid",placeItems: "center",color: "#82FF7F"}}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></div>
-                    </div>
-                </div>
-                <div style={{margin: "14px 14px 0",position: "relative",borderRadius:14,overflow: "hidden",boxShadow: "0 12px 36px rgba(0,0,0,.5)"}}>
-                    <div style={{paddingTop: "100%",position: "relative"}}>
-                        <div style={{position: "absolute",inset:0}}>
-                            <CoverArt type="atomic" />
-                        </div>
-                    </div>
-                </div>
-                <div style={{padding: "10px 14px 0",display: "flex",gap:6}}>
-                    {[ {t:"Ask AI",i:<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>},
-                    {t:"Save",i:
-                    <svg width="8" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>},
-                    {t:"Notes",i:
-                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>},
-                    ].map((a,i)=>(
-                    <div key={i} style={{flex:1,background: "rgba(255,255,255,.06)",border: "1px solid rgba(255,255,255,.1)",color: "#EAF3F8",padding: "7px 0",borderRadius:8,fontSize:9,fontWeight:600,display: "flex",alignItems: "center",justifyContent: "center",gap:5}}>
-                        {a.i} {a.t}
-                    </div>
-                    ))}
-                </div>
-                <div style={{padding: "14px 18px 0"}}>
-                    <div style={{display: "flex",justifyContent: "space-between",fontSize:10,color: "rgba(255,255,255,.5)",marginBottom:6}}>
-                        <span>03:42</span><span>15:00</span>
-                    </div>
-                    <div style={{height:3,background: "rgba(255,255,255,.12)",borderRadius:999,position: "relative"}}>
-                        <div style={{width: "24%",height: "100%",background: "#82FF7F",borderRadius:999}}/>
-                        <div style={{position: "absolute",left: "24%",top: "50%",transform: "translate(-50%,-50%)",width:10,height:10,borderRadius: "50%",background: "#82FF7F"}}/>
-                    </div>
-                    <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",marginTop:14}}>
-                        <span style={{color: "rgba(255,255,255,.45)",display:"flex",alignItems:"center"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></span>
-                        <span style={{color: "rgba(255,255,255,.6)",display:"flex",alignItems:"center",gap:2,fontSize:9,fontWeight:700}}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/></svg>15</span>
-                        <div style={{width:44,height:44,borderRadius: "50%",background: "#82FF7F",color: "#03212E",display: "grid",placeItems: "center",boxShadow: "0 6px 20px rgba(130,255,127,.4)"}}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#03212E"><polygon points="5,3 19,12 5,21"/></svg>
-                        </div>
-                        <span style={{color: "rgba(255,255,255,.6)",display:"flex",alignItems:"center",gap:2,fontSize:9,fontWeight:700}}>15<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.49-4.5"/></svg></span>
-                        <span style={{color: "rgba(255,255,255,.45)",display:"flex",alignItems:"center"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></span>
-                    </div>
-                    <div style={{display: "flex",gap:5,marginTop:12}}>
-                        {[{l:"Speed",v:"1×"},{l:"Sleep",v:"OFF"},{l:"Text",v:"ON"}].map((o,i)=>(
-                        <div key={i} style={{flex:1,background: "rgba(130,255,127,.07)",border: "1px solid rgba(130,255,127,.12)",borderRadius:7,padding: "6px 5px",fontSize:8,display: "flex",justifyContent: "space-between",alignItems: "center"}}>
-                            <span style={{color: "rgba(255,255,255,.55)"}}>{o.l}</span>
-                            <span style={{background: "rgba(0,0,0,.3)",borderRadius:3,padding: "1px 4px",fontWeight:700}}>{o.v}</span>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
-        ); } /* ── CHAT SCREEN ── */ function ChatScreen(){ return (
-        <div style={ph.frame}>
-            <div style={ph.notch}/>
-            <div style={ph.screen}>
-                <div style={ph.status}><span>9:41</span><span>◼◼ ▶</span></div>
-                <div style={{padding: "28px 18px 0",display: "flex",alignItems: "center",justifyContent: "space-between"}}>
-                    <span style={{fontWeight:700,fontSize:14}}>Ask AI <span style={{opacity:.5}}>· Atomic Habits</span></span>
-                    <span style={{opacity:.5,display:"flex",alignItems:"center"}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-                </div>
-                <div style={{padding: "16px 16px 0"}}>
-                    <div style={{background: "#063349",border: "1px solid rgba(255,255,255,.06)",borderRadius: "14px 14px 14px 4px",padding: "10px 12px",fontSize:11,lineHeight:1.4}}>
-                        What's the most important habit-forming principle from chapter 3?
-                    </div>
-                    <div style={{fontSize:9,color: "rgba(255,255,255,.4)",marginTop:4,marginLeft:2}}>Just now</div>
-                    <div style={{marginTop:14,fontSize:11,lineHeight:1.6,color: "#EAF3F8"}}>
-                        Clear's core idea: <span style={{color: "#82FF7F",fontWeight:600}}>make it obvious, attractive, easy, and satisfying</span>. The "Two-Minute Rule" is the entry point — if it takes less than two minutes, do it now. Small entries
-                        compound.
-                    </div>
-                    <div style={{display: "flex",gap:12,marginTop:10,color: "rgba(255,255,255,.4)",fontSize:12}}>
-                        <span style={{display:"flex"}}><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span><span style={{display:"flex"}}><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></span><span style={{display:"flex"}}><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"/><path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg></span><span style={{display:"flex"}}><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.49-4.5"/></svg></span>
-                    </div>
-                    <div style={{marginTop:16,background: "rgba(130,255,127,.06)",border: "1px solid rgba(130,255,127,.15)",borderRadius:10,padding: "8px 10px",fontSize:10,lineHeight:1.45,color: "rgba(255,255,255,.75)"}}>
-                        <span style={{color: "#82FF7F",fontWeight:700,fontSize:9,letterSpacing: ".08em",display: "flex",alignItems:"center",gap:4,marginBottom:4}}><svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> RELATED LESSON</span> Tiny Changes, Remarkable Results — Ch. 1 · 15 min
-                    </div>
-                </div>
-                <div style={{position: "absolute",bottom:54,left:12,right:12,display: "flex",gap:6,alignItems: "center"}}>
-                    <div style={{flex:1,background: "#052A3B",border: "1px solid rgba(255,255,255,.08)",borderRadius:999,padding: "8px 12px",fontSize:10,color: "rgba(255,255,255,.5)",display: "flex",alignItems: "center",justifyContent: "space-between"}}>
-                        <span>Ask anything about this book…</span>
-                        <div style={{width:18,height:18,borderRadius: "50%",background: "#82FF7F",display: "grid",placeItems: "center",color: "#03212E",fontSize:9}}>↑</div>
-                    </div>
-                </div>
-                <BottomNav active="Ask AI" />
-            </div>
-        </div>
-        ); } /* ── GOALS SCREEN ── */ function GoalsScreen(){ return (
-        <div style={ph.frame}>
-            <div style={ph.notch}/>
-            <div style={ph.screen}>
-                <div style={ph.status}><span>9:41</span><span>◼◼ ▶</span></div>
-                <div style={{padding: "28px 16px 0"}}>
-                    <div style={{fontWeight:800,fontSize:18,letterSpacing: "-0.02em"}}>Пешрафти ман</div>
-                    <div style={{fontSize:11,color: "rgba(255,255,255,.5)",marginTop:2}}>Апрели 2026</div>
-                    {/* streak */}
-                    <div style={{marginTop:14,background: "linear-gradient(145deg,#FBF2A8,#E8C964)",color: "#03212E",borderRadius:14,padding: "14px 16px",display: "flex",justifyContent: "space-between",alignItems: "center"}}>
-                        <div>
-                            <div style={{fontSize:9,fontWeight:700,letterSpacing: ".12em",textTransform: "uppercase",opacity:.6}}>Силсилаи кунунӣ</div>
-                            <div style={{fontSize:28,fontWeight:800,letterSpacing: "-0.02em",marginTop:4}}>42 <span style={{fontSize:14,opacity:.65}}>days</span></div>
-                        </div>
-                        <div style={{fontSize:32}}>🔥</div>
-                    </div>
-                    {/* daily goal */}
-                    <div style={{marginTop:12,background: "rgba(255,255,255,.03)",border: "1px solid rgba(255,255,255,.07)",borderRadius:12,padding:12}}>
-                        <div style={{display: "flex",justifyContent: "space-between",alignItems: "center"}}>
-                            <div style={{fontSize:11,fontWeight:700}}>Ҳадафи имрӯз</div>
-                            <div style={{fontSize:9,color: "#82FF7F",fontWeight:700}}>1 / 2 done</div>
-                        </div>
-                        <div style={{marginTop:8,height:6,background: "rgba(255,255,255,.08)",borderRadius:999}}>
-                            <div style={{width: "50%",height: "100%",background: "linear-gradient(90deg,#82FF7F,#92F090)",borderRadius:999}}/>
-                        </div>
-                    </div>
-                    {/* recent */}
-                    <div style={{marginTop:14,fontSize:10,fontWeight:700,color: "rgba(255,255,255,.7)",letterSpacing: ".08em",textTransform: "uppercase"}}>Тозаомӯхта</div>
-                    {[{t:"Atomic Habits",cat:"Productivity",d:"Имрӯз"}, {t:"Ikigai",cat:"Mindset",d:"Дирӯз"}, {t:"Deep Work",cat:"Focus",d:"Mon"}, {t:"Psychology of Money",cat:"Finance",d:"Tue"}, {t:"Mindset",cat:"Mindset",d:"Wed"}, {t:"Think Again",cat:"Leadership",d:"Thu"}, {t:"Zero to One",cat:"Business",d:"Fri"} ].map((b,i)=>(
-                    <div key={i} style={{marginTop:8,display: "flex",gap:8,alignItems: "center",background: "rgba(255,255,255,.03)",border: "1px solid rgba(255,255,255,.05)",borderRadius:10,padding: "8px 10px"}}>
-                        <div style={{width:28,height:36,borderRadius:4,overflow: "hidden",flexShrink:0}}>
-                            <CoverArt type={[ "atomic", "ikigai", "deepwork", "money", "mindset", "thinkagain", "zerotoone"][i]}/>
-                        </div>
-                        <div style={{flex:1,minWidth:0}}>
-                            <div style={{fontSize:10,fontWeight:700,lineHeight:1.2}}>{b.t}</div>
-                            <div style={{fontSize:8,color: "rgba(255,255,255,.5)",marginTop:1}}>{b.cat}</div>
-                        </div>
-                        <div style={{fontSize:8,color: "rgba(255,255,255,.4)"}}>{b.d}</div>
-                        <div style={{width:16,height:16,borderRadius: "50%",background: "rgba(130,255,127,.15)",display: "grid",placeItems: "center",color: "#82FF7F"}}>
-                            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
-                    </div>
-                    ))}
-                </div>
-                <BottomNav active="Goals" />
-            </div>
-        </div>
-        ); } /* ── NAV ── */ function Nav(){ const [scrolled, setScrolled] = React.useState(false); React.useEffect(()=>{ const h=()=>setScrolled(window.scrollY>20); window.addEventListener("scroll",h); return ()=>window.removeEventListener("scroll",h); },[]);
-        return (
-        <nav className={ "nav "+(scrolled? "scrolled": "")}>
-            <div className="wrap nav-row">
-                <a href="#" className="logo" aria-label="Zehn — home">
-                    <ZehnLogo/><span>zehn</span></a>
-                <div className="nav-links">
-                    <a href="#features">Хусусиятҳо</a>
-                    <a href="#how-it-works">Чӣ тавр кор мекунад</a>
-                    <a href="#library">Китобхона</a>
-                    <a href="#pricing">Нархҳо</a>
-                </div>
-                <div className="nav-cta">
-                    <a href="#download" className="btn btn-primary" style={{padding: "10px 16px"}}>Боргирӣ</a>
-                </div>
-            </div>
-        </nav>
-        ); } /* ── HERO ── */ function Hero(){ return (
-        <section style={{position: "relative",paddingTop:180,paddingBottom:80,overflow: "hidden"}}>
-            <div className="grid-decor" />
-            <div style={{position: "absolute",top: "-30%",left: "50%",transform: "translateX(-50%)",width:1100,height:1100,background: "radial-gradient(circle,rgba(130,255,127,.15) 0%,transparent 60%)",pointerEvents: "none"}}/>
-            <div className="wrap" style={{position: "relative",zIndex:2}} id="main-content">
-                <div style={{display: "grid",gridTemplateColumns: "1.15fr 1fr",gap:60,alignItems: "center"}} className="hero-grid">
-                    {/* left */}
-                    <div>
-                        <div className="chip"><span className="dot" /> Ҳоло бо 4 забон · 5,000+ китоб</div>
-                        <h1 style={{fontSize: "clamp(44px,6.4vw,82px)",fontWeight:800,letterSpacing: "-0.035em",lineHeight:.98,marginTop:22,textWrap: "balance"}}>
-                            Китобро омӯзед<br/>
-                            <em className="lora" style={{color: "var(--green)",fontWeight:400}}>дар 15 дақиқа.</em>
-                        </h1>
-                        <p style={{marginTop:22,fontSize:19,lineHeight:1.55,color: "var(--text-dim)",maxWidth:540,textWrap: "pretty"}}>
-                            Zehn — ҳар рӯз хирадмандтар.
-                        </p>
-                        <div style={{display: "flex",gap:12,marginTop:32,flexWrap: "wrap",alignItems: "center"}}>
-                            <a href="https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en" target="_blank" rel="noopener" className="btn btn-dark" style={{padding: "13px 20px"}}>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"/></svg>                                Google Play
-                            </a>
-                            <a href="https://apps.apple.com/app/id6759160035" target="_blank" rel="noopener" className="btn btn-dark" style={{padding: "13px 20px"}}>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>                                App Store
-                            </a>
-                            <div style={{display: "flex",alignItems: "center",gap:8,color: "var(--text-dim)",fontSize:13}}>
-                                <div style={{display: "flex"}} aria-label="4.8 stars">
-                                    {[0,1,2,3,4].map(i=><svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="var(--cream)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
-                                </div>
-                                4.8 · 12k+ reviews
-                            </div>
-                        </div>
-                        <div style={{marginTop:16}}>
-                            <a href="/tj/quiz" style={{fontSize:13,color:"var(--green)",fontWeight:600,display:"inline-flex",alignItems:"center",gap:6,opacity:.85}}>
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                Намедонед аз куҷо оғоз кунед? Тести 5 саволро гузаред →
-                            </a>
-                        </div>
-                        {/* KPIs */}
-                        <div style={{display: "flex",gap:40,marginTop:48,flexWrap: "wrap"}}>
-                            {[{v:"5,000+",l:"китоб"},{v:"15 дақ",l:"китоби миёнагӣ"},{v:"4",l:"забон"}].map(k=>(
-                            <div key={k.l}>
-                                <div style={{fontSize:28,fontWeight:800,letterSpacing: "-0.02em"}}>{k.v}</div>
-                                <div style={{fontSize:11,color: "var(--text-mute)",marginTop:2,textTransform: "uppercase",letterSpacing: ".08em",fontFamily: "'JetBrains Mono',monospace"}}>{k.l}</div>
-                            </div>
-                            ))}
-                        </div>
-                    </div>
-                    {/* right — phones */}
-                    <div style={{position: "relative",display: "flex",justifyContent: "center"}}>
-                        <div style={{position: "absolute",inset: "-60px -40px",background: "radial-gradient(circle,rgba(130,255,127,.16),transparent 60%)",filter: "blur(40px)"}}/>
-                        <div style={{position: "absolute",top:50,right: "-8%",zIndex:1,transform: "rotate(8deg) scale(.76)",opacity:.5,filter: "blur(1px)"}}>
-                            <ChatScreen/>
-                        </div>
-                        <div style={{position: "relative",zIndex:2,transform: "rotate(-4deg) scale(1.06)"}}>
-                            <PlayerScreen/>
-                        </div>
-                        {/* floating label — now playing */}
-                        <div style={{position: "absolute",top: "8%",right:-20,background: "rgba(5,42,59,.96)",border: "1px solid var(--line-2)",borderRadius:14,padding: "10px 14px",fontSize:12,fontWeight:500,backdropFilter: "blur(10px)",display: "flex",alignItems: "center",gap:10,zIndex:4,boxShadow:
-                            "0 20px 50px rgba(0,0,0,.4)"}}>
-                            <div style={{width:8,height:8,borderRadius: "50%",background: "var(--green)",boxShadow: "0 0 12px var(--green)"}}/>
-                            <div>
-                                <div style={{fontSize:10,color: "var(--text-mute)",fontFamily: "'JetBrains Mono',monospace",letterSpacing: ".1em",textTransform: "uppercase"}}>Ҳоло меомӯзад</div>
-                                <div style={{marginTop:2}}>Одатҳои Атомӣ · 15 дақ</div>
-                            </div>
-                        </div>
-                        {/* streak badge */}
-                        <div style={{position: "absolute",bottom: "30%",left:-28,background: "linear-gradient(145deg,var(--cream),#E8C964)",color: "var(--ink)",borderRadius:14,padding: "10px 14px",zIndex:4,boxShadow: "0 14px 40px rgba(251,242,168,.2)",transform:
-                            "rotate(-4deg)"}}>
-                            <div style={{fontSize:10,fontWeight:700,letterSpacing: ".1em",textTransform: "uppercase",opacity:.7,fontFamily: "'JetBrains Mono',monospace"}}>Силсила</div>
-                            <div style={{fontSize:22,fontWeight:800,letterSpacing: "-0.02em",marginTop:2,display: "flex",alignItems: "baseline",gap:2}}>42 <span style={{fontSize:12,opacity:.65}}>рӯз</span></div>
-                        </div>
-                        {/* AI note float */}
-                        <div style={{position: "absolute",bottom: "52%",left:-36,background: "rgba(5,42,59,.96)",border: "1px solid var(--line-2)",borderRadius:14,padding: "12px 14px",fontSize:12,fontWeight:500,backdropFilter: "blur(10px)",zIndex:4,maxWidth:200,boxShadow:
-                            "0 20px 50px rgba(0,0,0,.4)"}}>
-                            <div style={{display: "flex",alignItems: "center",gap:6,fontSize:10,color: "var(--green)",fontWeight:700,letterSpacing: ".1em",textTransform: "uppercase",marginBottom:6,fontFamily: "'JetBrains Mono',monospace"}}>
-                                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor" style={{flexShrink:0}}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Биниши ҲМ
-                            </div>
-                            <div style={{lineHeight:1.4,fontSize:11}}>"Шумо ба сатҳи <span style={{color: "var(--green)",fontWeight:600}}>системаҳои</span> худ мерасед, на ба ҳадафҳо."</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        ); } /* ── LOGO / PRESS STRIP ── */ function PressStrip(){ const logos = ["TechCrunch","Product Hunt","The Verge","Wired","AppAdvice","MakeUseOf"]; return (
-        <section style={{padding: "32px 0 64px",borderTop: "1px solid var(--line)",borderBottom: "1px solid var(--line)"}}>
-            <div className="wrap">
-                <div style={{fontSize:11,letterSpacing: ".14em",textTransform: "uppercase",fontFamily: "'JetBrains Mono',monospace",color: "var(--text-mute)",textAlign: "center",marginBottom:24}}>Дар расонаҳо</div>
-                <div className="marquee-wrap">
-                    <div className="marquee-track">
-                        {[...logos,...logos].map((n,i)=>(
-                        <div key={i} style={{fontWeight:700,fontSize:18,opacity:.45,letterSpacing: "-0.02em",color: "var(--text)",whiteSpace: "nowrap"}}>{n}</div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-        ); } /* ── HOW IT WORKS ── */ function HowItWorks(){ const steps = [ {n:"01",title:"Ҳадафҳоятонро муайян кунед",body:"Ба Zehn гӯед, ки чӣ мехоҳед омӯзед ва чӣ қадар вақт доред. Рӯйхати китобҳои шахсӣ гиред.",icon:(
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-        <path d="M19 8l1.5-1.5M19 11h2" stroke="var(--green)" strokeWidth="1.5"/>
-      </svg> )}, {n:"02",title:"15 дақиқа гӯш кунед",body:"Китоби аудиоии мутамарказ ғояҳои асосии китобро интиқол медиҳад. Бо матни ҳамзамон пайравӣ кунед ва дар ҳаракат омӯзед.",icon:(
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polygon points="10,8 16,12 10,16" fill="var(--green)" stroke="var(--green)" strokeWidth="1"/>
-      </svg> )}, {n:"03",title:"Ҳар рӯз рушд кунед",body:"Аз ҲМ хоҳед, ки ба ягон ғоя амиқтар ворид шавад. Силсилаи худро пайгирӣ кунед ва китобхонаи дониши худро бисозед.",icon:(
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-        <circle cx="9" cy="3" r="1" fill="var(--green)" stroke="none"/>
-      </svg> )}, ]; return (
-        <section id="how-it-works" className="section">
-            <div className="wrap">
-                <div className="section-head">
-                    <div className="eyebrow">Чӣ тавр кор мекунад</div>
-                    <h2>Се қадам ба <em>рӯзи беҳтар.</em></h2>
-                    <p>Ҳеҷ танзимоти мураккаб нест. Ҳеҷ матнҳои дароз нест. Танҳо ҳадафро муайян кунед, play-ро пахш кунед ва рушд кунед.</p>
-                </div>
-                <div style={{display: "grid",gridTemplateColumns: "1fr auto 1fr auto 1fr",gap:0,alignItems: "center"}} className="steps-grid">
-                    {steps.map((s,i)=>(
-                    <React.Fragment key={i}>
-                        <div className="card" style={{padding: "36px 32px",textAlign: "center"}}>
-                            <div style={{width:56,height:56,borderRadius: "50%",background: "rgba(130,255,127,.1)",border: "1px solid rgba(130,255,127,.2)",display: "grid",placeItems: "center",margin: "0 auto 20px",color: "var(--green)"}}>{s.icon}</div>
-                            <div style={{fontSize:11,fontFamily: "'JetBrains Mono',monospace",color: "var(--green)",fontWeight:700,letterSpacing: ".14em",marginBottom:12}}>{s.n}</div>
-                            <div style={{fontSize:20,fontWeight:800,letterSpacing: "-0.02em",lineHeight:1.1,marginBottom:12}}>{s.title}</div>
-                            <p style={{fontSize:14,color: "var(--text-dim)",lineHeight:1.6}}>{s.body}</p>
-                        </div>
-                        {i
-                        < 2 && ( <div className="step-connector" style={{display: "flex",alignItems: "center",justifyContent: "center",padding: "0 16px"}}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(130,255,127,.35)" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </div>
-                )}
-                </React.Fragment>
-                ))}
-            </div>
-            </div>
-        </section>
-        ); } /* ── FEATURES ── */ function Features(){ const items = [ { eyebrow:"Дарсҳои аудио", title:"15 дақиқа. Ин ҳама чизе аст, ки лозим аст.", body:"Ҳар китоб ба китоби аудиоии мутамарказ табдил мешавад. Матни ҳамзамон кӯмак мекунад. Суръати худро муайян кунед. Дар ҳаракат гӯш кунед.", render:()=>
-        <PlayerScreen/>, accent:"var(--green)", tags:["Матни ҳамзамон","Офлайн","Суръати тағйирёбанда"], }, { eyebrow:"Аз ҲМ бипурсед", title:"Бо ягон китоб гуфтугӯ кунед.", body:"Дар бораи мафҳуме кунҷков ҳастед? Аз Zehn бипурсед. Вай бо истифода аз ғояҳои воқеии муаллиф ҷавоб медиҳад.", render:()=>
-        <ChatScreen/>, accent:"var(--cream)", tags:["Ҷавобҳои фаврӣ","Аз китоб","Ҳар китоб"], }, { eyebrow:"Пешрафтатонро пайгирӣ кунед", title:"Ҳадафҳои рӯзона. Одатҳои пойдор.", body:"Ҳадафи рӯзонаи омӯзиш гузоред — ҳатто 5 дақиқа ҳисоб мешавад. Силсила созед ва китобхонаи дониши худро бисозед.", render:()=>
-        <GoalsScreen/>, accent:"#6EC1D6", tags:["Силсилаҳо","Ҳадафҳои рӯзона","Китобхонаи пешрафт"], }, ]; return (
-        <section id="features" className="section">
-            <div className="wrap">
-                <div className="section-head">
-                    <div className="eyebrow">Хусусиятҳо</div>
-                    <h2>Ҳама чизе, ки барои <em>идомаи омӯзиш</em> лозим аст.</h2>
-                    <p>Гӯш кунед, бипурсед ва пайгирӣ кунед — се давраи оддӣ, ки ба одати воқеии омӯзиш табдил мешаванд.</p>
-                </div>
-                <div style={{display: "grid",gap:20}}>
-                    {items.map((it,i)=>(
-                    <div key={i} className="card feature-row" style={{padding:0,display: "grid",gridTemplateColumns:i%2? "1fr 1.05fr": "1.05fr 1fr",gap:0,alignItems: "stretch",minHeight:440}}>
-                        <div style={{padding: "52px 48px",display: "flex",flexDirection: "column",justifyContent: "center",order:i%2?2:1}}>
-                            <div className="eyebrow" style={{color:it.accent}}>{it.eyebrow}</div>
-                            <h3 style={{fontSize:38,fontWeight:800,letterSpacing: "-0.028em",lineHeight:1.06,marginTop:14,textWrap: "balance"}}>{it.title}</h3>
-                            <p style={{marginTop:16,color: "var(--text-dim)",fontSize:16,lineHeight:1.6,textWrap: "pretty"}}>{it.body}</p>
-                            <div style={{marginTop:24,display: "flex",gap:8,flexWrap: "wrap"}}>
-                                {it.tags.map(t=>(
-                                <span key={t} style={{padding: "5px 12px",borderRadius:999,border: "1px solid var(--line-2)",fontSize:12,color: "var(--text-dim)"}}>{t}</span> ))}
-                            </div>
-                        </div>
-                        <div style={{background:`radial-gradient(circle at ${i%2? "30%": "70%"} 40%, rgba(130,255,127,.09), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.02), transparent)`,display: "flex",alignItems: "center",justifyContent: "center",padding:
-                            "48px 0",order:i%2?1:2,borderLeft:i%2? "none": "1px solid var(--line)",borderRight:i%2? "1px solid var(--line)": "none",position: "relative",overflow: "hidden"}}>
-                            <div style={{transform: "scale(.92)"}}>{it.render()}</div>
-                        </div>
-                    </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        ); } /* ── LIBRARY / CATEGORIES ── */ function Library(){ const cats = [ {n:"Роҳбарӣ",c:820,icon:
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>},
-        {n:"Самаранокӣ",c:740,icon:
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}, {n:"Тафаккур",c:680,icon:
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><path d="M12 6a6 6 0 0 1 6 6c0 2.2-1.2 4.2-3 5.3V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.7A6 6 0 0 1 6 12a6 6 0 0 1 6-6z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>},
-        {n:"Пул ва молия",c:520,icon:<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>},
-        {n:"Муносибатҳо",c:490,icon:
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>},
-        {n:"Саломатӣ",c:460,icon:<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>},
-        {n:"Тиҷорат",c:590,icon:
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>},
-        {n:"Илм ва фалсафа",c:380,icon:<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>},
-        ]; const featured = [ {title:"Atomic Habits",author:"James Clear",time:"15 min",type:"atomic"}, {title:"Ikigai",author:"Héctor García",time:"17 min",type:"ikigai"}, {title:"Deep Work",author:"Cal Newport",time:"18 min",type:"deepwork"}, {title:"Psych. of Money",author:"Morgan Housel",time:"16 min",type:"money"}, {title:"Mindset",author:"Carol Dweck",time:"15 min",type:"mindset"}, {title:"Think Again",author:"Adam Grant",time:"18 min",type:"thinkagain"}, {title:"Zero to One",author:"Peter Thiel",time:"17 min",type:"zerotoone"}, ]; return (
-        <section id="library" className="section">
-            <div className="wrap">
-                <div className="section-head">
-                    <div className="eyebrow">Китобхона</div>
-                    <h2>5,000+ китоб дар <em>ҳар мавзӯъ.</em></h2>
-                    <p>Аз роҳбарӣ то стоицизм, аз молияи шахсӣ то тамаркузи амиқ — агар арзиши донистан дошта бошад, Zehn барои он китоб дорад.</p>
-                </div>
-
-                {/* Language badges */}
-                <div style={{display: "flex",gap:10,justifyContent: "center",flexWrap: "wrap",marginBottom:52}} className="lang-row">
-                    {[{l:"Тоҷикӣ",c:"TG"},{l:"Русӣ",c:"RU"},{l:"Арабӣ",c:"AR"},{l:"Англисӣ",c:"EN"}].map(({l,c})=>(
-                    <div key={l} className="lang-badge" style={{display: "flex",alignItems: "center",gap:8,padding: "8px 16px",borderRadius:999,background: "rgba(255,255,255,.04)",border: "1px solid var(--line-2)",fontSize:13,fontWeight:600}}>
-                        <span style={{fontSize:10,fontWeight:700,fontFamily:"'JetBrains Mono',monospace",background:"rgba(130,255,127,.15)",color:"var(--green)",padding:"2px 5px",borderRadius:4,letterSpacing:".06em"}}>{c}</span>{l}
-                    </div>
-                    ))}
-                </div>
-
-                {/* Category grid */}
-                <div style={{display: "grid",gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))",gap:14,marginBottom:56}}>
-                    {cats.map((c,i)=>(
-                    <a key={i} href="#download" className="card cat-card" style={{padding: "22px 20px",textDecoration: "none"}} aria-label={`Browse ${c.n} books`}>
-                        <div style={{display: "flex",alignItems: "center",gap:12}}>
-                            <div style={{width:40,height:40,borderRadius:10,background:`rgba(130,255,127,.08)`,display: "grid",placeItems: "center",color: "var(--green)",flexShrink:0}}>{c.icon}</div>
-                            <div>
-                                <div style={{fontWeight:700,fontSize:14}}>{c.n}</div>
-                                <div style={{fontSize:12,color: "var(--text-mute)",marginTop:2,fontFamily: "'JetBrains Mono',monospace"}}>{c.c}+ китоб</div>
-                            </div>
-                        </div>
-                    </a>
-                    ))}
-                </div>
-
-                {/* Featured books */}
-                <div style={{display: "flex",justifyContent: "space-between",alignItems: "center",marginBottom:20}}>
-                    <div style={{fontWeight:700,fontSize:18}}>Дарсҳои баргузида</div>
-                    <a href="#download" style={{fontSize:13,color: "var(--green)",fontWeight:600}}>Ҳамаро бинед →</a>
-                </div>
-                <div style={{display: "grid",gridTemplateColumns: "repeat(auto-fill,minmax(160px,1fr))",gap:14}}>
-                    {featured.map((b,i)=>(
-                    <a key={i} href="#download" className="book-card" style={{background: "rgba(255,255,255,.03)",border: "1px solid var(--line)",borderRadius:14,padding:12,textDecoration: "none",display: "block"}} aria-label={`${b.title} by ${b.author} — ${b.time} book`}>
-                        <div style={{aspectRatio: "3/4",borderRadius:8,overflow: "hidden",marginBottom:10,boxShadow: "0 6px 18px rgba(0,0,0,.35)"}}>
-                            <CoverArt type={b.type}/>
-                        </div>
-                        <div style={{fontWeight:700,fontSize:13,lineHeight:1.2}}>{b.title}</div>
-                        <div style={{fontSize:11,color: "var(--text-mute)",marginTop:3}}>{b.author}</div>
-                        <div style={{display: "inline-flex",alignItems: "center",gap:4,marginTop:7,background: "rgba(130,255,127,.12)",color: "var(--green)",borderRadius:6,padding: "3px 7px",fontSize:11,fontWeight:600}}>
-                            ▶ {b.time}
-                        </div>
-                    </a>
-                    ))}
-                </div>
-            </div>
-        </section>
-        ); } /* ── TESTIMONIALS ── */ function Testimonials(){ const quotes = [ {t:"Бо Zehn дар роҳи кор бештар меомӯзам назар ба моҳҳои мутолиаи китобҳои пурра. Формати 15 дақиқа мӯъҷиза аст.",n:"Айша М.",r:"Менеҷери маркетинг"}, {t:"Функсияи 'Аз ҲМ бипурс' аҷоиб аст — аз он хостам фаслеро дар бораи стоицизм шарҳ диҳад ва шарҳи комилеро дар чорчӯби муаллиф дод.",n:"Даниэл К.",r:"Аспирант"}, {t:"Ҳадафи 5-дақиқагиро гузоштам, танҳо барои санҷиш. Ба ҳар ҳол ҳоло дар силсилаи 42-рӯзам. Пайгирии одат воқеан кор мекунад.",n:"Прия С.",r:"Муаллима"}, {t:"Ҳангоми машқ гӯш мекунам. Аз ҲМ мепурсам, ғояро мефаҳмам, тасмим мегирам. Беҳтарин филтр барои он чизе ки арзиши вақтамро дорад.",n:"Ҷордан К.",r:"Асосгузор"}, ]; return (
-        <section className="section" style={{paddingTop:0}}>
-            <div className="wrap">
-                <div className="section-head">
-                    <div className="eyebrow">Аз омӯзандагони мо</div>
-                    <h2>Рушди воқеӣ. <em>Ҳар бор 15 дақиқа.</em></h2>
-                </div>
-                <div style={{display: "grid",gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",gap:16}}>
-                    {quotes.map((q,i)=>(
-                    <div key={i} className="card" style={{padding:28}}>
-                        <div style={{display: "flex",gap:2,marginBottom:14}} aria-label="5 out of 5 stars">
-                            {[0,1,2,3,4].map(s=><svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="var(--cream)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
-                        </div>
-                        <p style={{fontSize:15,lineHeight:1.55,textWrap: "pretty",color: "var(--text)"}}>&ldquo;{q.t}&rdquo;</p>
-                        <div style={{marginTop:20,display: "flex",alignItems: "center",gap:10,paddingTop:16,borderTop: "1px solid var(--line)"}}>
-                            <div style={{width:32,height:32,borderRadius: "50%",background:`hsl(${i*80+40},55%,60%)`,color: "var(--ink)",display: "grid",placeItems: "center",fontWeight:700,fontSize:13}}>{q.n[0]}</div>
-                            <div>
-                                <div style={{fontSize:13,fontWeight:700}}>{q.n}</div>
-                                <div style={{fontSize:11,color: "var(--text-mute)"}}>{q.r}</div>
-                            </div>
-                        </div>
-                    </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        ); } /* ── PRICING ── */ function Pricing(){ const [annual, setAnnual] = React.useState(true); const proMain = annual ? "$59.99" : "$9.99"; const proSub = annual ? "солона · ~$5/моҳ" : "дар моҳ"; const checkIcon = (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{flexShrink:0,marginTop:2}}><polyline points="20 6 9 17 4 12"/></svg> ); return (
-        <section className="section" id="pricing">
-            <div className="wrap">
-                <div className="section-head">
-                    <div className="eyebrow">Нархҳо</div>
-                    <h2>Ҳар рӯз омӯзед. <em>Нархи ками китоб.</em></h2>
-                    <p>Ройгон оғоз кунед. Вақте ки хуш омад баланд баред. Ҳар вақт бекор кунед.</p>
-                </div>
-
-                {/* Billing toggle */}
-                <div style={{display: "flex",alignItems: "center",gap:12,justifyContent: "center",marginBottom:40}}>
-                    <span onClick={()=>setAnnual(false)} style={{fontSize:14,fontWeight:600,color:!annual?"var(--text)":"var(--text-mute)",cursor:"pointer",transition:"color .15s"}}>Моҳона</span>
-                    <button onClick={()=>setAnnual(a=>!a)} aria-label="Toggle billing period" role="switch" aria-checked={annual}
-            style={{width:48,height:26,borderRadius:999,background:annual?"var(--green)":"rgba(255,255,255,.15)",border:"none",cursor:"pointer",position:"relative",transition:"background .2s",flexShrink:0}}>
-            <div style={{position:"absolute",top:3,left:annual?25:3,width:20,height:20,borderRadius:"50%",background:annual?"var(--ink)":"#fff",transition:"left .2s"}}/>
-          </button>
-                    <div style={{display: "flex",alignItems: "center",gap:8}}>
-                        <span onClick={()=>setAnnual(true)} style={{fontSize:14,fontWeight:600,color:annual?"var(--text)":"var(--text-mute)",cursor:"pointer",transition:"color .15s"}}>Солона</span>
-                        <span style={{fontSize:11,fontWeight:700,color: "var(--green)",background: "rgba(130,255,127,.12)",border: "1px solid rgba(130,255,127,.2)",borderRadius:999,padding: "2px 8px"}}>50% сарфа кунед</span>
-                    </div>
-                </div>
-
-                <div style={{display: "grid",gridTemplateColumns: "repeat(3,1fr)",gap:16}} className="pricing-grid">
-
-                    {/* Free */}
-                    <div className="card" style={{padding:32}}>
-                        <div style={{fontSize:14,fontWeight:700}}>Ройгон</div>
-                        <div style={{display: "flex",alignItems: "baseline",gap:6,marginTop:16}}>
-                            <span style={{fontSize:44,fontWeight:800,letterSpacing: "-0.03em"}}>$0</span>
-                            <span style={{fontSize:13,opacity:.6}}>абадӣ</span>
-                        </div>
-                        <ul style={{listStyle: "none",marginTop:24,display: "flex",flexDirection: "column",gap:10}}>
-                            {["5 китоб / моҳ","Аз ҲМ бипурсед (3 савол/рӯз)","Пайгирии асосии пешрафт"].map(f=>(
-                            <li key={f} style={{display: "flex",gap:10,alignItems: "flex-start",fontSize:14}}>{checkIcon}{f}</li>
-                            ))}
-                        </ul>
-                        <a href="#download" className="btn" style={{marginTop:28,width: "100%",justifyContent: "center",display: "flex",background: "transparent",color: "var(--text)",border: "1px solid var(--line-2)",padding: "13px 0",borderRadius:999,textDecoration: "none"}}>Ройгон оғоз кунед</a>
-                    </div>
-
-                    {/* Pro */}
-                    <div className="card" style={{padding:32,position: "relative",background: "linear-gradient(160deg,#8FFF6B,#6FE85A)",color: "var(--ink)",border: "none"}}>
-                        <div style={{position: "absolute",top:16,right:16,background: "var(--ink)",color: "var(--green)",padding: "4px 10px",borderRadius:999,fontSize:10,fontWeight:700,letterSpacing: ".08em",textTransform: "uppercase",fontFamily: "'JetBrains Mono',monospace"}}>Маъмултарин</div>
-                        <div style={{fontSize:14,fontWeight:700}}>Про</div>
-                        <div style={{marginTop:16}}>
-                            <div style={{display: "flex",alignItems: "baseline",gap:6}}>
-                                <span style={{fontSize:44,fontWeight:800,letterSpacing: "-0.03em"}}>{proMain}</span>
-                                <span style={{fontSize:13,opacity:.65}}>{proSub}</span>
-                            </div>
-                            {annual &&
-                            <div style={{fontSize:12,fontWeight:700,marginTop:5,opacity:.7}}>50% нисбат ба моҳона сарфа кунед</div>}
-                        </div>
-                        <ul style={{listStyle: "none",marginTop:24,display: "flex",flexDirection: "column",gap:10}}>
-                            {["Дарсҳои беҳудуд","ҲМ бе маҳдудият","Офлайн гӯш кардан","Пешрафти муфассал ва силсилаҳо","Лента бо ҲМ шахсигардонидашуда","Нархҳои минтақавӣ дар 30+ кишвар"].map(f=>(
-                            <li key={f} style={{display: "flex",gap:10,alignItems: "flex-start",fontSize:14}}>{checkIcon}{f}</li>
-                            ))}
-                        </ul>
-                        <a href="#download" className="btn" style={{marginTop:28,width: "100%",justifyContent: "center",display: "flex",background: "var(--ink)",color: "#fff",border: "none",padding: "13px 0",borderRadius:999,textDecoration: "none"}}>7 рӯз ройгон санҷед</a>
-                    </div>
-
-                    {/* Lifetime */}
-                    <div className="card" style={{padding:32,position: "relative"}}>
-                        <div style={{position: "absolute",top:16,right:16,background: "rgba(251,242,168,.1)",color: "var(--cream)",padding: "4px 10px",borderRadius:999,fontSize:10,fontWeight:700,fontFamily: "'JetBrains Mono',monospace",border:
-                            "1px solid rgba(251,242,168,.2)",display:"flex",alignItems:"center",gap:5}}><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" opacity=".85"><path d="M12 21c-3.3 0-6-2.7-6-6 0-3 1.5-5 3-6.5-.5 1.5 0 3 1.5 4C11 11 11.5 9 11 7.5 12.5 9 15 10.5 15 13.5c0 .8-.2 1.6-.5 2.2.8-.7 1.5-2 1.5-3.7 0 0 2 2 2 5C18 19.4 15.3 21 12 21z"/></svg> Пешниҳоди оғоз</div>
-                        <div style={{fontSize:14,fontWeight:700}}>Абадӣ</div>
-                        <div style={{marginTop:16}}>
-                            <div style={{display: "flex",alignItems: "baseline",gap:6}}>
-                                <span style={{fontSize:44,fontWeight:800,letterSpacing: "-0.03em"}}>$29.99</span>
-                                <span style={{fontSize:13,opacity:.6}}>яквақта</span>
-                            </div>
-                            <div style={{fontSize:12,color: "var(--text-mute)",marginTop:5}}>1,000 истифодабари аввал · Баъд $129</div>
-                        </div>
-                        <ul style={{listStyle: "none",marginTop:24,display: "flex",flexDirection: "column",gap:10}}>
-                            {["Ҳама чиз аз Про","Яквақт пардохт кунед, абадӣ омӯзед","Ҳама хусусиятҳои оянда","Дастгирии афзалиятнок","Нишони аввалхонанда"].map(f=>(
-                            <li key={f} style={{display: "flex",gap:10,alignItems: "flex-start",fontSize:14}}>{checkIcon}{f}</li>
-                            ))}
-                        </ul>
-                        <a href="#download" className="btn" style={{marginTop:28,width: "100%",justifyContent: "center",display: "flex",background: "transparent",color: "var(--text)",border: "1px solid var(--line-2)",padding: "13px 0",borderRadius:999,textDecoration: "none"}}>Нархи оғозро бигиред</a>
-                    </div>
-
-                </div>
-
-                {/* Footer notes */}
-                <div style={{display: "flex",gap:24,justifyContent: "center",marginTop:24,flexWrap: "wrap",fontSize:13,color: "var(--text-mute)"}}>
-                    <span>✓ Озмоиши 7-рӯзаи ройгон, корти бонкӣ лозим нест</span>
-                    <span>✓ Ҳар вақт бекор кунед</span>
-                    <span>🌍 Нархҳои минтақавӣ дар 30+ бозор</span>
-                </div>
-            </div>
-        </section>
-        ); } /* ── DOWNLOAD ── */ function Download(){ const AppleIcon = ()=>(
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>        ); const PlayIcon = ()=>(
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"/></svg>        ); const storeBtnStyle = {display:"inline-flex",alignItems:"center",gap:14,padding:"16px 28px",borderRadius:16,background:"#0a0a0a",border:"1px solid rgba(255,255,255,.14)",textDecoration:"none",minWidth:200,transition:"border-color .2s,background .2s,transform .15s"}; return (
-        <section id="download" className="section" style={{paddingBottom:60}}>
-            <div className="wrap">
-                <div className="card" style={{padding: "80px 52px",textAlign: "center",background: "radial-gradient(ellipse at center, rgba(130,255,127,.13), transparent 60%), linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))",position: "relative",overflow:
-                    "hidden"}}>
-                    <div style={{position: "absolute",inset:0,background: "radial-gradient(circle at 15% 85%, rgba(251,242,168,.07), transparent 40%)"}}/>
-                    <div style={{position: "relative"}}>
-                        <div className="eyebrow" style={{marginBottom:20}}>Zehn-ро боргирӣ кунед</div>
-                        <h2 style={{fontSize: "clamp(32px,5vw,60px)",fontWeight:800,letterSpacing: "-0.03em",lineHeight:1.04,textWrap: "balance"}}>
-                            Китоби навбатии шумо<br/><em className="lora" style={{color: "var(--green)"}}>ҳозир оғоз мешавад.</em>
-                        </h2>
-                        <p style={{marginTop:18,color: "var(--text-dim)",fontSize:17,maxWidth:500,margin: "18px auto 0"}}>Барои Android ва iOS дастрас аст. Озмоиши 7-рӯзаи ройгон — картаи бонкӣ лозим нест.</p>
-                        <div style={{display: "flex",gap:16,justifyContent: "center",marginTop:40,flexWrap: "wrap"}}>
-                            <a href="https://play.google.com/store/apps/details?id=com.audiobook.zehn" target="_blank" rel="noopener" style={storeBtnStyle} aria-label="Get Zehn on Google Play" onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.32)";e.currentTarget.style.background="#111";e.currentTarget.style.transform="translateY(-2px)"}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.14)";e.currentTarget.style.background="#0a0a0a";e.currentTarget.style.transform=""}}>
-                <PlayIcon/>
-                <div style={{textAlign:"left"}}>
-                  <div style={{fontSize:11,color:"rgba(255,255,255,.5)",lineHeight:1,marginBottom:3}}>Боргирӣ аз</div>
-                  <div style={{fontSize:17,fontWeight:700,lineHeight:1,color:"#fff"}}>Google Play</div>
-                </div>
-              </a>
-                            <a href="https://apps.apple.com/app/id6759160035" target="_blank" rel="noopener" style={storeBtnStyle} aria-label="Download Zehn on the App Store" onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.32)";e.currentTarget.style.background="#111";e.currentTarget.style.transform="translateY(-2px)"}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.14)";e.currentTarget.style.background="#0a0a0a";e.currentTarget.style.transform=""}}>
-                <AppleIcon/>
-                <div style={{textAlign:"left"}}>
-                  <div style={{fontSize:11,color:"rgba(255,255,255,.5)",lineHeight:1,marginBottom:3}}>Зеркашӣ аз</div>
-                  <div style={{fontSize:17,fontWeight:700,lineHeight:1,color:"#fff"}}>App Store</div>
-                </div>
-              </a>
-                        </div>
-                        <p style={{marginTop:20,fontSize:13,color: "var(--text-mute)"}}>Оғози ройгон · Ҳар вақт бекор кунед · Бо тоҷикӣ, русӣ, арабӣ ва англисӣ</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        ); } /* ── FOOTER ── */ function Footer(){ const cols = [ {h:"Маҳсулот",l:[{t:"Хусусиятҳо",u:"#features"},{t:"Китобхона",u:"#library"},{t:"Чӣ тавр кор мекунад",u:"#how-it-works"},{t:"Нархҳо",u:"#pricing"}]}, {h:"Ширкат",l:[{t:"Дар бораи мо",u:"/tj/about"},{t:"Саволу ҷавоб",u:"/tj/faq"}]}, {h:"Дастгирӣ",l:[{t:"Дастгирӣ",u:"/tj/support"},{t:"Махфият",u:"/tj/privacy"},{t:"Шартҳо",u:"/tj/terms"},{t:"Тамос",u:"mailto:Contact@safarigrp.com"}]},
-        ]; return (
-        <footer style={{borderTop: "1px solid var(--line)",padding: "64px 0 48px"}}>
-            <div className="wrap">
-                <div style={{display: "grid",gridTemplateColumns: "2fr 1fr 1fr 1fr",gap:40}} className="footer-grid">
-                    <div>
-                        <div style={{display: "flex",alignItems: "center",gap:10}}>
-                            <ZehnLogo/>
-                            <span style={{fontSize:20,fontWeight:800,letterSpacing: "-0.02em"}}>zehn</span>
-                        </div>
-                        <p style={{marginTop:14,color: "var(--text-dim)",fontSize:14,maxWidth:300,lineHeight:1.55}}>Китобро дар 15 дақиқа омӯзед. Китобҳои аудиои кӯтоҳ барои омӯзандагони баландпарвоз.</p>
-                        <div style={{marginTop:18,display: "flex",gap:10}}>
-                            {[ {label:"X (Twitter)",h:SOCIAL_LINKS.twitter,icon:<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>},
-                            {label:"LinkedIn",h:SOCIAL_LINKS.linkedin,icon:
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>}, {label:"Instagram",h:SOCIAL_LINKS.instagram,icon:
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>},
-                            {label:"YouTube",h:SOCIAL_LINKS.youtube,icon:
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="var(--ink)"/></svg>},
-                            ].map(s=>(
-                            <a key={s.label} href={s.h} aria-label={s.label} style={{width:36,height:36,borderRadius: "50%",border: "1px solid var(--line-2)",display: "grid",placeItems: "center",color: "var(--text-dim)",textDecoration: "none",transition:
-                                "border-color .2s,color .2s"}} onMouseEnter={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.3)";e.currentTarget.style.color="var(--text)"}}
-                  onMouseLeave={e=>{e.currentTarget.style.borderColor="";e.currentTarget.style.color=""}}
-                >{s.icon}</a> ))}
-                        </div>
-                    </div>
-                    {cols.map(c=>(
-                    <div key={c.h}>
-                        <div style={{fontSize:11,letterSpacing: ".14em",textTransform: "uppercase",color: "var(--text-mute)",fontFamily: "'JetBrains Mono',monospace",fontWeight:600,marginBottom:16}}>{c.h}</div>
-                        <div style={{display: "flex",flexDirection: "column",gap:10}}>
-                            {c.l.map(x=>(<a key={x.t} href={x.u} style={{fontSize:14,color: "var(--text-dim)"}}>{x.t}</a>))}
-                        </div>
-                    </div>
-                    ))}
-                </div>
-                <div style={{marginTop:52,paddingTop:22,borderTop: "1px solid var(--line)",display: "flex",justifyContent: "space-between",flexWrap: "wrap",gap:12,color: "var(--text-mute)",fontSize:12}}>
-                    <div>&copy; 2026 Safari Group. All rights reserved.</div>
-                    <div>Сохтааст <a href="https://safarigrp.com" target="_blank" rel="noopener" style={{color:"var(--text-mute)",textDecoration:"underline",textUnderlineOffset:"3px"}}>SafariGroup</a></div>
-                </div>
-            </div>
-        </footer>
-        ); } /* ── APP ── */ function App(){ return (
-        <>
-            <Nav/>
-            <Hero/>
-            <PressStrip/>
-            <HowItWorks/>
-            <Features/>
-            <Library/>
-            <Testimonials/>
-            <Pricing/>
-            <Download/>
-            <Footer/>
-            </> ); } ReactDOM.createRoot(document.getElementById("root")).render(
-
-            <App/>);
-    </script>
+/* ── LOGO ── */
+function ZehnLogo({
+  size = 34
+}) {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 400 400",
+    xmlns: "http://www.w3.org/2000/svg",
+    style: {
+      borderRadius: size * 0.27,
+      display: "block",
+      flexShrink: 0,
+      boxShadow: "0 4px 16px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08)"
+    }
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "0",
+    y: "0",
+    width: "400",
+    height: "400",
+    rx: "108",
+    fill: "#03212E"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(60, 60) scale(11.6)"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "4",
+    width: "18",
+    height: "3.4",
+    rx: "1.7",
+    fill: "#ffffff"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "10.3",
+    width: "18",
+    height: "3.4",
+    rx: "1.7",
+    fill: "#ffffff",
+    transform: "rotate(-32 12 12)"
+  }), /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "16.6",
+    width: "18",
+    height: "3.4",
+    rx: "1.7",
+    fill: "#ffffff"
+  })));
+} /* ── PHONE SHARED ── */
+const ph = {
+  frame: {
+    width: 280,
+    aspectRatio: "280/580",
+    background: "#000",
+    borderRadius: 44,
+    padding: 9,
+    position: "relative",
+    boxShadow: "0 40px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08)",
+    flexShrink: 0
+  },
+  screen: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 36,
+    background: "#03212E",
+    position: "relative",
+    overflow: "hidden",
+    fontFamily: "'Plus Jakarta Sans',sans-serif",
+    color: "#EAF3F8"
+  },
+  notch: {
+    position: "absolute",
+    top: 8,
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: 86,
+    height: 22,
+    background: "#000",
+    borderRadius: 12,
+    zIndex: 3
+  },
+  status: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "14px 22px 0",
+    fontSize: 11,
+    fontWeight: 600,
+    color: "#fff",
+    position: "relative",
+    zIndex: 4
+  }
+};
+function BottomNav({
+  active
+}) {
+  const items = [{
+    l: "Home",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    }), /*#__PURE__*/React.createElement("polyline", {
+      points: "9,22 9,12 15,12 15,22"
+    }))
+  }, {
+    l: "Books",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+    }))
+  }, {
+    l: "АЗ ИИ ПУРСЕД",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("polygon", {
+      points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+    }))
+  }, {
+    l: "Goals",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "6"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "2"
+    }))
+  }, {
+    l: "Profile",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "14",
+      height: "14",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "7",
+      r: "4"
+    }))
+  }];
+  return;
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      background: "#052A3B",
+      borderTop: "1px solid rgba(255,255,255,.06)",
+      padding: "8px 12px 14px",
+      display: "flex",
+      justifyContent: "space-between"
+    }
+  }, items.map(it => {
+    const on = it.l === active;
+    return;
+    /*#__PURE__*/React.createElement("div", {
+      key: it.l,
+      style: {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 3,
+        color: on ? "#82FF7F" : "rgba(255,255,255,.45)"
+      }
+    }, it.i, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 8,
+        fontWeight: 600
+      }
+    }, it.l));
+  }));
+} /* ── BOOK COVER ART ── */
+function CoverArt({
+  type
+}) {
+  if (type === "atomic") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 100 100",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "xMidYMid slice"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("radialGradient", {
+    id: "ahDot",
+    cx: "50%",
+    cy: "50%",
+    r: "50%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#FF7A3D"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#C94310"
+  }))), /*#__PURE__*/React.createElement("rect", {
+    width: "100",
+    height: "100",
+    fill: "#F5EFE3"
+  }), [42, 34, 26, 18, 10].map((r, i) => /*#__PURE__*/React.createElement("circle", {
+    key: i,
+    cx: "50",
+    cy: "56",
+    r: r,
+    fill: "none",
+    stroke: "#1F3A4A",
+    strokeWidth: ".5",
+    opacity: 0.4 - i * .04
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "50",
+    cy: "56",
+    r: "8",
+    fill: "url(#ahDot)"
+  }), /*#__PURE__*/React.createElement("ellipse", {
+    cx: "47",
+    cy: "53",
+    rx: "3",
+    ry: "2",
+    fill: "#FFD0A8",
+    opacity: ".5"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: "50",
+    y: "16",
+    fontSize: "10",
+    fontWeight: "800",
+    fill: "#1F3A4A",
+    textAnchor: "middle",
+    fontFamily: "sans-serif",
+    letterSpacing: "-0.5"
+  }, "ATOMIC"), /*#__PURE__*/React.createElement("text", {
+    x: "50",
+    y: "27",
+    fontSize: "10",
+    fontWeight: "800",
+    fill: "#1F3A4A",
+    textAnchor: "middle",
+    fontFamily: "sans-serif",
+    letterSpacing: "-0.5"
+  }, "HABITS"), /*#__PURE__*/React.createElement("line", {
+    x1: "32",
+    y1: "88",
+    x2: "68",
+    y2: "88",
+    stroke: "#E85B1F",
+    strokeWidth: ".5"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: "50",
+    y: "94",
+    fontSize: "4",
+    fill: "#E85B1F",
+    textAnchor: "middle",
+    fontFamily: "sans-serif",
+    fontWeight: "700",
+    letterSpacing: "0.8"
+  }, "JAMES CLEAR"));
+  if (type === "ikigai") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "#F0E6C8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M10 100 Q 25 70 45 75 Q 65 80 80 50",
+    stroke: "#2C4A1E",
+    strokeWidth: "1.6",
+    fill: "none"
+  }), [[28, 78], [42, 74], [58, 72], [70, 62]].map(([x, y], i) => /*#__PURE__*/React.createElement("circle", {
+    key: i,
+    cx: x,
+    cy: y,
+    r: "2",
+    fill: "#E88B9B"
+  })), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "26",
+    fontSize: "11",
+    fontWeight: "800",
+    fill: "#C13A28",
+    textAnchor: "middle",
+    fontFamily: "serif"
+  }, "IKIGAI"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "111",
+    fontSize: "3.2",
+    fontWeight: "700",
+    fill: "#2C4A1E",
+    textAnchor: "middle"
+  }, "H. GARC\xCDA"));
+  if (type === "deepwork") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "#1A1F2E"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "52",
+    fontSize: "12",
+    fontWeight: "900",
+    fill: "#E8C964",
+    textAnchor: "middle",
+    fontFamily: "serif"
+  }, "DEEP"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "68",
+    fontSize: "12",
+    fontWeight: "900",
+    fill: "#E8C964",
+    textAnchor: "middle",
+    fontFamily: "serif"
+  }, "WORK"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "106",
+    fontSize: "3.5",
+    fontWeight: "700",
+    fill: "#E8C964",
+    textAnchor: "middle"
+  }, "CAL NEWPORT"));
+  if (type === "money") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "#0D2535"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M15 90 Q 30 40 45 55 Q 60 70 75 20",
+    stroke: "#82FF7F",
+    strokeWidth: "2",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "75",
+    cy: "20",
+    r: "4",
+    fill: "#82FF7F"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "106",
+    fontSize: "4",
+    fontWeight: "700",
+    fill: "rgba(255,255,255,.7)",
+    textAnchor: "middle"
+  }, "MORGAN HOUSEL"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "20",
+    fontSize: "6.5",
+    fontWeight: "800",
+    fill: "#fff",
+    textAnchor: "middle"
+  }, "PSYCHOLOGY"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "29",
+    fontSize: "5",
+    fill: "#82FF7F",
+    textAnchor: "middle"
+  }, "OF MONEY"));
+  if (type === "mindset") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "mindsetGradSmall",
+    x1: "0%",
+    y1: "0%",
+    x2: "100%",
+    y2: "100%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    style: {
+      stopColor: "#1a4d3e"
+    }
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    style: {
+      stopColor: "#0d2818"
+    }
+  }))), /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "url(#mindsetGradSmall)"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "15",
+    cy: "25",
+    r: "10",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "1.2",
+    opacity: "0.6"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "15",
+    cy: "25",
+    r: "7",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "0.8",
+    opacity: "0.4"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(45, 40)"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M -10 0 Q -12 -8 -8 -12 Q -2 -15 2 -14 Q 8 -15 12 -12 Q 16 -8 14 0",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "1.2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "-6",
+    cy: "2",
+    r: "1.2",
+    fill: "#82FF7F"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "3",
+    r: "1.2",
+    fill: "#82FF7F"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "6",
+    cy: "2",
+    r: "1.2",
+    fill: "#82FF7F"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M -4 8 L -4 14 M 0 8 L 0 15 M 4 8 L 4 14",
+    stroke: "#82FF7F",
+    strokeWidth: "1",
+    strokeLinecap: "round"
+  })), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "95",
+    fontSize: "7",
+    fontWeight: "800",
+    fill: "#82FF7F",
+    textAnchor: "middle"
+  }, "MINDSET"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "107",
+    fontSize: "3.2",
+    fontWeight: "600",
+    fill: "#82FF7F",
+    opacity: "0.7",
+    textAnchor: "middle"
+  }, "CAROL DWECK"));
+  if (type === "thinkagain") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "#1a2e3d"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "45",
+    cy: "40",
+    r: "28",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "0.8",
+    opacity: "0.2"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(45, 42)"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "-4",
+    r: "14",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "2.2",
+    strokeLinecap: "round"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "-6",
+    y1: "11",
+    x2: "6",
+    y2: "11",
+    stroke: "#82FF7F",
+    strokeWidth: "2",
+    strokeLinecap: "round"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "-4",
+    y1: "15",
+    x2: "4",
+    y2: "15",
+    stroke: "#82FF7F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M -4 5 Q 0 1 4 5",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "1.4",
+    opacity: "0.85"
+  })), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "96",
+    fontSize: "7",
+    fontWeight: "800",
+    fill: "#82FF7F",
+    textAnchor: "middle"
+  }, "THINK AGAIN"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "108",
+    fontSize: "3.2",
+    fontWeight: "600",
+    fill: "#82FF7F",
+    opacity: "0.7",
+    textAnchor: "middle"
+  }, "ADAM GRANT"));
+  if (type === "zerotoone") return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 90 120",
+    style: {
+      display: "block",
+      width: "100%",
+      height: "100%"
+    },
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/React.createElement("rect", {
+    width: "90",
+    height: "120",
+    fill: "#1a0f05"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(20, 50)"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    r: "11",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    r: "6",
+    fill: "none",
+    stroke: "#82FF7F",
+    strokeWidth: "1.4"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "0",
+    r: "3",
+    fill: "#82FF7F"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M 35 49 L 55 49",
+    stroke: "#82FF7F",
+    strokeWidth: "2.4",
+    strokeLinecap: "round",
+    opacity: "0.9"
+  }), /*#__PURE__*/React.createElement("g", {
+    transform: "translate(70, 50)"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M -8 -8 L 0 0 L -8 8 M 8 -8 L 0 0 L 8 8",
+    stroke: "#82FF7F",
+    strokeWidth: "2",
+    fill: "none",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "95",
+    fontSize: "8",
+    fontWeight: "900",
+    fill: "#82FF7F",
+    textAnchor: "middle"
+  }, "ZERO TO"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "104",
+    fontSize: "8",
+    fontWeight: "900",
+    fill: "#82FF7F",
+    textAnchor: "middle"
+  }, "ONE"), /*#__PURE__*/React.createElement("text", {
+    x: "45",
+    y: "115",
+    fontSize: "3",
+    fontWeight: "600",
+    fill: "#82FF7F",
+    opacity: "0.6",
+    textAnchor: "middle"
+  }, "PETER THIEL"));
+  return null;
+} /* ── PLAYER SCREEN ── */
+function PlayerScreen() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: ph.frame
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.notch
+  }), /*#__PURE__*/React.createElement("div", {
+    style: ph.screen
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.status
+  }, /*#__PURE__*/React.createElement("span", null, "9:41"), /*#__PURE__*/React.createElement("span", null, "\u25FC\u25FC \u25B6")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "28px 18px 0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#fff",
+      display: "flex",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "15 18 9 12 15 6"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontWeight: 700,
+      fontSize: 14
+    }
+  }, "Atomic Habits")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 26,
+      height: 24,
+      borderRadius: 6,
+      background: "rgba(130,255,127,.15)",
+      display: "grid",
+      placeItems: "center",
+      color: "#82FF7F"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    strokeLinecap: "round"
+  }, /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "6",
+    x2: "21",
+    y2: "6"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "12",
+    x2: "21",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "18",
+    x2: "21",
+    y2: "18"
+  }))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      margin: "14px 14px 0",
+      position: "relative",
+      borderRadius: 14,
+      overflow: "hidden",
+      boxShadow: "0 12px 36px rgba(0,0,0,.5)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      paddingTop: "100%",
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0
+    }
+  }, /*#__PURE__*/React.createElement(CoverArt, {
+    type: "atomic"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "10px 14px 0",
+      display: "flex",
+      gap: 6
+    }
+  }, [{
+    t: "АЗ ИИ ПУРСЕД",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "9",
+      height: "9",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2.5"
+    }, /*#__PURE__*/React.createElement("polygon", {
+      points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+    }))
+  }, {
+    t: "Захира",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "8",
+      height: "9",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2.5",
+      strokeLinecap: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+    }))
+  }, {
+    t: "Қайдҳо",
+    i: /*#__PURE__*/React.createElement("svg", {
+      width: "9",
+      height: "9",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2.5",
+      strokeLinecap: "round"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+    }))
+  }].map((a, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      flex: 1,
+      background: "rgba(255,255,255,.06)",
+      border: "1px solid rgba(255,255,255,.1)",
+      color: "#EAF3F8",
+      padding: "7px 0",
+      borderRadius: 8,
+      fontSize: 9,
+      fontWeight: 600,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 5
+    }
+  }, a.i, " ", a.t))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "14px 18px 0"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      fontSize: 10,
+      color: "rgba(255,255,255,.5)",
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "03:42"), /*#__PURE__*/React.createElement("span", null, "15:00")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 3,
+      background: "rgba(255,255,255,.12)",
+      borderRadius: 999,
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "24%",
+      height: "100%",
+      background: "#82FF7F",
+      borderRadius: 999
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      left: "24%",
+      top: "50%",
+      transform: "translate(-50%,-50%)",
+      width: 10,
+      height: 10,
+      borderRadius: "50%",
+      background: "#82FF7F"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginTop: 14
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,.45)",
+      display: "flex",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "19 20 9 12 19 4 19 20"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "5",
+    y1: "19",
+    x2: "5",
+    y2: "5"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,.6)",
+      display: "flex",
+      alignItems: "center",
+      gap: 2,
+      fontSize: 9,
+      fontWeight: 700
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "1 4 1 10 7 10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3.51 15a9 9 0 1 0 .49-4.5"
+  })), "15"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: "50%",
+      background: "#82FF7F",
+      color: "#03212E",
+      display: "grid",
+      placeItems: "center",
+      boxShadow: "0 6px 20px rgba(130,255,127,.4)"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "#03212E"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "5,3 19,12 5,21"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,.6)",
+      display: "flex",
+      alignItems: "center",
+      gap: 2,
+      fontSize: 9,
+      fontWeight: 700
+    }
+  }, "15", /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "23 4 23 10 17 10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M20.49 15a9 9 0 1 1-.49-4.5"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,.45)",
+      display: "flex",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "5 4 15 12 5 20 5 4"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "19",
+    y1: "5",
+    x2: "19",
+    y2: "19"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 5,
+      marginTop: 12
+    }
+  }, [{
+    l: "Суръат",
+    v: "1×"
+  }, {
+    l: "Хоб",
+    v: "OFF"
+  }, {
+    l: "Матн",
+    v: "ON"
+  }].map((o, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      flex: 1,
+      background: "rgba(130,255,127,.07)",
+      border: "1px solid rgba(130,255,127,.12)",
+      borderRadius: 7,
+      padding: "6px 5px",
+      fontSize: 8,
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,.55)"
+    }
+  }, o.l), /*#__PURE__*/React.createElement("span", {
+    style: {
+      background: "rgba(0,0,0,.3)",
+      borderRadius: 3,
+      padding: "1px 4px",
+      fontWeight: 700
+    }
+  }, o.v)))))));
+} /* ── CHAT SCREEN ── */
+function ChatScreen() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: ph.frame
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.notch
+  }), /*#__PURE__*/React.createElement("div", {
+    style: ph.screen
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.status
+  }, /*#__PURE__*/React.createElement("span", null, "9:41"), /*#__PURE__*/React.createElement("span", null, "\u25FC\u25FC \u25B6")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "28px 18px 0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontWeight: 700,
+      fontSize: 14
+    }
+  }, "Ask AI ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      opacity: .5
+    }
+  }, "\xB7 Atomic Habits")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      opacity: .5,
+      display: "flex",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "16px 16px 0"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "#063349",
+      border: "1px solid rgba(255,255,255,.06)",
+      borderRadius: "14px 14px 14px 4px",
+      padding: "10px 12px",
+      fontSize: 11,
+      lineHeight: 1.4
+    }
+  }, "Муҳимтарин принсипи ташкили одат дар боби 3 чист?"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 9,
+      color: "rgba(255,255,255,.4)",
+      marginTop: 4,
+      marginLeft: 2
+    }
+  }, "Just now"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 14,
+      fontSize: 11,
+      lineHeight: 1.6,
+      color: "#EAF3F8"
+    }
+  }, "Ғояи асосии Клир: ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#82FF7F",
+      fontWeight: 600
+    }
+  }, "онро возеҳ, ҷолиб, осон ва қаноатбахш созед"), ". The \"Two-Minute Rule\" is the entry point \u2014 if it takes less than two minutes, do it now. Small entries compound."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 12,
+      marginTop: 10,
+      color: "rgba(255,255,255,.4)",
+      fontSize: 12
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "flex"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "9",
+    y: "9",
+    width: "13",
+    height: "13",
+    rx: "2",
+    ry: "2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "flex"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "flex"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "flex"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "23 4 23 10 17 10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M20.49 15a9 9 0 1 1-.49-4.5"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16,
+      background: "rgba(130,255,127,.06)",
+      border: "1px solid rgba(130,255,127,.15)",
+      borderRadius: 10,
+      padding: "8px 10px",
+      fontSize: 10,
+      lineHeight: 1.45,
+      color: "rgba(255,255,255,.75)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#82FF7F",
+      fontWeight: 700,
+      fontSize: 9,
+      letterSpacing: ".08em",
+      display: "flex",
+      alignItems: "center",
+      gap: 4,
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "8",
+    height: "8",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+  })), " RELATED LESSON"), " Tiny Changes, Remarkable Results \u2014 Ch. 1 \xB7 15 min")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: 54,
+      left: 12,
+      right: 12,
+      display: "flex",
+      gap: 6,
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      background: "#052A3B",
+      border: "1px solid rgba(255,255,255,.08)",
+      borderRadius: 999,
+      padding: "8px 12px",
+      fontSize: 10,
+      color: "rgba(255,255,255,.5)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "Ask anything about this book\u2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 18,
+      height: 18,
+      borderRadius: "50%",
+      background: "#82FF7F",
+      display: "grid",
+      placeItems: "center",
+      color: "#03212E",
+      fontSize: 9
+    }
+  }, "\u2191"))), /*#__PURE__*/React.createElement(BottomNav, {
+    active: "АЗ ИИ ПУРСЕД"
+  })));
+} /* ── GOALS SCREEN ── */
+function GoalsScreen() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: ph.frame
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.notch
+  }), /*#__PURE__*/React.createElement("div", {
+    style: ph.screen
+  }, /*#__PURE__*/React.createElement("div", {
+    style: ph.status
+  }, /*#__PURE__*/React.createElement("span", null, "9:41"), /*#__PURE__*/React.createElement("span", null, "\u25FC\u25FC \u25B6")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "28px 16px 0"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 800,
+      fontSize: 18,
+      letterSpacing: "-0.02em"
+    }
+  }, "Пешрафти шумо"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "rgba(255,255,255,.5)",
+      marginTop: 2
+    }
+  }, "Апрели 2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 14,
+      background: "linear-gradient(145deg,#FBF2A8,#E8C964)",
+      color: "#03212E",
+      borderRadius: 14,
+      padding: "14px 16px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: ".12em",
+      textTransform: "uppercase",
+      opacity: .6
+    }
+  }, "Силсилаи ҷорӣ"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 28,
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
+      marginTop: 4
+    }
+  }, "42 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      opacity: .65
+    }
+  }, "рӯз"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32
+    }
+  }, "\uD83D\uDD25")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 12,
+      background: "rgba(255,255,255,.03)",
+      border: "1px solid rgba(255,255,255,.07)",
+      borderRadius: 12,
+      padding: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontWeight: 700
+    }
+  }, "Ҳадафи имрӯз"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 9,
+      color: "#82FF7F",
+      fontWeight: 700
+    }
+  }, "1 / 2 иҷро шуд")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 8,
+      height: 6,
+      background: "rgba(255,255,255,.08)",
+      borderRadius: 999
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "50%",
+      height: "100%",
+      background: "linear-gradient(90deg,#82FF7F,#92F090)",
+      borderRadius: 999
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 14,
+      fontSize: 10,
+      fontWeight: 700,
+      color: "rgba(255,255,255,.7)",
+      letterSpacing: ".08em",
+      textTransform: "uppercase"
+    }
+  }, "Тозаомӯхта"), [{
+    t: "Atomic Habits",
+    cat: "Productivity",
+    d: "Имрӯз"
+  }, {
+    t: "Ikigai",
+    cat: "Mindset",
+    d: "Дирӯз"
+  }, {
+    t: "Deep Work",
+    cat: "Focus",
+    d: "Mon"
+  }, {
+    t: "Psychology of Money",
+    cat: "Finance",
+    d: "Tue"
+  }, {
+    t: "Mindset",
+    cat: "Mindset",
+    d: "Wed"
+  }, {
+    t: "Think Again",
+    cat: "Leadership",
+    d: "Thu"
+  }, {
+    t: "Zero to One",
+    cat: "Business",
+    d: "Fri"
+  }].map((b, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      marginTop: 8,
+      display: "flex",
+      gap: 8,
+      alignItems: "center",
+      background: "rgba(255,255,255,.03)",
+      border: "1px solid rgba(255,255,255,.05)",
+      borderRadius: 10,
+      padding: "8px 10px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 28,
+      height: 36,
+      borderRadius: 4,
+      overflow: "hidden",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(CoverArt, {
+    type: ["atomic", "ikigai", "deepwork", "money", "mindset", "thinkagain", "zerotoone"][i]
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      fontWeight: 700,
+      lineHeight: 1.2
+    }
+  }, b.t), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 8,
+      color: "rgba(255,255,255,.5)",
+      marginTop: 1
+    }
+  }, b.cat)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 8,
+      color: "rgba(255,255,255,.4)"
+    }
+  }, b.d), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 16,
+      height: 16,
+      borderRadius: "50%",
+      background: "rgba(130,255,127,.15)",
+      display: "grid",
+      placeItems: "center",
+      color: "#82FF7F"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "9",
+    height: "9",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "3",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "20 6 9 17 4 12"
+  })))))), /*#__PURE__*/React.createElement(BottomNav, {
+    active: "Goals"
+  })));
+} /* ── NAV ── */
+function Nav() {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", h);
+    return () => window.removeEventListener("scroll", h);
+  }, []);
+  return /*#__PURE__*/React.createElement("nav", {
+    className: "nav " + (scrolled ? "scrolled" : "")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap nav-row"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "logo",
+    "aria-label": "Zehn \u2014 home"
+  }, /*#__PURE__*/React.createElement(ZehnLogo, null), /*#__PURE__*/React.createElement("span", null, "zehn")), /*#__PURE__*/React.createElement("div", {
+    className: "nav-links"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#features"
+  }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("a", {
+    href: "#how-it-works"
+  }, "Чӣ тавр кор мекунад"), /*#__PURE__*/React.createElement("a", {
+    href: "/books/"
+  }, "Китобхона"), /*#__PURE__*/React.createElement("a", {
+    href: "#pricing"
+  }, "Нарх")), /*#__PURE__*/React.createElement("div", {
+    className: "nav-cta"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#download",
+    className: "btn btn-primary",
+    style: {
+      padding: "10px 16px"
+    }
+  }, "Зеркаш кунед"))));
+} /* ── HERO ── */
+function Hero() {
+  return /*#__PURE__*/React.createElement("section", {
+    style: {
+      position: "relative",
+      paddingTop: 180,
+      paddingBottom: 80,
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "grid-decor"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: "-30%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: 1100,
+      height: 1100,
+      background: "radial-gradient(circle,rgba(130,255,127,.15) 0%,transparent 60%)",
+      pointerEvents: "none"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "wrap",
+    style: {
+      position: "relative",
+      zIndex: 2
+    },
+    id: "main-content"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1.15fr 1fr",
+      gap: 60,
+      alignItems: "center"
+    },
+    className: "hero-grid"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "chip"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dot"
+  }), " Now in 4 languages \xB7 5,000+ books"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: "clamp(44px,6.4vw,82px)",
+      fontWeight: 800,
+      letterSpacing: "-0.035em",
+      lineHeight: .98,
+      marginTop: 22,
+      textWrap: "balance"
+    }
+  }, "Китобро омӯзед", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", {
+    className: "lora",
+    style: {
+      color: "var(--green)",
+      fontWeight: 400
+    }
+  }, "дар 15 дақиқа.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 22,
+      fontSize: 19,
+      lineHeight: 1.55,
+      color: "var(--text-dim)",
+      maxWidth: 540,
+      textWrap: "pretty"
+    }
+  }, "Zehn \u2014 a smarter you, daily."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 12,
+      marginTop: 32,
+      flexWrap: "wrap",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en",
+    target: "_blank",
+    rel: "noopener",
+    className: "btn btn-dark",
+    style: {
+      padding: "13px 20px"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "17",
+    height: "17",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"
+  })), "                                Google Play"), /*#__PURE__*/React.createElement("a", {
+    href: "https://apps.apple.com/app/id6759160035",
+    target: "_blank",
+    rel: "noopener",
+    className: "btn btn-dark",
+    style: {
+      padding: "13px 20px"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "17",
+    height: "17",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+  })), "                                App Store"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 8,
+      color: "var(--text-dim)",
+      fontSize: 13
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex"
+    },
+    "aria-label": "4.8 stars"
+  }, [0, 1, 2, 3, 4].map(i => /*#__PURE__*/React.createElement("svg", {
+    key: i,
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "var(--cream)",
+    stroke: "none"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+  })))), "4.8 \xB7 12k+ reviews")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: window.__quizUrl,
+    style: {
+      fontSize: 13,
+      color: "var(--green)",
+      fontWeight: 600,
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 6,
+      opacity: .85
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 17h.01"
+  })), "Not sure what to read? Take the 5-question quiz \u2192")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 40,
+      marginTop: 48,
+      flexWrap: "wrap"
+    }
+  }, [{
+    v: "5,000+",
+    l: "китоб"
+  }, {
+    v: "15 min",
+    l: "миёнаи китоб"
+  }, {
+    v: "4",
+    l: "забон"
+  }].map(k => /*#__PURE__*/React.createElement("div", {
+    key: k.l
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 28,
+      fontWeight: 800,
+      letterSpacing: "-0.02em"
+    }
+  }, k.v), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "var(--text-mute)",
+      marginTop: 2,
+      textTransform: "uppercase",
+      letterSpacing: ".08em",
+      fontFamily: "'JetBrains Mono',monospace"
+    }
+  }, k.l))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      display: "flex",
+      justifyContent: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: "-60px -40px",
+      background: "radial-gradient(circle,rgba(130,255,127,.16),transparent 60%)",
+      filter: "blur(40px)"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 50,
+      right: "-8%",
+      zIndex: 1,
+      transform: "rotate(8deg) scale(.76)",
+      opacity: .5,
+      filter: "blur(1px)"
+    }
+  }, /*#__PURE__*/React.createElement(ChatScreen, null)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      zIndex: 2,
+      transform: "rotate(-4deg) scale(1.06)"
+    }
+  }, /*#__PURE__*/React.createElement(PlayerScreen, null)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: "8%",
+      right: -20,
+      background: "rgba(5,42,59,.96)",
+      border: "1px solid var(--line-2)",
+      borderRadius: 14,
+      padding: "10px 14px",
+      fontSize: 12,
+      fontWeight: 500,
+      backdropFilter: "blur(10px)",
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      zIndex: 4,
+      boxShadow: "0 20px 50px rgba(0,0,0,.4)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: "50%",
+      background: "var(--green)",
+      boxShadow: "0 0 12px var(--green)"
+    }
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: "var(--text-mute)",
+      fontFamily: "'JetBrains Mono',monospace",
+      letterSpacing: ".1em",
+      textTransform: "uppercase"
+    }
+  }, "Ҳоло омӯзиш"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 2
+    }
+  }, "Atomic Habits \xB7 15 min"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: "30%",
+      left: -28,
+      background: "linear-gradient(145deg,var(--cream),#E8C964)",
+      color: "var(--ink)",
+      borderRadius: 14,
+      padding: "10px 14px",
+      zIndex: 4,
+      boxShadow: "0 14px 40px rgba(251,242,168,.2)",
+      transform: "rotate(-4deg)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      fontWeight: 700,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      opacity: .7,
+      fontFamily: "'JetBrains Mono',monospace"
+    }
+  }, "Силсила"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
+      marginTop: 2,
+      display: "flex",
+      alignItems: "baseline",
+      gap: 2
+    }
+  }, "42 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      opacity: .65
+    }
+  }, "рӯз"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: "52%",
+      left: -36,
+      background: "rgba(5,42,59,.96)",
+      border: "1px solid var(--line-2)",
+      borderRadius: 14,
+      padding: "12px 14px",
+      fontSize: 12,
+      fontWeight: 500,
+      backdropFilter: "blur(10px)",
+      zIndex: 4,
+      maxWidth: 200,
+      boxShadow: "0 20px 50px rgba(0,0,0,.4)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+      fontSize: 10,
+      color: "var(--green)",
+      fontWeight: 700,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      marginBottom: 6,
+      fontFamily: "'JetBrains Mono',monospace"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "8",
+    height: "8",
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    style: {
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+  })), " AI insight"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      lineHeight: 1.4,
+      fontSize: 11
+    }
+  }, "\"You fall to the level of your ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--green)",
+      fontWeight: 600
+    }
+  }, "systems"), ", not your goals.\""))))));
+} /* ── LOGO / PRESS STRIP ── */
+function PressStrip() {
+  const logos = ["TechCrunch", "Product Hunt", "The Verge", "Wired", "AppAdvice", "MakeUseOf"];
+  return /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: "32px 0 64px",
+      borderTop: "1px solid var(--line)",
+      borderBottom: "1px solid var(--line)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      letterSpacing: ".14em",
+      textTransform: "uppercase",
+      fontFamily: "'JetBrains Mono',monospace",
+      color: "var(--text-mute)",
+      textAlign: "center",
+      marginBottom: 24
+    }
+  }, "Дар нашрияҳо"), /*#__PURE__*/React.createElement("div", {
+    className: "marquee-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "marquee-track"
+  }, [...logos, ...logos].map((n, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      fontWeight: 700,
+      fontSize: 18,
+      opacity: .45,
+      letterSpacing: "-0.02em",
+      color: "var(--text)",
+      whiteSpace: "nowrap"
+    }
+  }, n))))));
+} /* ── HOW IT WORKS ── */
+function HowItWorks() {
+  const steps = [{
+    n: "01",
+    title: "Ҳадафҳоятонро муайян кунед",
+    body: "Ба Zehn бигӯед чӣ мехоҳед омӯзед, вақти рӯзонаи худ ва ҳолатҳои шумо. Феҳристи китобҳои фардикардашуда гиред — танҳо барои шумо.",
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "28",
+      height: "28",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "1.8",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "8",
+      r: "4"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M4 20c0-4 3.6-7 8-7s8 3 8 7"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M19 8l1.5-1.5M19 11h2",
+      stroke: "var(--green)",
+      strokeWidth: "1.5"
+    }))
+  }, {
+    n: "02",
+    title: "15 дақиқа гӯш кунед",
+    body: "Аудиокитоби мухтасар ғояҳои асосиро фаро мегирад. Бо матни ҳамоҳангшуда пайравӣ кунед, суръататонро танзим кунед ва дар роҳ омӯзед.",
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "28",
+      height: "28",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "1.8",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), /*#__PURE__*/React.createElement("polygon", {
+      points: "10,8 16,12 10,16",
+      fill: "var(--green)",
+      stroke: "var(--green)",
+      strokeWidth: "1"
+    }))
+  }, {
+    n: "03",
+    title: "Ҳар рӯз рушд кунед",
+    body: "Барои амиқтар шудан дар ягон ғоя аз ИИ бипурсед. Силсилаатонро пайгирӣ кунед, ба ҳадафҳои рӯзона расед ва китобхонаи дониш бинед — панҷ дақиқа дар як маврид.",
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "28",
+      height: "28",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "1.8",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("polyline", {
+      points: "22,12 18,12 15,21 9,3 6,12 2,12"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "9",
+      cy: "3",
+      r: "1",
+      fill: "var(--green)",
+      stroke: "none"
+    }))
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    id: "how-it-works",
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow"
+  }, "Чӣ тавр кор мекунад"), /*#__PURE__*/React.createElement("h2", null, "Се қадам ба ", /*#__PURE__*/React.createElement("em", null, "рӯзи зиракона.")), /*#__PURE__*/React.createElement("p", null, "Ҳеҷ ташрифоти мураккаб нест. Ҳеҷ хондани дуру дароз нест. Фақат ҳадафатонро гузоред, play-ро пахш кунед ва рушд кунед.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1fr auto 1fr auto 1fr",
+      gap: 0,
+      alignItems: "center"
+    },
+    className: "steps-grid"
+  }, steps.map((s, i) => /*#__PURE__*/React.createElement(React.Fragment, {
+    key: i
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      padding: "36px 32px",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 56,
+      height: 56,
+      borderRadius: "50%",
+      background: "rgba(130,255,127,.1)",
+      border: "1px solid rgba(130,255,127,.2)",
+      display: "grid",
+      placeItems: "center",
+      margin: "0 auto 20px",
+      color: "var(--green)"
+    }
+  }, s.icon), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontFamily: "'JetBrains Mono',monospace",
+      color: "var(--green)",
+      fontWeight: 700,
+      letterSpacing: ".14em",
+      marginBottom: 12
+    }
+  }, s.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 20,
+      fontWeight: 800,
+      letterSpacing: "-0.02em",
+      lineHeight: 1.1,
+      marginBottom: 12
+    }
+  }, s.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 14,
+      color: "var(--text-dim)",
+      lineHeight: 1.6
+    }
+  }, s.body)), i < 2 && /*#__PURE__*/React.createElement("div", {
+    className: "step-connector",
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "0 16px"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "rgba(130,255,127,.35)",
+    strokeWidth: "2"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M5 12h14M13 6l6 6-6 6"
+  }))))))));
+} /* ── FEATURES ── */
+function Features() {
+  const items = [{
+    eyebrow: "Аудиокитобҳо",
+    title: "15 дақиқа. Ин кифоя аст.",
+    body: "Ҳар китоб ба аудиокитоби мухтасар табдил меёбад. Матни ҳамоҳангшуда имкон медиҳад пайравӣ кунед. Суръататонро танзим кунед. Дар роҳ, дар варзишгоҳ ё ҳар ҷо гӯш кунед.",
+    render: () => /*#__PURE__*/React.createElement(PlayerScreen, null),
+    accent: "var(--green)",
+    tags: ["Матни ҳамоҳанг", "Ҳолати офлайн", "Суръати тағйирёбанда"]
+  }, {
+    eyebrow: "АЗ ИИ ПУРСЕД",
+    title: "Бо ҳар китоб гуфтугӯ кунед.",
+    body: "Дар бораи мафҳуме кунҷков ҳастед? Аз Zehn AI бипурсед. Бо ғояҳои воқеии муаллиф — аз китоб, на интернети кушод — ҷавоб медиҳад.",
+    render: () => /*#__PURE__*/React.createElement(ChatScreen, null),
+    accent: "var(--cream)",
+    tags: ["Ҷавобҳои фаврӣ", "Аз манбаъ", "Ҳар китоб"]
+  }, {
+    eyebrow: "Рушди худро пайгирӣ кунед",
+    title: "Ҳадафҳои рӯзона. Одатҳои доимӣ.",
+    body: "Ҳадафи рӯзонаи омӯзишӣ гузоред — ҳатто 5 дақиқа ҳам ҳисоб мешавад. Силсила бисозед, дастовардҳо ба даст оред ва китобхонаи дониши шахсии худро рушд диҳед.",
+    render: () => /*#__PURE__*/React.createElement(GoalsScreen, null),
+    accent: "#6EC1D6",
+    tags: ["Силсилаҳо", "Ҳадафҳои рӯзона", "Китобхонаи пешрафт"]
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    id: "features",
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow"
+  }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("h2", null, "Ҳама чизе ки барои ", /*#__PURE__*/React.createElement("em", null, "идомаи омӯзиш лозим аст.")), /*#__PURE__*/React.createElement("p", null, "Listen, ask, and track \u2014 three simple loops that compound into a genuine learning habit.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gap: 20
+    }
+  }, items.map((it, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "card feature-row",
+    style: {
+      padding: 0,
+      display: "grid",
+      gridTemplateColumns: i % 2 ? "1fr 1.05fr" : "1.05fr 1fr",
+      gap: 0,
+      alignItems: "stretch",
+      minHeight: 440
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "52px 48px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      order: i % 2 ? 2 : 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow",
+    style: {
+      color: it.accent
+    }
+  }, it.eyebrow), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 38,
+      fontWeight: 800,
+      letterSpacing: "-0.028em",
+      lineHeight: 1.06,
+      marginTop: 14,
+      textWrap: "balance"
+    }
+  }, it.title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16,
+      color: "var(--text-dim)",
+      fontSize: 16,
+      lineHeight: 1.6,
+      textWrap: "pretty"
+    }
+  }, it.body), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: "flex",
+      gap: 8,
+      flexWrap: "wrap"
+    }
+  }, it.tags.map(t => /*#__PURE__*/React.createElement("span", {
+    key: t,
+    style: {
+      padding: "5px 12px",
+      borderRadius: 999,
+      border: "1px solid var(--line-2)",
+      fontSize: 12,
+      color: "var(--text-dim)"
+    }
+  }, t)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: `radial-gradient(circle at ${i % 2 ? "30%" : "70%"} 40%, rgba(130,255,127,.09), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.02), transparent)`,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "48px 0",
+      order: i % 2 ? 1 : 2,
+      borderLeft: i % 2 ? "none" : "1px solid var(--line)",
+      borderRight: i % 2 ? "1px solid var(--line)" : "none",
+      position: "relative",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      transform: "scale(.92)"
+    }
+  }, it.render())))))));
+} /* ── LIBRARY / CATEGORIES ── */
+function Library() {
+  const [meta, setMeta] = React.useState(null);
+  React.useEffect(() => {
+    fetch('/books/books_meta.json').then(r => r.json()).then(setMeta);
+  }, []);
+  const LANG_LABEL = {
+    en: 'English',
+    ru: 'Russian',
+    tg: 'Tajik',
+    ar: 'Arabic',
+    hi: 'Hindi',
+    es: 'Spanish',
+    fr: 'French',
+    zh: 'Chinese'
+  };
+  const LANG_CODE = {
+    en: 'EN',
+    ru: 'RU',
+    tg: 'TG',
+    ar: 'AR',
+    hi: 'HI',
+    es: 'ES',
+    fr: 'FR',
+    zh: 'ZH'
+  };
+  const langCounts = meta ? meta.lang_counts : {};
+  const langDisplay = meta ? meta.lang_display || {} : {};
+  const cats = meta ? meta.categories.slice(0, 8) : [];
+  const featured = meta ? meta.featured : [];
+  const CAT_DISPLAY_COUNT = {
+    'Family': 1100,
+    'Career & Business': 1050,
+    'Personal Development': 950,
+    'Biography & Memoir': 800,
+    'Psychology': 750,
+    'Entrepreneurship': 700,
+    'Marketing & Sales': 650,
+    'Relationships': 600,
+    'Leadership': 550,
+    'Negotiation': 420,
+    'Money & Investments': 400,
+    'Productivity': 380,
+    'Technology': 320,
+    'Mindfulness & Happiness': 250,
+    'Fiction': 200,
+    'Health & Nutrition': 180,
+    'History': 160
+  };
+  const I = (d, w = '20', h = '20') => /*#__PURE__*/React.createElement("svg", {
+    width: w,
+    height: h,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    dangerouslySetInnerHTML: {
+      __html: d
+    }
+  });
+  const CAT_ICONS = {
+    'Leadership': I('<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'),
+    'Productivity': I('<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>'),
+    'Career & Business': I('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>'),
+    'Personal Development': I('<circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><polyline points="16 3 18 5 22 1"/>'),
+    'Biography & Memoir': I('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>'),
+    'Psychology': I('<path d="M9.5 2A6.5 6.5 0 0 1 16 8.5c0 2.5-1.5 5.5-4 7.5v4H8v-4c-2.5-2-4-5-4-7.5A6.5 6.5 0 0 1 9.5 2z"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="17" x2="12" y2="22"/>'),
+    'Entrepreneurship': I('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>'),
+    'Marketing & Sales': I('<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>'),
+    'Relationships': I('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'),
+    'Negotiation': I('<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>'),
+    'Money & Investments': I('<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'),
+    'Technology': I('<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/>'),
+    'Mindfulness & Happiness': I('<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>'),
+    'Family': I('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>'),
+    'Health & Nutrition': I('<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>'),
+    'History': I('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'),
+    'Fiction': I('<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>')
+  };
+  const defaultIcon = I('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>');
+  return /*#__PURE__*/React.createElement("section", {
+    id: "library",
+    className: "section"
+  }, /*#__PURE__*/React.createElement("style", null, `
+              .lib-cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:56px;}
+              @media(max-width:640px){.lib-cat-grid{grid-template-columns:1fr 1fr;}.cat-mosaic{display:none!important;}}
+              .book-shelf{display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+              .book-shelf::-webkit-scrollbar{display:none;}
+              .shelf-card{flex:0 0 155px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:12px;text-decoration:none;display:block;color:var(--text);transition:border-color .2s,transform .2s;}
+              .shelf-card:hover{border-color:rgba(130,255,127,.3);transform:translateY(-2px);}
+              @media(max-width:640px){.shelf-card{flex:0 0 135px;}}
+              .cat-mosaic{display:flex;gap:3px;flex-shrink:0;}
+              .cat-mosaic-img{width:26px;height:34px;object-fit:cover;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.5);}
+              .lang-row a{display:inline-flex!important;}
+            `), /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow"
+  }, "Китобхона"), /*#__PURE__*/React.createElement("h2", null, "Беш аз 8,000 китоб дар ", /*#__PURE__*/React.createElement("em", null, "ҳар мавзӯъ.")), /*#__PURE__*/React.createElement("p", null, "From leadership to stoicism, personal finance to deep focus \u2014 if it's worth knowing, Zehn has a book for it. Available in English, Arabic, Russian, and Tajik.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "center",
+      marginBottom: 48
+    },
+    className: "lang-row"
+  }, Object.entries(langCounts).sort((a, b) => b[1] - a[1]).map(([code]) => /*#__PURE__*/React.createElement("a", {
+    key: code,
+    href: `/books/?lang=${LANG_LABEL[code] || code}`,
+    className: "lang-badge",
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "8px 16px",
+      borderRadius: 999,
+      background: "rgba(255,255,255,.04)",
+      border: "1px solid var(--line-2)",
+      fontSize: 13,
+      fontWeight: 600,
+      color: "var(--text)",
+      textDecoration: "none",
+      margin: "0 5px 10px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10,
+      fontWeight: 700,
+      fontFamily: "'JetBrains Mono',monospace",
+      background: "rgba(130,255,127,.15)",
+      color: "var(--green)",
+      padding: "2px 5px",
+      borderRadius: 4,
+      letterSpacing: ".06em"
+    }
+  }, LANG_CODE[code] || code.toUpperCase()), LANG_LABEL[code] || code))), /*#__PURE__*/React.createElement("div", {
+    className: "lib-cat-grid"
+  }, cats.map((cat, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: `/books/?cat=${encodeURIComponent(cat.name)}`,
+    className: "card cat-card",
+    style: {
+      padding: "16px 18px",
+      textDecoration: "none"
+    },
+    "aria-label": `Browse ${cat.name} books`
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      marginBottom: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 9,
+      background: "rgba(130,255,127,.08)",
+      display: "grid",
+      placeItems: "center",
+      color: "var(--green)",
+      flexShrink: 0
+    }
+  }, CAT_ICONS[cat.name] || defaultIcon), cat.covers?.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "cat-mosaic"
+  }, cat.covers.map((src, j) => /*#__PURE__*/React.createElement("img", {
+    key: j,
+    src: src,
+    alt: "",
+    className: "cat-mosaic-img"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 13,
+      lineHeight: 1.3
+    }
+  }, cat.name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "var(--text-mute)",
+      marginTop: 4,
+      fontFamily: "'JetBrains Mono',monospace"
+    }
+  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+")))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 18
+    }
+  }, "Китобҳои барҷаста"), /*#__PURE__*/React.createElement("a", {
+    href: "/books/",
+    style: {
+      fontSize: 13,
+      color: "var(--green)",
+      fontWeight: 600
+    }
+  }, "Browse all \u2192")), /*#__PURE__*/React.createElement("div", {
+    className: "book-shelf"
+  }, featured.map((b, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: `/${b.language || 'en'}/books/${b.slug}/`,
+    className: "shelf-card",
+    "aria-label": b.title
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      aspectRatio: "3/4",
+      borderRadius: 8,
+      overflow: "hidden",
+      marginBottom: 10,
+      boxShadow: "0 6px 18px rgba(0,0,0,.4)"
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: b.cover_url,
+    alt: b.title,
+    style: {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover"
+    },
+    loading: "lazy"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 12,
+      lineHeight: 1.3
+    }
+  }, b.title))))));
+} /* ── TESTIMONIALS ── */
+function Testimonials() {
+  const quotes = [{
+    t: "Дар роҳи саҳаргоҳӣ бо Zehn бештар аз он чизе ёд мегирам, ки моҳҳо китобҳои пурра хондам. Формати 15 дақиқа доҳиёна аст.",
+    n: "Aisha M.",
+    r: "Мудири маркетинг"
+  }, {
+    t: "Хусусияти "Аз ИИ пурсед" ҳайратангез аст — хоҳиш кардам бобе дар бораи стоицизм шарҳ диҳад ва таҳлили комилеро аз чаҳорчӯби худи муаллиф гирифтам.",
+    n: "Daniel C.",
+    r: "Докторант"
+  }, {
+    t: "Ҳадафи 5 дақиқа дар рӯз гузоштам танҳо барои санҷидан. Акнун ба силсилаи 42-рӯза расидам. Пайгирии одат воқеан кор мекунад.",
+    n: "Priya S.",
+    r: "Муаллим"
+  }, {
+    t: "Ҳангоми варзиш гӯш мекунам. Аз ИИ мепурсам, ғояро мефаҳмам, қарор мекунам амиқтар шавам ё не. Беҳтарин филтр барои вақти арзишманд.",
+    n: "Jordan K.",
+    r: "Бунёдгузор"
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    className: "section",
+    style: {
+      paddingTop: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow"
+  }, "Аз омӯзандагони мо"), /*#__PURE__*/React.createElement("h2", null, "Рушди воқеӣ. ", /*#__PURE__*/React.createElement("em", null, "15 дақиқа дар як маврид."))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: 16
+    }
+  }, quotes.map((q, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "card",
+    style: {
+      padding: 28
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 2,
+      marginBottom: 14
+    },
+    "aria-label": "5 out of 5 stars"
+  }, [0, 1, 2, 3, 4].map(s => /*#__PURE__*/React.createElement("svg", {
+    key: s,
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "var(--cream)",
+    stroke: "none"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+  })))), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 15,
+      lineHeight: 1.55,
+      textWrap: "pretty",
+      color: "var(--text)"
+    }
+  }, "\u201C", q.t, "\u201D"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 20,
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      paddingTop: 16,
+      borderTop: "1px solid var(--line)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 32,
+      height: 32,
+      borderRadius: "50%",
+      background: `hsl(${i * 80 + 40},55%,60%)`,
+      color: "var(--ink)",
+      display: "grid",
+      placeItems: "center",
+      fontWeight: 700,
+      fontSize: 13
+    }
+  }, q.n[0]), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700
+    }
+  }, q.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "var(--text-mute)"
+    }
+  }, q.r))))))));
+} /* ── PRICING ── */
+function Pricing() {
+  const [annual, setAnnual] = React.useState(true);
+  const proMain = annual ? "$59.99" : "$9.99";
+  const proSub = annual ? "дар сол · ~$5/моҳ" : "дар моҳ";
+  const checkIcon = /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    style: {
+      flexShrink: 0,
+      marginTop: 2
+    }
+  }, /*#__PURE__*/React.createElement("polyline", {
+    points: "20 6 9 17 4 12"
+  }));
+  return /*#__PURE__*/React.createElement("section", {
+    className: "section",
+    id: "pricing"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow"
+  }, "Нарх"), /*#__PURE__*/React.createElement("h2", null, "Ҳар рӯз омӯзед. ", /*#__PURE__*/React.createElement("em", null, "Ба нархи арзон.")), /*#__PURE__*/React.createElement("p", null, "Ройгон оғоз кунед. Вақте ки ҷалб шудед баромад кунед. Ҳар вақт бекор кунед.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      justifyContent: "center",
+      marginBottom: 40
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    onClick: () => setAnnual(false),
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: !annual ? "var(--text)" : "var(--text-mute)",
+      cursor: "pointer",
+      transition: "color .15s"
+    }
+  }, "Моҳона"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setAnnual(a => !a),
+    "aria-label": "Toggle billing period",
+    role: "switch",
+    "aria-checked": annual,
+    style: {
+      width: 48,
+      height: 26,
+      borderRadius: 999,
+      background: annual ? "var(--green)" : "rgba(255,255,255,.15)",
+      border: "none",
+      cursor: "pointer",
+      position: "relative",
+      transition: "background .2s",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 3,
+      left: annual ? 25 : 3,
+      width: 20,
+      height: 20,
+      borderRadius: "50%",
+      background: annual ? "var(--ink)" : "#fff",
+      transition: "left .2s"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    onClick: () => setAnnual(true),
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: annual ? "var(--text)" : "var(--text-mute)",
+      cursor: "pointer",
+      transition: "color .15s"
+    }
+  }, "Солона"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      fontWeight: 700,
+      color: "var(--green)",
+      background: "rgba(130,255,127,.12)",
+      border: "1px solid rgba(130,255,127,.2)",
+      borderRadius: 999,
+      padding: "2px 8px"
+    }
+  }, "Save 50%"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(3,1fr)",
+      gap: 16
+    },
+    className: "pricing-grid"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      padding: 32
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700
+    }
+  }, "Free"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 6,
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 44,
+      fontWeight: 800,
+      letterSpacing: "-0.03em"
+    }
+  }, "$0"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      opacity: .6
+    }
+  }, "forever")), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      marginTop: 24,
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    }
+  }, ["5 китоб / моҳ", "Ask AI (3 questions/day)", "Basic progress tracking"].map(f => /*#__PURE__*/React.createElement("li", {
+    key: f,
+    style: {
+      display: "flex",
+      gap: 10,
+      alignItems: "flex-start",
+      fontSize: 14
+    }
+  }, checkIcon, f))), /*#__PURE__*/React.createElement("a", {
+    href: "#download",
+    className: "btn",
+    style: {
+      marginTop: 28,
+      width: "100%",
+      justifyContent: "center",
+      display: "flex",
+      background: "transparent",
+      color: "var(--text)",
+      border: "1px solid var(--line-2)",
+      padding: "13px 0",
+      borderRadius: 999,
+      textDecoration: "none"
+    }
+  }, "Start free")), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      padding: 32,
+      position: "relative",
+      background: "linear-gradient(160deg,#8FFF6B,#6FE85A)",
+      color: "var(--ink)",
+      border: "none"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 16,
+      right: 16,
+      background: "var(--ink)",
+      color: "var(--green)",
+      padding: "4px 10px",
+      borderRadius: 999,
+      fontSize: 10,
+      fontWeight: 700,
+      letterSpacing: ".08em",
+      textTransform: "uppercase",
+      fontFamily: "'JetBrains Mono',monospace"
+    }
+  }, "Машҳуртарин"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700
+    }
+  }, "Pro"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 44,
+      fontWeight: 800,
+      letterSpacing: "-0.03em"
+    }
+  }, proMain), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      opacity: .65
+    }
+  }, proSub)), annual && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      fontWeight: 700,
+      marginTop: 5,
+      opacity: .7
+    }
+  }, "Save 50% vs monthly")), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      marginTop: 24,
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    }
+  }, ["Китобҳои беҳад", "Full Ask AI — no limits", "Гӯш кардан офлайн", "Detailed progress & streaks", "AI-personalized feed", "Regional pricing in 30+ countries"].map(f => /*#__PURE__*/React.createElement("li", {
+    key: f,
+    style: {
+      display: "flex",
+      gap: 10,
+      alignItems: "flex-start",
+      fontSize: 14
+    }
+  }, checkIcon, f))), /*#__PURE__*/React.createElement("a", {
+    href: "#download",
+    className: "btn",
+    style: {
+      marginTop: 28,
+      width: "100%",
+      justifyContent: "center",
+      display: "flex",
+      background: "var(--ink)",
+      color: "#fff",
+      border: "none",
+      padding: "13px 0",
+      borderRadius: 999,
+      textDecoration: "none"
+    }
+  }, "Try 7 days free")), /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      padding: 32,
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 16,
+      right: 16,
+      background: "rgba(251,242,168,.1)",
+      color: "var(--cream)",
+      padding: "4px 10px",
+      borderRadius: 999,
+      fontSize: 10,
+      fontWeight: 700,
+      fontFamily: "'JetBrains Mono',monospace",
+      border: "1px solid rgba(251,242,168,.2)",
+      display: "flex",
+      alignItems: "center",
+      gap: 5
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "10",
+    height: "10",
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    opacity: ".85"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M12 21c-3.3 0-6-2.7-6-6 0-3 1.5-5 3-6.5-.5 1.5 0 3 1.5 4C11 11 11.5 9 11 7.5 12.5 9 15 10.5 15 13.5c0 .8-.2 1.6-.5 2.2.8-.7 1.5-2 1.5-3.7 0 0 2 2 2 5C18 19.4 15.3 21 12 21z"
+  })), " Launch deal"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700
+    }
+  }, "Lifetime"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 44,
+      fontWeight: 800,
+      letterSpacing: "-0.03em"
+    }
+  }, "$29.99"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      opacity: .6
+    }
+  }, "one-time")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: "var(--text-mute)",
+      marginTop: 5
+    }
+  }, "First 1,000 users \xB7 Then $129")), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      marginTop: 24,
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    }
+  }, ["Everything in Pro", "Pay once, learn forever", "All future features included", "Дастгирии афзалиятнок", "Early adopter badge"].map(f => /*#__PURE__*/React.createElement("li", {
+    key: f,
+    style: {
+      display: "flex",
+      gap: 10,
+      alignItems: "flex-start",
+      fontSize: 14
+    }
+  }, checkIcon, f))), /*#__PURE__*/React.createElement("a", {
+    href: "#download",
+    className: "btn",
+    style: {
+      marginTop: 28,
+      width: "100%",
+      justifyContent: "center",
+      display: "flex",
+      background: "transparent",
+      color: "var(--text)",
+      border: "1px solid var(--line-2)",
+      padding: "13px 0",
+      borderRadius: 999,
+      textDecoration: "none"
+    }
+  }, "Claim launch price"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 24,
+      justifyContent: "center",
+      marginTop: 24,
+      flexWrap: "wrap",
+      fontSize: 13,
+      color: "var(--text-mute)"
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "\u2713 7-day free trial, no credit card required"), /*#__PURE__*/React.createElement("span", null, "\u2713 Cancel any time"), /*#__PURE__*/React.createElement("span", null, "\uD83C\uDF0D Regional pricing in 30+ markets"))));
+} /* ── DOWNLOAD ── */
+function Download() {
+  const AppleIcon = () => /*#__PURE__*/React.createElement("svg", {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+  }));
+  const PlayIcon = () => /*#__PURE__*/React.createElement("svg", {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"
+  }));
+  const storeBtnStyle = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 14,
+    padding: "16px 28px",
+    borderRadius: 16,
+    background: "#0a0a0a",
+    border: "1px solid rgba(255,255,255,.14)",
+    textDecoration: "none",
+    minWidth: 200,
+    transition: "border-color .2s,background .2s,transform .15s"
+  };
+  return /*#__PURE__*/React.createElement("section", {
+    id: "download",
+    className: "section",
+    style: {
+      paddingBottom: 60
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      padding: "80px 52px",
+      textAlign: "center",
+      background: "radial-gradient(ellipse at center, rgba(130,255,127,.13), transparent 60%), linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))",
+      position: "relative",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      background: "radial-gradient(circle at 15% 85%, rgba(251,242,168,.07), transparent 40%)"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "eyebrow",
+    style: {
+      marginBottom: 20
+    }
+  }, "Download Zehn"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: "clamp(32px,5vw,60px)",
+      fontWeight: 800,
+      letterSpacing: "-0.03em",
+      lineHeight: 1.04,
+      textWrap: "balance"
+    }
+  }, "Your next book", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("em", {
+    className: "lora",
+    style: {
+      color: "var(--green)"
+    }
+  }, "starts right now.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 18,
+      color: "var(--text-dim)",
+      fontSize: 17,
+      maxWidth: 500,
+      margin: "18px auto 0"
+    }
+  }, "Available on Android & iOS. 7-day free trial \u2014 no credit card required."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 16,
+      justifyContent: "center",
+      marginTop: 40,
+      flexWrap: "wrap"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "https://play.google.com/store/apps/details?id=com.audiobook.zehn",
+    target: "_blank",
+    rel: "noopener",
+    style: storeBtnStyle,
+    "aria-label": "Get Zehn on Google Play",
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
+      e.currentTarget.style.background = "#111";
+      e.currentTarget.style.transform = "translateY(-2px)";
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = "rgba(255,255,255,.14)";
+      e.currentTarget.style.background = "#0a0a0a";
+      e.currentTarget.style.transform = "";
+    }
+  }, /*#__PURE__*/React.createElement(PlayIcon, null), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "left"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "rgba(255,255,255,.5)",
+      lineHeight: 1,
+      marginBottom: 3
+    }
+  }, "Get it on"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 17,
+      fontWeight: 700,
+      lineHeight: 1,
+      color: "#fff"
+    }
+  }, "Google Play"))), /*#__PURE__*/React.createElement("a", {
+    href: "https://apps.apple.com/app/id6759160035",
+    target: "_blank",
+    rel: "noopener",
+    style: storeBtnStyle,
+    "aria-label": "Download Zehn on the App Store",
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
+      e.currentTarget.style.background = "#111";
+      e.currentTarget.style.transform = "translateY(-2px)";
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = "rgba(255,255,255,.14)";
+      e.currentTarget.style.background = "#0a0a0a";
+      e.currentTarget.style.transform = "";
+    }
+  }, /*#__PURE__*/React.createElement(AppleIcon, null), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "left"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: "rgba(255,255,255,.5)",
+      lineHeight: 1,
+      marginBottom: 3
+    }
+  }, "Download on the"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 17,
+      fontWeight: 700,
+      lineHeight: 1,
+      color: "#fff"
+    }
+  }, "App Store")))), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 20,
+      fontSize: 13,
+      color: "var(--text-mute)"
+    }
+  }, "Free to start \xB7 Cancel anytime \xB7 Available in English, Arabic, Russian & Tajik")))));
+} /* ── FOOTER ── */
+function Footer() {
+  const cols = [{
+    h: "Product",
+    l: [{
+      t: "Хусусиятҳо",
+      u: "#features"
+    }, {
+      t: "Китобхона",
+      u: "/books/"
+    }, {
+      t: "Чӣ тавр кор мекунад",
+      u: "#how-it-works"
+    }, {
+      t: "Нарх",
+      u: "#pricing"
+    }]
+  }, {
+    h: "Company",
+    l: [{
+      t: "Дар бораи мо",
+      u: "/en/about"
+    }, {
+      t: "FAQ",
+      u: "/en/faq"
+    }]
+  }, {
+    h: "Дастгирӣ",
+    l: [{
+      t: "Дастгирӣ",
+      u: "/en/support"
+    }, {
+      t: "Privacy",
+      u: "/en/privacy"
+    }, {
+      t: "Terms",
+      u: "/en/terms"
+    }, {
+      t: "Contact",
+      u: "mailto:Contact@safarigrp.com"
+    }]
+  }];
+  return /*#__PURE__*/React.createElement("footer", {
+    style: {
+      borderTop: "1px solid var(--line)",
+      padding: "64px 0 48px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "2fr 1fr 1fr 1fr",
+      gap: 40
+    },
+    className: "footer-grid"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(ZehnLogo, null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 20,
+      fontWeight: 800,
+      letterSpacing: "-0.02em"
+    }
+  }, "zehn")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 14,
+      color: "var(--text-dim)",
+      fontSize: 14,
+      maxWidth: 300,
+      lineHeight: 1.55
+    }
+  }, "Learn a book in 15 minutes. Bite-sized audio books for ambitious learners. Available in English, Arabic, Russian & Tajik."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 18,
+      display: "flex",
+      gap: 10
+    }
+  }, [{
+    label: "X (Twitter)",
+    h: SOCIAL_LINKS.twitter,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "currentColor"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+    }))
+  }, {
+    label: "LinkedIn",
+    h: SOCIAL_LINKS.linkedin,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "currentColor"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "4",
+      cy: "4",
+      r: "2"
+    }))
+  }, {
+    label: "Instagram",
+    h: SOCIAL_LINKS.instagram,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "2",
+      width: "20",
+      height: "20",
+      rx: "5",
+      ry: "5"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+    }), /*#__PURE__*/React.createElement("line", {
+      x1: "17.5",
+      y1: "6.5",
+      x2: "17.51",
+      y2: "6.5"
+    }))
+  }, {
+    label: "Facebook",
+    h: SOCIAL_LINKS.facebook,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "currentColor"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+    }))
+  }, {
+    label: "YouTube",
+    h: SOCIAL_LINKS.youtube,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "currentColor"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+    }), /*#__PURE__*/React.createElement("polygon", {
+      points: "9.75,15.02 15.5,12 9.75,8.98 9.75,15.02",
+      fill: "var(--ink)"
+    }))
+  }].map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.label,
+    href: s.h,
+    "aria-label": s.label,
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: "50%",
+      border: "1px solid var(--line-2)",
+      display: "grid",
+      placeItems: "center",
+      color: "var(--text-dim)",
+      textDecoration: "none",
+      transition: "border-color .2s,color .2s"
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = "rgba(255,255,255,.3)";
+      e.currentTarget.style.color = "var(--text)";
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = "";
+      e.currentTarget.style.color = "";
+    }
+  }, s.icon)))), cols.map(c => /*#__PURE__*/React.createElement("div", {
+    key: c.h
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      letterSpacing: ".14em",
+      textTransform: "uppercase",
+      color: "var(--text-mute)",
+      fontFamily: "'JetBrains Mono',monospace",
+      fontWeight: 600,
+      marginBottom: 16
+    }
+  }, c.h), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    }
+  }, c.l.map(x => /*#__PURE__*/React.createElement("a", {
+    key: x.t,
+    href: x.u,
+    style: {
+      fontSize: 14,
+      color: "var(--text-dim)"
+    }
+  }, x.t)))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 52,
+      paddingTop: 22,
+      borderTop: "1px solid var(--line)",
+      display: "flex",
+      justifyContent: "space-between",
+      flexWrap: "wrap",
+      gap: 12,
+      color: "var(--text-mute)",
+      fontSize: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", null, "\xA9 2026 Safari Group. All rights reserved."), /*#__PURE__*/React.createElement("div", null, "Made by ", /*#__PURE__*/React.createElement("a", {
+    href: "https://safarigrp.com",
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      color: "var(--text-mute)",
+      textDecoration: "underline",
+      textUnderlineOffset: "3px"
+    }
+  }, "SafariGroup")))));
+} /* ── APP ── */
+function App() {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
+</script>
     <div class="lang-picker" id="lp">
       <div class="lang-picker-btn" id="lpBtn" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language" aria-controls="lpMenu">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        Тоҷикӣ
+        English
         <svg class="lp-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
       </div>
       <div class="lang-picker-menu" role="listbox" id="lpMenu" aria-label="Language options">
-        <a href="/?lang=en" onclick="sessionStorage.setItem('zehn-lang','en')" role="option">English</a>
-        <a href="/ar">العربية</a>
-        <a href="/ru">Русский</a>
-        <a href="/tj" class="active" role="option">Тоҷикӣ</a>
+        <a href="/" class="active" role="option">English</a>
+        <a href="/ar" onclick="sessionStorage.removeItem('zehn-lang')" role="option">العربية</a>
+        <a href="/ru" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Русский</a>
+        <a href="/tj" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Тоҷикӣ</a>
       </div>
     </div>
     <script>
@@ -1380,7 +3897,11 @@
         document.addEventListener('click',function(){ setOpen(false); });
       })();
     </script>
-</body>
-
-</html>
-                                                                                                                                                                                                                                                                                                                            
+    <!-- Service Worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </sc
