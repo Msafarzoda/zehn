@@ -2804,6 +2804,28 @@ function Library() {
   const langDisplay = meta ? meta.lang_display || {} : {};
   const cats = meta ? meta.categories.slice(0, 8) : [];
   const featured = meta ? meta.featured : [];
+  const CAT_NAMES = {
+    'Personal Development': 'Саморазвитие',
+    'Family': 'Семья',
+    'Career & Business': 'Карьера и бизнес',
+    'Psychology': 'Психология',
+    'Entrepreneurship': 'Предпринимательство',
+    'Marketing & Sales': 'Маркетинг и продажи',
+    'Money & Investments': 'Деньги и инвестиции',
+    'Leadership': 'Лидерство',
+    'Biography & Memoir': 'Биография и мемуары',
+    'Relationships': 'Отношения',
+    'Negotiation': 'Переговоры',
+    'Productivity': 'Продуктивность',
+    'Technology': 'Технологии',
+    'Mindfulness & Happiness': 'Осознанность и счастье',
+    'Fiction': 'Художественная',
+    'Health & Nutrition': 'Здоровье и питание',
+    'History': 'История',
+    'Science': 'Наука',
+    'Society & Culture': 'Общество и культура',
+    'Spirituality': 'Духовность',
+  };
   const CAT_DISPLAY_COUNT = {
     'Family': 1100,
     'Career & Business': 1050,
@@ -2953,7 +2975,7 @@ function Library() {
       fontSize: 13,
       lineHeight: 1.3
     }
-  }, cat.name), /*#__PURE__*/React.createElement("div", {
+  }, CAT_NAMES[cat.name] || cat.name), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
       color: "var(--text-mute)",

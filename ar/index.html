@@ -2804,6 +2804,28 @@ function Library() {
   const langDisplay = meta ? meta.lang_display || {} : {};
   const cats = meta ? meta.categories.slice(0, 8) : [];
   const featured = meta ? meta.featured : [];
+  const CAT_NAMES = {
+    'Personal Development': 'تطوير الذات',
+    'Family': 'الأسرة',
+    'Career & Business': 'مهنة وأعمال',
+    'Psychology': 'علم النفس',
+    'Entrepreneurship': 'ريادة الأعمال',
+    'Marketing & Sales': 'تسويق ومبيعات',
+    'Money & Investments': 'المال والاستثمار',
+    'Leadership': 'القيادة',
+    'Biography & Memoir': 'سيرة ومذكرات',
+    'Relationships': 'العلاقات',
+    'Negotiation': 'التفاوض',
+    'Productivity': 'الإنتاجية',
+    'Technology': 'التكنولوجيا',
+    'Mindfulness & Happiness': 'اليقظة والسعادة',
+    'Fiction': 'الخيال',
+    'Health & Nutrition': 'الصحة والتغذية',
+    'History': 'التاريخ',
+    'Science': 'العلوم',
+    'Society & Culture': 'المجتمع والثقافة',
+    'Spirituality': 'الروحانية',
+  };
   const CAT_DISPLAY_COUNT = {
     'Family': 1100,
     'Career & Business': 1050,
@@ -2953,7 +2975,7 @@ function Library() {
       fontSize: 13,
       lineHeight: 1.3
     }
-  }, cat.name), /*#__PURE__*/React.createElement("div", {
+  }, CAT_NAMES[cat.name] || cat.name), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
       color: "var(--text-mute)",
