@@ -623,6 +623,13 @@
                 gap: 12px!important
             }
         }
+
+        @media(max-width:600px) {
+            .feat-grid { grid-template-columns: 1fr !important; }
+            .section { padding: 56px 0 !important; }
+            .section-head { margin-bottom: 36px !important; }
+            .wrap { padding-left: 18px !important; padding-right: 18px !important; }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -2702,6 +2709,7 @@ function Features() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
   }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("h2", null, "Ҳама чизе ки барои ", /*#__PURE__*/React.createElement("em", null, "идомаи омӯзиш лозим аст.")), /*#__PURE__*/React.createElement("p", null, "Гӯш кунед، бипурсед، пайгирӣ кунед — се ҳалқа ке ба ҳам ѡамъ шавад мешаванд.")), /*#__PURE__*/React.createElement("div", {
+    className: "feat-grid",
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
@@ -2757,10 +2765,11 @@ function Features() {
   }, tag))))))));
 } /* ── LIBRARY / CATEGORIES ── */
 function BookSlider({books}) {
-  if (!books || books.length < 4) return null;
-  const half = Math.ceil(books.length / 2);
-  const r1 = books.slice(0, half);
-  const r2 = books.slice(half);
+  if (!books || books.length < 6) return null;
+  const third = Math.ceil(books.length / 3);
+  const r1 = books.slice(0, third);
+  const r2 = books.slice(third, third * 2);
+  const r3 = books.slice(third * 2);
   const makeRow = (items, anim) => {
     const doubled = [...items, ...items];
     return /*#__PURE__*/React.createElement('div', {className: 'bslide-track ' + anim},
@@ -2769,7 +2778,7 @@ function BookSlider({books}) {
           /*#__PURE__*/React.createElement('img', {
             src: 'https://thezehnapp.com' + b.cover_url,
             alt: b.title || '',
-            width: 88, height: 122,
+            width: 110, height: 152,
             loading: 'lazy', draggable: false,
             className: 'bslide-img'
           })
@@ -2779,21 +2788,25 @@ function BookSlider({books}) {
   };
   return /*#__PURE__*/React.createElement('div', {className: 'bslide-wrap'},
     /*#__PURE__*/React.createElement('style', null, `
-      .bslide-wrap{overflow:hidden;padding:40px 0;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:48px}
-      .bslide-wrap::before,.bslide-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
-      .bslide-wrap::before{left:0;background:linear-gradient(to right,var(--ink) 30%,transparent)}
-      .bslide-wrap::after{right:0;background:linear-gradient(to left,var(--ink) 30%,transparent)}
+      .bslide-wrap{overflow:hidden;padding:32px 0;position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:48px}
+      .bslide-wrap::before,.bslide-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+      .bslide-wrap::before{left:0;background:linear-gradient(to right,var(--ink) 40%,transparent)}
+      .bslide-wrap::after{right:0;background:linear-gradient(to left,var(--ink) 40%,transparent)}
+      @media(max-width:600px){.bslide-wrap::before,.bslide-wrap::after{width:32px}}
       @keyframes bslide-l{from{transform:translateX(0)}to{transform:translateX(-50%)}}
       @keyframes bslide-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-      .bslide-track{display:flex;gap:12px;width:max-content;user-select:none}
-      .bslide-l{animation:bslide-l 60s linear infinite}
-      .bslide-r{animation:bslide-r 65s linear infinite;margin-top:12px}
-      .bslide-l:hover,.bslide-r:hover{animation-play-state:paused}
-      .bslide-img{width:88px;height:122px;border-radius:10px;object-fit:cover;display:block;transition:transform .2s,box-shadow .2s}
-      .bslide-img:hover{transform:scale(1.06) translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.6)}
+      .bslide-track{display:flex;gap:14px;width:max-content;user-select:none}
+      .bslide-l{animation:bslide-l 90s linear infinite}
+      .bslide-r{animation:bslide-r 105s linear infinite;margin-top:14px}
+      .bslide-l2{animation:bslide-l 82s linear infinite;margin-top:14px}
+      .bslide-l:hover,.bslide-r:hover,.bslide-l2:hover{animation-play-state:paused}
+      .bslide-img{width:110px;height:152px;border-radius:12px;object-fit:cover;display:block;transition:transform .2s,box-shadow .2s}
+      .bslide-img:hover{transform:scale(1.06) translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.65)}
+      @media(max-width:600px){.bslide-img{width:90px;height:124px;border-radius:10px}}
     `),
     makeRow(r1, 'bslide-l'),
-    makeRow(r2, 'bslide-r')
+    makeRow(r2, 'bslide-r'),
+    makeRow(r3, 'bslide-l2')
   );
 }
 function Library() {
