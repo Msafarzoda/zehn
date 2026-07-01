@@ -2509,7 +2509,7 @@ function PressStrip() {
 function HowItWorks() {
   const steps = [{
     n: "01",
-    title: "Ҳадафҳоятонро муайян кунед",
+    title: "Забонатонро интихоб кунед",
     body: "Ба Zehn бигӯед чӣ мехоҳед омӯзед, вақти рӯзонаи худ ва ҳолатҳои шумо. Феҳристи китобҳои фардикардашуда гиред — танҳо барои шумо.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
@@ -2533,7 +2533,7 @@ function HowItWorks() {
     }))
   }, {
     n: "02",
-    title: "15 дақиқа гӯш кунед",
+    title: "15 дақиқа тугмаро фишоред",
     body: "Аудиокитоби мухтасар ғояҳои асосиро фаро мегирад. Бо матни ҳамоҳангшуда пайравӣ кунед, суръататонро танзим кунед ва дар роҳ омӯзед.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
@@ -2556,8 +2556,8 @@ function HowItWorks() {
     }))
   }, {
     n: "03",
-    title: "Ҳар рӯз рушд кунед",
-    body: "Барои амиқтар шудан дар ягон ғоя аз ИИ бипурсед. Силсилаатонро пайгирӣ кунед, ба ҳадафҳои рӯзона расед ва китобхонаи дониш бинед — панҷ дақиқа дар як маврид.",
+    title: "Аз ИИ ҳар чиз бипурсед",
+    body: "Хулосаро тамом кунед ва бо ИИ чуқуртар кашфшавед. Саволҳои иловагӣ диҳед, мисолҳо талаб кунед — ба забони шумо.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2657,28 +2657,41 @@ function HowItWorks() {
   }))))))));
 } /* ── FEATURES ── */
 function Features() {
-  const items = [{
+  const items = [  {
     eyebrow: "Аудиокитобҳо",
-    title: "15 дақиқа. Ин кифоя аст.",
-    body: "Ҳар китоб ба аудиокитоби мухтасар табдил меёбад. Матни ҳамоҳангшуда имкон медиҳад пайравӣ кунед. Суръататонро танзим кунед. Дар роҳ, дар варзишгоҳ ё ҳар ҷо гӯш кунед.",
-    render: () => /*#__PURE__*/React.createElement(PlayerScreen, null),
-    accent: "var(--green)",
-    tags: ["Матни ҳамоҳанг", "Ҳолати офлайн", "Суръати тағйирёбанда"]
-  }, {
-    eyebrow: "АЗ ИИ ПУРСЕД",
+    title: "15 дақиқа. Ин ҳама чизест ки лозим дорӣ.",
+    body: "Ҳар китоб ба хулосаи аудиои мутамарказ коркард шудааст. Матн ҳамзамон бо шунидан тағйир меёбад — бо ҳар суъат، ҳатто бидуни интернет.",
+    iconChar: "▶",
+    tags: ["Матни ҳамоҳанг", "Режими офлайн", "Суъати тағйирёбанда"]
+  },
+  {
+    eyebrow: "Аз ИИ пурсед",
     title: "Бо ҳар китоб гуфтугӯ кунед.",
-    body: "Дар бораи мафҳуме кунҷков ҳастед? Аз Zehn AI бипурсед. Бо ғояҳои воқеии муаллиф — аз китоб, на интернети кушод — ҷавоб медиҳад.",
-    render: () => /*#__PURE__*/React.createElement(ChatScreen, null),
-    accent: "var(--green)",
-    tags: ["Ҷавобҳои фаврӣ", "Аз манбаъ", "Ҳар китоб"]
-  }, {
-    eyebrow: "Рушди худро пайгирӣ кунед",
-    title: "Ҳадафҳои рӯзона. Одатҳои доимӣ.",
-    body: "Ҳадафи рӯзонаи омӯзишӣ гузоред — ҳатто 5 дақиқа ҳам ҳисоб мешавад. Силсила бисозед, дастовардҳо ба даст оред ва китобхонаи дониши шахсии худро рушд диҳед.",
-    render: () => /*#__PURE__*/React.createElement(GoalsScreen, null),
-    accent: "var(--green)",
-    tags: ["Силсилаҳо", "Ҳадафҳои рӯзона", "Китобхонаи пешрафт"]
+    body: "Дар бораи мафҳӯме кунҷов ҳастед? Аз Zehn AI бипурсед. Ҳар ҷавоб ба китобе ки ҳоло шунидед асос ёфтааст.",
+    iconChar: "✦",
+    tags: ["Контексти китоб", "Саволҳои иловагӣ", "Ҳама забонҳо"]
+  },
+  {
+    eyebrow: "Пешрафтатонро пайгирӣ кунед",
+    title: "Ҳадафҳои рӯзона. Одатҳои пойдор.",
+    body: "Ҳадафи рӯзонаи омӯзиш гӯзоред ва бибинед силсилаатон чӣ тавр рушд мекунад. Омор، китобхона، пешрафт — ҳама дар як ҷо.",
+    iconChar: "▲",
+    tags: ["Силсила", "Ҳадафҳои рӯзона", "Омор"]
   }];
+  const iconBox = ic => /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: 12,
+      background: "rgba(130,255,127,.12)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--green)",
+      fontSize: 20,
+      flexShrink: 0
+    }
+  }, ic);
   return /*#__PURE__*/React.createElement("section", {
     id: "features",
     className: "section"
@@ -2688,86 +2701,61 @@ function Features() {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
-  }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("h2", null, "Ҳама чизе ки барои ", /*#__PURE__*/React.createElement("em", null, "идомаи омӯзиш лозим аст.")), /*#__PURE__*/React.createElement("p", null, "Listen, ask, and track \u2014 three simple loops that compound into a genuine learning habit.")), /*#__PURE__*/React.createElement("div", {
+  }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("h2", null, "Ҳама чизе ки барои ", /*#__PURE__*/React.createElement("em", null, "идомаи омӯзиш лозим аст.")), /*#__PURE__*/React.createElement("p", null, "Гӯш кунед، бипурсед، пайгирӣ кунед — се ҳалқа ке ба ҳам ѡамъ шавад мешаванд.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gap: 20
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: 24
     }
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("div", {
+  }, items.map((item, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "card feature-row",
+    className: "card",
     style: {
-      padding: 0,
-      display: "grid",
-      gridTemplateColumns: i === 1 ? "1fr 1.05fr" : i === 2 ? "1fr 1fr" : "1.05fr 1fr",
-      gap: 0,
-      alignItems: "stretch",
-      minHeight: 440
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: "52px 48px",
+      padding: "32px 28px",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
-      order: i % 2 ? 2 : 1
+      gap: 16
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, iconBox(item.iconChar), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow",
     style: {
-      color: it.accent
+      marginBottom: 8
     }
-  }, it.eyebrow), /*#__PURE__*/React.createElement("h3", {
+  }, item.eyebrow), /*#__PURE__*/React.createElement("h3", {
     style: {
-      fontSize: 38,
-      fontWeight: 800,
-      letterSpacing: "-0.028em",
-      lineHeight: 1.06,
-      marginTop: 14,
-      textWrap: "balance"
+      fontSize: 20,
+      fontWeight: 700,
+      letterSpacing: "-0.01em",
+      lineHeight: 1.3,
+      marginBottom: 10
     }
-  }, it.title), /*#__PURE__*/React.createElement("p", {
+  }, item.title), /*#__PURE__*/React.createElement("p", {
     style: {
-      marginTop: 16,
       color: "var(--text-dim)",
-      fontSize: 16,
-      lineHeight: 1.6,
-      textWrap: "pretty"
+      fontSize: 15,
+      lineHeight: 1.7
     }
-  }, it.body), /*#__PURE__*/React.createElement("div", {
+  }, item.body)), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 24,
       display: "flex",
-      gap: 8,
-      flexWrap: "wrap"
+      flexWrap: "wrap",
+      gap: 6,
+      marginTop: "auto",
+      paddingTop: 16
     }
-  }, it.tags.map(t => /*#__PURE__*/React.createElement("span", {
-    key: t,
+  }, item.tags.map((tag, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
     style: {
-      padding: "5px 12px",
-      borderRadius: 999,
-      border: "1px solid var(--line-2)",
-      fontSize: 12,
-      color: "var(--text-dim)"
+      fontSize: 11,
+      fontFamily: "'JetBrains Mono',monospace",
+      letterSpacing: ".06em",
+      padding: "4px 10px",
+      borderRadius: 100,
+      background: "rgba(130,255,127,.08)",
+      color: "var(--green)"
     }
-  }, t)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: `radial-gradient(circle at ${i % 2 ? "30%" : "70%"} 40%, rgba(130,255,127,.09), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.02), transparent)`,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "48px 0",
-      order: i % 2 ? 1 : 2,
-      borderLeft: i % 2 ? "none" : "1px solid var(--line)",
-      borderRight: i % 2 ? "1px solid var(--line)" : "none",
-      position: "relative",
-      overflow: "hidden"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      transform: "scale(.92)"
-    }
-  }, it.render())))))));
+  }, tag))))))));
+}
 } /* ── LIBRARY / CATEGORIES ── */
 function BookSlider({books}) {
   if (!books || books.length < 4) return null;
@@ -3017,74 +3005,43 @@ function Library() {
       marginTop: 4,
       fontFamily: "'JetBrains Mono',monospace"
     }
-  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: 20
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 18
-    }
-  }, "Китобҳои барҷаста"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/?lang=Tajik",
-    style: {
-      fontSize: 13,
-      color: "var(--green)",
-      fontWeight: 600
-    }
-  }, "Browse all \u2192")), /*#__PURE__*/React.createElement("div", {
-    className: "book-shelf"
-  }, featured.map((b, i) => /*#__PURE__*/React.createElement("a", {
-    key: i,
-    href: `/${b.language || 'en'}/books/${b.slug}/`,
-    className: "shelf-card",
-    "aria-label": b.title
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      aspectRatio: "3/4",
-      borderRadius: 8,
-      overflow: "hidden",
-      marginBottom: 10,
-      boxShadow: "0 6px 18px rgba(0,0,0,.4)"
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: b.cover_url,
-    alt: b.title,
-    style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover"
-    },
-    loading: "lazy"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 12,
-      lineHeight: 1.3
-    }
-  }, b.title))))));
+  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+"))))));
 } /* ── TESTIMONIALS ── */
 function Testimonials() {
-  const quotes = [{
+  const quotes = [  {
     t: "Дар роҳи саҳаргоҳӣ бо Zehn бештар аз он чизе ёд мегирам, ки моҳҳо китобҳои пурра хондам. Формати 15 дақиқа доҳиёна аст.",
     n: "Aisha M.",
     r: "Мудири маркетинг"
-  }, {
-    t: "Хусусияти \"Аз ИИ пурсед\" ҳайратангез аст — хоҳиш кардам бобе дар бораи стоицизм шарҳ диҳад ва таҳлили комилеро аз чаҳорчӯби худи муаллиф гирифтам.",
+  },
+  {
+    t: "Хусусияти «Аз ИИ пурсед» ҳайратангез аст — хоҳиш кардам бобе дар бораи стоицизм шарҳ диҳад ва таҳлили комилеро аз чаҳорчӯби муаллиф гирифтам.",
     n: "Daniel C.",
     r: "Докторант"
-  }, {
+  },
+  {
     t: "Ҳадафи 5 дақиқа дар рӯз гузоштам танҳо барои санҷидан. Акнун ба силсилаи 42-рӯза расидам. Пайгирии одат воқеан кор мекунад.",
     n: "Priya S.",
     r: "Муаллим"
-  }, {
-    t: "Ҳангоми варзиш гӯш мекунам. Аз ИИ мепурсам, ғояро мефаҳмам, қарор мекунам амиқтар шавам ё не. Беҳтарин филтр барои вақти арзишманд.",
+  },
+  {
+    t: "Ҳангоми варзиш гӯш мекунам. Аз ИИ мепурсам, ғояро мефаҳмам, қарор мекунам амиқтар шавам ё не.",
     n: "Jordan K.",
     r: "Бунёдгузор"
+  },
+  {
+    t: "Як сол дунболи барномаи хуби китоб ба забони тоҷикӣ гаштам. Zehn аввалинест ки воқеан кор мекунад.",
+    n: "Аҳмад К.",
+    r: "Муҳандис"
+  },
+  {
+    t: "Одати подкаст шунидан-ро бо Zehn иваз кардам. Ҳоло ғояҳоро ба анҷом мерасонам, на танҳо ҷамъ мекунам.",
+    n: "Лена В.",
+    r: "Мудири маҳсулот"
+  },
+  {
+    t: "Аудио бо матни ҳамоҳанг ва саволҳо ба ИИ. Ин омезиш хеле беҳтар аз интизоротам аст. Ба ҳамаи гурӯҳам тавсия додам.",
+    n: "Маркус Р.",
+    r: "Соҳибкор"
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "section",
@@ -3164,6 +3121,9 @@ function Testimonials() {
       color: "var(--text-mute)"
     }
   }, q.r))))))));
+function WhyZehn() {
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "Чаро Zehn?"), /*#__PURE__*/React.createElement("h2", null, "Барои ", /*#__PURE__*/React.createElement("em", null, "6 миллиарди дигар сохта шудааст.")), /*#__PURE__*/React.createElement("p", null, "Аксари барномаҳои хулосаи китоб танҳо барои забони англисӣ сохта шудаанд. Zehn аз рӯзи аввал барои арабӣ، русӣ، тоҷикӣ ва англисӣзабонон тарроҳӣ шудааст.")), /*#__PURE__*/React.createElement("div", {style:{overflowX:"auto",borderRadius:16,border:"1px solid var(--line)"}}, /*#__PURE__*/React.createElement("table", {style:{width:"100%",borderCollapse:"collapse",minWidth:500,fontSize:14}}, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"left",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)",width:"40%"}}, "Хусусият"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--green)",fontWeight:700,borderBottom:"1px solid var(--line)",background:"rgba(130,255,127,.04)"}}, "Zehn"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Blinkist"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Headway"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Китобхонаи арабӣ (+800 китоб)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Китобхонаи русӣ (+1000 китоб)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Мӯҳтавои тоҷикӣ"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "+8،000 унвон дар маҷмӯъ"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Гуфтугӯ бо ИИ"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Матни ҳамоҳанг"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Нақшаи умрбод"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))))))));
+}
 } /* ── PRICING ── */
 function Pricing() {
   const [annual, setAnnual] = React.useState(true);
@@ -3520,6 +3480,11 @@ function Pricing() {
       color: "var(--text-mute)"
     }
   }, /*#__PURE__*/React.createElement("span", null, "\u2713 7-day free trial, no credit card required"), /*#__PURE__*/React.createElement("span", null, "\u2713 Cancel any time"), /*#__PURE__*/React.createElement("span", null, "\uD83C\uDF0D Regional pricing in 30+ markets"))));
+function FAQ() {
+  const [open, setOpen] = React.useState(null);
+  const items = [{q:"Zehn аз Blinkist чӣ фарқ дорад?",a:"Blinkist танҳо англисӣ аст. Zehn арабӣ، русӣ ва тоҷикӣро дастгирӣ мекунад — ягона барномаи хулосаи китоб барои ин забонҳо дар ин миқёс. Ба ғайр аз ин، чати ИИ дорад ки ба мӯҳтавои китоб асос ёфтааст."}, {q:"Мӯҳтавои тоҷикӣ бо сифати хуб аст?",a:"Бале. Тоҷикӣ дар Zehn забони аслист. Китобхонаи тоҷикии мо китобҳо бо садои касбӣ дорад."}, {q:"Zehn дар кадом дастгоҳҳо кор мекунад?",a:"Zehn дар iOS ва Android кор мекунад. Аз App Store ё Google Play боргирӣ кунед. Веб-плеер ҳам дастрас аст."}, {q:"Оё ҳар вақт метавонем бекор кунем?",a:"Бале. Аз танзимоти иштирок дар App Store ё Google Play ҳар вақт бекор кунед. Дастрасӣ то охири давраи пардохт боқӣ мемонад."}, {q:"Ҳар хулосаи китоб чанд дақиқа аст?",a:"Аксари хулосаҳо 12–18 дақиқа мебошанд. Ҳадафи мо 15 дақиқа аст — барои фаро гирифтани ғояҳои асосӣ кофӣ ва барои роҳ мувофиқ."}, {q:"Озмоиши ройгон вуҷуд дорад?",a:"Бале. Нақшаи ройгон 5 китоб дар моҳ дорад. Нақшаи Pro 7 рӯзи озмоиши ройгон дорад — бе ниёз ба корти бонкӣ."}];
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "Саволҳои маъмул"), /*#__PURE__*/React.createElement("h2", null, "Саволҳо? ", /*#__PURE__*/React.createElement("em", null, "Ҷавоб медиҳем."))), /*#__PURE__*/React.createElement("div", {style:{maxWidth:720,margin:"0 auto"}}, items.map((item, i) => /*#__PURE__*/React.createElement("div", {key:i,style:{borderTop:"1px solid var(--line)",overflow:"hidden"}}, /*#__PURE__*/React.createElement("button", {onClick:()=>setOpen(open===i?null:i),style:{width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"20px 0",background:"none",border:"none",cursor:"pointer",textAlign:"left",color:"var(--text)",fontSize:16,fontWeight:600,fontFamily:"inherit",gap:16}}, item.q, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontSize:22,transform:open===i?"rotate(45deg)":"rotate(0)",transition:"transform .2s",flexShrink:0}}, "+")), open===i && /*#__PURE__*/React.createElement("div", {style:{paddingBottom:20,color:"var(--text-dim)",fontSize:15,lineHeight:1.7}}, item.a))))));
+}
 } /* ── DOWNLOAD ── */
 function Download() {
   const AppleIcon = () => /*#__PURE__*/React.createElement("svg", {
@@ -3679,7 +3644,7 @@ function Download() {
       lineHeight: 1,
       color: "#fff"
     }
-  }, "App Store")))), /*#__PURE__*/React.createElement("p", {
+  }, "App Store")))), /*#__PURE__*/React.createElement("div", {style:{marginTop:32,display:"flex",flexDirection:"column",alignItems:"center",gap:10}}, /*#__PURE__*/React.createElement("img", {src:"https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fthezehnapp.com%2Ftj%2F&bgcolor=03212e&color=ffffff&qzone=1",alt:"Scan to download Zehn",width:110,height:110,style:{borderRadius:10,border:"1px solid rgba(255,255,255,.12)"}}),/*#__PURE__*/React.createElement("div", {style:{fontSize:11,color:"var(--text-mute)",letterSpacing:".08em",textTransform:"uppercase",fontFamily:"'JetBrains Mono',monospace"}}, "Барои боргирӣ скан кунед")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 20,
       fontSize: 13,
@@ -3918,7 +3883,7 @@ function Footer() {
   }, "SafariGroup")))));
 } /* ── APP ── */
 function App() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(WhyZehn, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>

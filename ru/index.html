@@ -2509,8 +2509,8 @@ function PressStrip() {
 function HowItWorks() {
   const steps = [{
     n: "01",
-    title: "Поставь цели",
-    body: "Скажи Zehn, что хочешь узнать, сколько времени готов уделять и какое у тебя настроение. Получи персональный список книг — только для тебя.",
+    title: "Выбери свой язык",
+    body: "Арабский, русский, таджикский или английский — начни на том, который ближе. Более 8000 книг на твоём языке.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2533,8 +2533,8 @@ function HowItWorks() {
     }))
   }, {
     n: "02",
-    title: "Слушай 15 минут",
-    body: "Краткая аудиокнига раскрывает ключевые идеи. Следи по синхронизированному тексту, настрой скорость и учись на ходу.",
+    title: "Нажми play на 15 минут",
+    body: "Каждый саммари — только самое важное. Синхронный текст прокручивается вместе с аудио. Скорость — по желанию.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2556,8 +2556,8 @@ function HowItWorks() {
     }))
   }, {
     n: "03",
-    title: "Расти каждый день",
-    body: "Спрашивай ИИ, чтобы углубиться в любую идею. Отслеживай серии, достигай ежедневных целей и строй библиотеку знаний — пять минут за раз.",
+    title: "Спроси ИИ что угодно",
+    body: "Дослушал? Погружайся глубже с ИИ. Задавай уточняющие вопросы, проси примеры — всё на твоём языке.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2657,28 +2657,41 @@ function HowItWorks() {
   }))))))));
 } /* ── FEATURES ── */
 function Features() {
-  const items = [{
+  const items = [  {
     eyebrow: "Аудиокниги",
-    title: "15 минут. Этого достаточно.",
-    body: "Каждая книга сжата в чёткую аудиокнигу. Синхронизированный текст позволяет следить. Задай темп. Слушай в дороге, в спортзале или где угодно.",
-    render: () => /*#__PURE__*/React.createElement(PlayerScreen, null),
-    accent: "var(--green)",
-    tags: ["Синхронизированный текст", "Офлайн-режим", "Переменная скорость"]
-  }, {
-    eyebrow: "Спросить ИИ",
-    title: "Общайся с любой книгой.",
-    body: "Интересует концепция? Спроси Zehn AI. Отвечает, опираясь на идеи автора — из книги, а не открытого интернета. Каждый ответ — дверь в более глубокое понимание.",
-    render: () => /*#__PURE__*/React.createElement(ChatScreen, null),
-    accent: "var(--green)",
-    tags: ["Мгновенные ответы", "На основе источника", "Любая книга"]
-  }, {
-    eyebrow: "Отслеживай рост",
-    title: "Ежедневные цели. Прочные привычки.",
-    body: "Поставь ежедневную цель — даже 5 минут считаются. Строй серии, зарабатывай достижения и наблюдай, как растёт твоя библиотека знаний.",
-    render: () => /*#__PURE__*/React.createElement(GoalsScreen, null),
-    accent: "var(--green)",
-    tags: ["Серии", "Ежедневные цели", "Библиотека прогресса"]
+    title: "15 минут. Больше ничего не нужно.",
+    body: "Каждая книга сжата в чёткое аудио-резюме. Синхронный текст прокручивается вместе с аудио — слушай в любом темпе, даже без интернета.",
+    iconChar: "▶",
+    tags: ["Синхронный текст", "Офлайн-режим", "Переменная скорость"]
+  },
+  {
+    eyebrow: "Спроси ИИ",
+    title: "Поговори с любой книгой.",
+    body: "Хочешь разобраться в концепции? Задай вопрос Zehn AI. Каждый ответ основан на книге, которую ты только что прослушал.",
+    iconChar: "✦",
+    tags: ["Контекст книги", "Уточняющие вопросы", "Все языки"]
+  },
+  {
+    eyebrow: "Следи за прогрессом",
+    title: "Ежедневные цели. Долгосрочные привычки.",
+    body: "Поставь ежедневную цель и следи, как растёт серия. Статистика, библиотека, прогресс — всё в одном месте.",
+    iconChar: "▲",
+    tags: ["Серии", "Ежедневные цели", "Прогресс"]
   }];
+  const iconBox = ic => /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: 12,
+      background: "rgba(130,255,127,.12)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--green)",
+      fontSize: 20,
+      flexShrink: 0
+    }
+  }, ic);
   return /*#__PURE__*/React.createElement("section", {
     id: "features",
     className: "section"
@@ -2688,86 +2701,61 @@ function Features() {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
-  }, "Функции"), /*#__PURE__*/React.createElement("h2", null, "Всё, что нужно, чтобы ", /*#__PURE__*/React.createElement("em", null, "не останавливаться.")), /*#__PURE__*/React.createElement("p", null, "Listen, ask, and track \u2014 three simple loops that compound into a genuine learning habit.")), /*#__PURE__*/React.createElement("div", {
+  }, "Функции"), /*#__PURE__*/React.createElement("h2", null, "Всё, что нужно, чтобы ", /*#__PURE__*/React.createElement("em", null, "не останавливаться.")), /*#__PURE__*/React.createElement("p", null, "Слушай, спрашивай, следи — три петли, которые накапливаются в настоящее знание.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gap: 20
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: 24
     }
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("div", {
+  }, items.map((item, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "card feature-row",
+    className: "card",
     style: {
-      padding: 0,
-      display: "grid",
-      gridTemplateColumns: i === 1 ? "1fr 1.05fr" : i === 2 ? "1fr 1fr" : "1.05fr 1fr",
-      gap: 0,
-      alignItems: "stretch",
-      minHeight: 440
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: "52px 48px",
+      padding: "32px 28px",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
-      order: i % 2 ? 2 : 1
+      gap: 16
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, iconBox(item.iconChar), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow",
     style: {
-      color: it.accent
+      marginBottom: 8
     }
-  }, it.eyebrow), /*#__PURE__*/React.createElement("h3", {
+  }, item.eyebrow), /*#__PURE__*/React.createElement("h3", {
     style: {
-      fontSize: 38,
-      fontWeight: 800,
-      letterSpacing: "-0.028em",
-      lineHeight: 1.06,
-      marginTop: 14,
-      textWrap: "balance"
+      fontSize: 20,
+      fontWeight: 700,
+      letterSpacing: "-0.01em",
+      lineHeight: 1.3,
+      marginBottom: 10
     }
-  }, it.title), /*#__PURE__*/React.createElement("p", {
+  }, item.title), /*#__PURE__*/React.createElement("p", {
     style: {
-      marginTop: 16,
       color: "var(--text-dim)",
-      fontSize: 16,
-      lineHeight: 1.6,
-      textWrap: "pretty"
+      fontSize: 15,
+      lineHeight: 1.7
     }
-  }, it.body), /*#__PURE__*/React.createElement("div", {
+  }, item.body)), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 24,
       display: "flex",
-      gap: 8,
-      flexWrap: "wrap"
+      flexWrap: "wrap",
+      gap: 6,
+      marginTop: "auto",
+      paddingTop: 16
     }
-  }, it.tags.map(t => /*#__PURE__*/React.createElement("span", {
-    key: t,
+  }, item.tags.map((tag, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
     style: {
-      padding: "5px 12px",
-      borderRadius: 999,
-      border: "1px solid var(--line-2)",
-      fontSize: 12,
-      color: "var(--text-dim)"
+      fontSize: 11,
+      fontFamily: "'JetBrains Mono',monospace",
+      letterSpacing: ".06em",
+      padding: "4px 10px",
+      borderRadius: 100,
+      background: "rgba(130,255,127,.08)",
+      color: "var(--green)"
     }
-  }, t)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: `radial-gradient(circle at ${i % 2 ? "30%" : "70%"} 40%, rgba(130,255,127,.09), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.02), transparent)`,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "48px 0",
-      order: i % 2 ? 1 : 2,
-      borderLeft: i % 2 ? "none" : "1px solid var(--line)",
-      borderRight: i % 2 ? "1px solid var(--line)" : "none",
-      position: "relative",
-      overflow: "hidden"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      transform: "scale(.92)"
-    }
-  }, it.render())))))));
+  }, tag))))))));
+}
 } /* ── LIBRARY / CATEGORIES ── */
 function BookSlider({books}) {
   if (!books || books.length < 4) return null;
@@ -3017,74 +3005,43 @@ function Library() {
       marginTop: 4,
       fontFamily: "'JetBrains Mono',monospace"
     }
-  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: 20
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 18
-    }
-  }, "Рекомендуемые книги"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/?lang=Russian",
-    style: {
-      fontSize: 13,
-      color: "var(--green)",
-      fontWeight: 600
-    }
-  }, "Browse all \u2192")), /*#__PURE__*/React.createElement("div", {
-    className: "book-shelf"
-  }, featured.map((b, i) => /*#__PURE__*/React.createElement("a", {
-    key: i,
-    href: `/${b.language || 'en'}/books/${b.slug}/`,
-    className: "shelf-card",
-    "aria-label": b.title
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      aspectRatio: "3/4",
-      borderRadius: 8,
-      overflow: "hidden",
-      marginBottom: 10,
-      boxShadow: "0 6px 18px rgba(0,0,0,.4)"
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: b.cover_url,
-    alt: b.title,
-    style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover"
-    },
-    loading: "lazy"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 12,
-      lineHeight: 1.3
-    }
-  }, b.title))))));
+  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+"))))));
 } /* ── TESTIMONIALS ── */
 function Testimonials() {
-  const quotes = [{
+  const quotes = [  {
     t: "С Zehn в утренней дороге я узнаю больше, чем читая полные книги месяцами. Формат 15 минут — гениален.",
     n: "Aisha M.",
     r: "Менеджер по маркетингу"
-  }, {
-    t: "Функция \"Спросить ИИ\" — восторг. Попросил объяснить главу о стоицизме и получил идеальный разбор в рамках автора.",
+  },
+  {
+    t: "Функция «Спросить ИИ» — восторг. Попросил объяснить главу о стоицизме и получил идеальный разбор в рамках автора.",
     n: "Daniel C.",
     r: "Аспирант"
-  }, {
+  },
+  {
     t: "Поставил цель 5 минут в день просто попробовать. Каким-то образом уже 42-дневная серия. Отслеживание привычек реально работает.",
     n: "Priya S.",
     r: "Учитель"
-  }, {
+  },
+  {
     t: "Слушаю во время тренировки. Спрашиваю ИИ, понимаю идею, решаю, стоит ли углубляться. Лучший фильтр для важного.",
     n: "Jordan K.",
     r: "Основатель"
+  },
+  {
+    t: "Год искал нормальное приложение для книг на русском — что-то качественное, не машинный перевод. Zehn наконец-то это.",
+    n: "Ахмад К.",
+    r: "Инженер"
+  },
+  {
+    t: "Заменил подкасты на Zehn. Теперь реально заканчиваю идеи, а не просто их собираю.",
+    n: "Лена В.",
+    r: "Продакт-менеджер"
+  },
+  {
+    t: "Аудио плюс синхронный текст плюс вопросы к ИИ. Связка оказалась намного лучше, чем я ожидал. Рекомендую всей команде.",
+    n: "Маркус Р.",
+    r: "Предприниматель"
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "section",
@@ -3164,6 +3121,9 @@ function Testimonials() {
       color: "var(--text-mute)"
     }
   }, q.r))))))));
+function WhyZehn() {
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "Почему Zehn"), /*#__PURE__*/React.createElement("h2", null, "Создан для ", /*#__PURE__*/React.createElement("em", null, "остальных 6 миллиардов.")), /*#__PURE__*/React.createElement("p", null, "Большинство приложений с саммари создано только для английского. Zehn с первого дня строился для арабского, русского, таджикского и английского.")), /*#__PURE__*/React.createElement("div", {style:{overflowX:"auto",borderRadius:16,border:"1px solid var(--line)"}}, /*#__PURE__*/React.createElement("table", {style:{width:"100%",borderCollapse:"collapse",minWidth:500,fontSize:14}}, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"left",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)",width:"40%"}}, "Функция"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--green)",fontWeight:700,borderBottom:"1px solid var(--line)",background:"rgba(130,255,127,.04)"}}, "Zehn"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Blinkist"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Headway"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Арабская библиотека (800+ книг)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Русская библиотека (1000+ книг)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Таджикский контент"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "8 000+ книг всего"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Чат с ИИ по книге"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Синхронный текст"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "Пожизненный план"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))))))));
+}
 } /* ── PRICING ── */
 function Pricing() {
   const [annual, setAnnual] = React.useState(true);
@@ -3520,6 +3480,11 @@ function Pricing() {
       color: "var(--text-mute)"
     }
   }, /*#__PURE__*/React.createElement("span", null, "\u2713 7-day free trial, no credit card required"), /*#__PURE__*/React.createElement("span", null, "\u2713 Cancel any time"), /*#__PURE__*/React.createElement("span", null, "\uD83C\uDF0D Regional pricing in 30+ markets"))));
+function FAQ() {
+  const [open, setOpen] = React.useState(null);
+  const items = [{q:"Чем Zehn отличается от Blinkist?",a:"Blinkist — только английский. Zehn поддерживает арабский, русский и таджикский — единственное приложение с саммари, созданное для этих языков в таком масштабе. Плюс — чат с ИИ, основанный на содержании книги."}, {q:"Качество русскоязычного контента — на уровне?",a:"Да. Русский — полноценный язык в Zehn, а не перевод второго сорта. В русской библиотеке 1000+ книг с профессиональной озвучкой."}, {q:"На каких устройствах работает Zehn?",a:"Zehn работает на iOS (iPhone и iPad) и Android. Скачать можно из App Store или Google Play. Также доступен веб-плеер."}, {q:"Можно ли отменить подписку в любой момент?",a:"Да. Отменяй в настройках подписки App Store или Google Play в любое время. Доступ сохраняется до конца оплаченного периода."}, {q:"Сколько длится каждый саммари?",a:"Большинство саммари — 12–18 минут. Цель — 15 минут: достаточно, чтобы раскрыть ключевые идеи, и достаточно коротко для дороги."}, {q:"Есть ли бесплатный пробный период?",a:"Да. Бесплатный план — 5 книг в месяц. Pro план — 7 дней пробного периода без кредитной карты."}];
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "FAQ"), /*#__PURE__*/React.createElement("h2", null, "Вопросы? ", /*#__PURE__*/React.createElement("em", null, "Отвечаем."))), /*#__PURE__*/React.createElement("div", {style:{maxWidth:720,margin:"0 auto"}}, items.map((item, i) => /*#__PURE__*/React.createElement("div", {key:i,style:{borderTop:"1px solid var(--line)",overflow:"hidden"}}, /*#__PURE__*/React.createElement("button", {onClick:()=>setOpen(open===i?null:i),style:{width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"20px 0",background:"none",border:"none",cursor:"pointer",textAlign:"left",color:"var(--text)",fontSize:16,fontWeight:600,fontFamily:"inherit",gap:16}}, item.q, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontSize:22,transform:open===i?"rotate(45deg)":"rotate(0)",transition:"transform .2s",flexShrink:0}}, "+")), open===i && /*#__PURE__*/React.createElement("div", {style:{paddingBottom:20,color:"var(--text-dim)",fontSize:15,lineHeight:1.7}}, item.a))))));
+}
 } /* ── DOWNLOAD ── */
 function Download() {
   const AppleIcon = () => /*#__PURE__*/React.createElement("svg", {
@@ -3679,7 +3644,7 @@ function Download() {
       lineHeight: 1,
       color: "#fff"
     }
-  }, "App Store")))), /*#__PURE__*/React.createElement("p", {
+  }, "App Store")))), /*#__PURE__*/React.createElement("div", {style:{marginTop:32,display:"flex",flexDirection:"column",alignItems:"center",gap:10}}, /*#__PURE__*/React.createElement("img", {src:"https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fthezehnapp.com%2Fru%2F&bgcolor=03212e&color=ffffff&qzone=1",alt:"Scan to download Zehn",width:110,height:110,style:{borderRadius:10,border:"1px solid rgba(255,255,255,.12)"}}),/*#__PURE__*/React.createElement("div", {style:{fontSize:11,color:"var(--text-mute)",letterSpacing:".08em",textTransform:"uppercase",fontFamily:"'JetBrains Mono',monospace"}}, "Сканируй для скачивания")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 20,
       fontSize: 13,
@@ -3918,7 +3883,7 @@ function Footer() {
   }, "SafariGroup")))));
 } /* ── APP ── */
 function App() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(WhyZehn, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>

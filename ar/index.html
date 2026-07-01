@@ -2509,8 +2509,8 @@ function PressStrip() {
 function HowItWorks() {
   const steps = [{
     n: "01",
-    title: "حدّد أهدافك",
-    body: "أخبر زن بما تريد تعلمه ووقتك اليومي ومزاجك. احصل على قائمة كتب مخصصة — لك وحدك.",
+    title: "اختر لغتك",
+    body: "العربية أو الروسية أو الطاجيكية أو الإنجليزية — ابدأ باللغة التي تريحك. +8,000 عنوان متاح.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2533,8 +2533,8 @@ function HowItWorks() {
     }))
   }, {
     n: "02",
-    title: "استمع 15 دقيقة",
-    body: "كتاب صوتي موجز يغطي الأفكار الأساسية. تابع النص المتزامن، اضبط سرعتك، وتعلّم أينما كنت.",
+    title: "اضغط تشغيل لـ 15 دقيقة",
+    body: "كل ملخص يحتوي فقط الأفكار الأساسية. النص يتزامن أثناء الاستماع. اضبط السرعة كما تشاء.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2556,8 +2556,8 @@ function HowItWorks() {
     }))
   }, {
     n: "03",
-    title: "انمُ كل يوم",
-    body: "اسأل الذكاء الاصطناعي للتعمق في أي فكرة. تتبع انتظامك وحقق أهدافك اليومية وابنِ مكتبة معرفية — خمس دقائق في كل مرة.",
+    title: "اسأل الذكاء الاصطناعي أي سؤال",
+    body: "انتهِ من الملخص وتعمّق أكثر مع الذكاء الاصطناعي. اطرح أسئلة متابعة، واطلب أمثلة، كل ذلك بلغتك.",
     icon: /*#__PURE__*/React.createElement("svg", {
       width: "28",
       height: "28",
@@ -2657,28 +2657,41 @@ function HowItWorks() {
   }))))))));
 } /* ── FEATURES ── */
 function Features() {
-  const items = [{
+  const items = [  {
     eyebrow: "كتب صوتية",
     title: "15 دقيقة. هذا كل ما تحتاجه.",
-    body: "كل كتاب مُقطَّر في كتاب صوتي موجز ومركّز. النص المتزامن يتيح لك المتابعة. حدّد وتيرتك. استمع في التنقل، في الصالة، أو أينما أخذتك الحياة.",
-    render: () => /*#__PURE__*/React.createElement(PlayerScreen, null),
-    accent: "var(--green)",
+    body: "كل كتاب مُقَطَّر في ملخص صوتي مركّز. النص يتزامن أثناء الاستماع — العب بأي سرعة، حتى دون إنترنت.",
+    iconChar: "▶",
     tags: ["نص متزامن", "وضع عدم الاتصال", "سرعة متغيرة"]
-  }, {
-    eyebrow: "اسأل الذكاء",
+  },
+  {
+    eyebrow: "اسأل الذكاء الاصطناعي",
     title: "تحدّث مع أي كتاب.",
-    body: "فضولي حول مفهوم؟ اسأل زن AI. يجيب باستخدام أفكار المؤلف الفعلية — مستند إلى الكتاب، لا الإنترنت المفتوح. كل إجابة هي باب نحو فهم أعمق.",
-    render: () => /*#__PURE__*/React.createElement(ChatScreen, null),
-    accent: "var(--green)",
-    tags: ["إجابات فورية", "مستند إلى المصدر", "أي كتاب"]
-  }, {
-    eyebrow: "تتبع نموّك",
+    body: "فضولي حول مفهوم ما؟ اسأل زن للمتابعة. كل إجابة مستندة إلى الكتاب الذي استمعت إليه للتو.",
+    iconChar: "✦",
+    tags: ["سياق الكتاب", "أسئلة متابعة", "جميع اللغات"]
+  },
+  {
+    eyebrow: "تتبع نموك",
     title: "أهداف يومية. عادات دائمة.",
-    body: "حدّد هدفاً تعليمياً يومياً — حتى 5 دقائق تُحسب. ابنِ سلاسل انتظام واكسب إنجازات وشاهد مكتبتك المعرفية الشخصية تنمو كتاباً تلو كتاب.",
-    render: () => /*#__PURE__*/React.createElement(GoalsScreen, null),
-    accent: "var(--green)",
-    tags: ["سلاسل الانتظام", "أهداف يومية", "مكتبة التقدم"]
+    body: "ضع هدفًا يوميًا وشاهد انتظامك يكبر. إحصائياتك، مكتبتك، تقدمك — كله في مكان واحد.",
+    iconChar: "▲",
+    tags: ["سلاسل يومية", "أهداف يومية", "إحصائيات التقدم"]
   }];
+  const iconBox = ic => /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: 12,
+      background: "rgba(130,255,127,.12)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--green)",
+      fontSize: 20,
+      flexShrink: 0
+    }
+  }, ic);
   return /*#__PURE__*/React.createElement("section", {
     id: "features",
     className: "section"
@@ -2688,86 +2701,61 @@ function Features() {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
-  }, "المميزات"), /*#__PURE__*/React.createElement("h2", null, "كل ما تحتاجه ", /*#__PURE__*/React.createElement("em", null, "للاستمرار في التعلم.")), /*#__PURE__*/React.createElement("p", null, "Listen, ask, and track \u2014 three simple loops that compound into a genuine learning habit.")), /*#__PURE__*/React.createElement("div", {
+  }, "المميزات"), /*#__PURE__*/React.createElement("h2", null, "كل ما تحتاجه ", /*#__PURE__*/React.createElement("em", null, "للاستمرار في التعلم.")), /*#__PURE__*/React.createElement("p", null, "استمع، اسأل، وتتبع — ثلاثة حلقات تتراكم لتتحول إلى معرفة حقيقية.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gap: 20
+      gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+      gap: 24
     }
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("div", {
+  }, items.map((item, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "card feature-row",
+    className: "card",
     style: {
-      padding: 0,
-      display: "grid",
-      gridTemplateColumns: i === 1 ? "1fr 1.05fr" : i === 2 ? "1fr 1fr" : "1.05fr 1fr",
-      gap: 0,
-      alignItems: "stretch",
-      minHeight: 440
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: "52px 48px",
+      padding: "32px 28px",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
-      order: i % 2 ? 2 : 1
+      gap: 16
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, iconBox(item.iconChar), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow",
     style: {
-      color: it.accent
+      marginBottom: 8
     }
-  }, it.eyebrow), /*#__PURE__*/React.createElement("h3", {
+  }, item.eyebrow), /*#__PURE__*/React.createElement("h3", {
     style: {
-      fontSize: 38,
-      fontWeight: 800,
-      letterSpacing: "-0.028em",
-      lineHeight: 1.06,
-      marginTop: 14,
-      textWrap: "balance"
+      fontSize: 20,
+      fontWeight: 700,
+      letterSpacing: "-0.01em",
+      lineHeight: 1.3,
+      marginBottom: 10
     }
-  }, it.title), /*#__PURE__*/React.createElement("p", {
+  }, item.title), /*#__PURE__*/React.createElement("p", {
     style: {
-      marginTop: 16,
       color: "var(--text-dim)",
-      fontSize: 16,
-      lineHeight: 1.6,
-      textWrap: "pretty"
+      fontSize: 15,
+      lineHeight: 1.7
     }
-  }, it.body), /*#__PURE__*/React.createElement("div", {
+  }, item.body)), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 24,
       display: "flex",
-      gap: 8,
-      flexWrap: "wrap"
+      flexWrap: "wrap",
+      gap: 6,
+      marginTop: "auto",
+      paddingTop: 16
     }
-  }, it.tags.map(t => /*#__PURE__*/React.createElement("span", {
-    key: t,
+  }, item.tags.map((tag, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
     style: {
-      padding: "5px 12px",
-      borderRadius: 999,
-      border: "1px solid var(--line-2)",
-      fontSize: 12,
-      color: "var(--text-dim)"
+      fontSize: 11,
+      fontFamily: "'JetBrains Mono',monospace",
+      letterSpacing: ".06em",
+      padding: "4px 10px",
+      borderRadius: 100,
+      background: "rgba(130,255,127,.08)",
+      color: "var(--green)"
     }
-  }, t)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: `radial-gradient(circle at ${i % 2 ? "30%" : "70%"} 40%, rgba(130,255,127,.09), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.02), transparent)`,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "48px 0",
-      order: i % 2 ? 1 : 2,
-      borderLeft: i % 2 ? "none" : "1px solid var(--line)",
-      borderRight: i % 2 ? "1px solid var(--line)" : "none",
-      position: "relative",
-      overflow: "hidden"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      transform: "scale(.92)"
-    }
-  }, it.render())))))));
+  }, tag))))))));
+}
 } /* ── LIBRARY / CATEGORIES ── */
 function BookSlider({books}) {
   if (!books || books.length < 4) return null;
@@ -3017,74 +3005,43 @@ function Library() {
       marginTop: 4,
       fontFamily: "'JetBrains Mono',monospace"
     }
-  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+")))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: 20
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 18
-    }
-  }, "كتب مختارة"), /*#__PURE__*/React.createElement("a", {
-    href: "/books/?lang=Arabic",
-    style: {
-      fontSize: 13,
-      color: "var(--green)",
-      fontWeight: 600
-    }
-  }, "Browse all \u2192")), /*#__PURE__*/React.createElement("div", {
-    className: "book-shelf"
-  }, featured.map((b, i) => /*#__PURE__*/React.createElement("a", {
-    key: i,
-    href: `/${b.language || 'en'}/books/${b.slug}/`,
-    className: "shelf-card",
-    "aria-label": b.title
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      aspectRatio: "3/4",
-      borderRadius: 8,
-      overflow: "hidden",
-      marginBottom: 10,
-      boxShadow: "0 6px 18px rgba(0,0,0,.4)"
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: b.cover_url,
-    alt: b.title,
-    style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover"
-    },
-    loading: "lazy"
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700,
-      fontSize: 12,
-      lineHeight: 1.3
-    }
-  }, b.title))))));
+  }, (CAT_DISPLAY_COUNT[cat.name] || cat.count).toLocaleString(), "+"))))));
 } /* ── TESTIMONIALS ── */
 function Testimonials() {
-  const quotes = [{
+  const quotes = [  {
     t: "أتعلم أكثر في رحلتي الصباحية مع زن مما تعلمته من قراءة كتب كاملة لأشهر. التنسيق بـ15 دقيقة عبقري.",
     n: "Aisha M.",
     r: "مديرة تسويق"
-  }, {
+  },
+  {
     t: "ميزة اسأل الذكاء رائعة — طلبت منها شرح فصل عن الرواقية فأعطتني تحليلاً مثالياً من إطار المؤلف نفسه.",
     n: "Daniel C.",
     r: "طالب دكتوراه"
-  }, {
+  },
+  {
     t: "وضعت هدف 5 دقائق يومياً لتجربته. والآن بلغت 42 يوماً متواصلاً. تتبع العادات يعمل فعلاً.",
     n: "Priya S.",
     r: "معلمة"
-  }, {
+  },
+  {
     t: "أستمع أثناء التمرين. أسأل الذكاء، أفهم الفكرة، أقرر إن أردت التعمق. أفضل فلتر لما يستحق وقتي.",
     n: "Jordan K.",
     r: "مؤسس"
+  },
+  {
+    t: "أمضيت عاماً أبحث عن تطبيق جيد للكتب بالعربية. زن هو أول تطبيق يعمل فعلاً — مئات العناوين، جودة صوت رائعة.",
+    n: "أحمد ك.",
+    r: "مهندس برمجيات"
+  },
+  {
+    t: "استبدلت عادة البودكاست بزن. الآن أُنهي الأفكار فعلاً بدلاً من مجرد جمعها.",
+    n: "سارة م.",
+    r: "مديرة منتج"
+  },
+  {
+    t: "الصوت مع النص المتزامن ومتابعة الذكاء الاصطناعي. هذا المزيج أفضل بكثير مما توقعت. أوصيت به لكل فريقي.",
+    n: "محمد ر.",
+    r: "رائد أعمال"
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "section",
@@ -3164,6 +3121,9 @@ function Testimonials() {
       color: "var(--text-mute)"
     }
   }, q.r))))))));
+function WhyZehn() {
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "لماذا زن؟"), /*#__PURE__*/React.createElement("h2", null, "مبني لـ", /*#__PURE__*/React.createElement("em", null, "ستة مليارات الآخرين.")), /*#__PURE__*/React.createElement("p", null, "معظم تطبيقات ملخصات الكتب صُنعت للإنجليزية فقط. زن صُمِّم منذ اليوم الأول للناطقين بالعربية والروسية والطاجيكية والإنجليزية.")), /*#__PURE__*/React.createElement("div", {style:{overflowX:"auto",borderRadius:16,border:"1px solid var(--line)"}}, /*#__PURE__*/React.createElement("table", {style:{width:"100%",borderCollapse:"collapse",minWidth:500,fontSize:14}}, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"left",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)",width:"40%"}}, "الميزة"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--green)",fontWeight:700,borderBottom:"1px solid var(--line)",background:"rgba(130,255,127,.04)"}}, "Zehn"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Blinkist"), /*#__PURE__*/React.createElement("th", {style:{padding:"16px 20px",textAlign:"center",color:"var(--text-mute)",fontWeight:600,borderBottom:"1px solid var(--line)"}}, "Headway"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "مكتبة عربية (+800 كتاب)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "مكتبة روسية (+1000 كتاب)"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(130,255,127,.4)",fontSize:13}}, "partial"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "محتوى طاجيكي"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "+8,000 عنوان إجمالاً"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "الدردشة مع الذكاء الاصطناعي"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "نص متزامن"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓"))), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",color:"var(--text)",fontWeight:500}}, "خطة مدى الحياة"), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center",background:"rgba(130,255,127,.04)"}}, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontWeight:700,fontSize:18}}, "✓")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗")), /*#__PURE__*/React.createElement("td", {style:{padding:"14px 20px",textAlign:"center"}}, /*#__PURE__*/React.createElement("span", {style:{color:"rgba(255,255,255,.2)",fontSize:18}}, "✗"))))))));
+}
 } /* ── PRICING ── */
 function Pricing() {
   const [annual, setAnnual] = React.useState(true);
@@ -3520,6 +3480,11 @@ function Pricing() {
       color: "var(--text-mute)"
     }
   }, /*#__PURE__*/React.createElement("span", null, "\u2713 7-day free trial, no credit card required"), /*#__PURE__*/React.createElement("span", null, "\u2713 Cancel any time"), /*#__PURE__*/React.createElement("span", null, "\uD83C\uDF0D Regional pricing in 30+ markets"))));
+function FAQ() {
+  const [open, setOpen] = React.useState(null);
+  const items = [{q:"كيف يختلف زن عن Blinkist؟",a:"Blinkist باللغة الإنجليزية فقط. زن يدعم العربية والروسية والطاجيكية — التطبيق الوحيد المبني لهذه اللغات على هذا النطاق. كما يتضمن محادثة مع الذكاء الاصطناعي مبنية على محتوى الكتاب نفسه."}, {q:"هل المحتوى العربي بجودة جيدة؟",a:"نعم. العربية لغة رئيسية في زن — وليست ترجمة آلية. مكتبتنا العربية تضم +800 كتاب بتعليق صوتي احترافي وتصميم من اليمين إلى اليسار."}, {q:"على أي أجهزة يعمل زن؟",a:"زن يعمل على iOS وAndroid. قم بالتنزيل من App Store أو Google Play. يتوفر أيضاً مشغل ويب."}, {q:"هل يمكنني الإلغاء في أي وقت؟",a:"نعم. الغِ اشتراكك من إعدادات App Store أو Google Play في أي وقت. ستحتفظ بالوصول حتى نهاية فترة الفوترة."}, {q:"كم مدة كل ملخص كتاب؟",a:"معظم الملخصات بين 12 و18 دقيقة. نهدف إلى 15 دقيقة — طويلة بما يكفي لتغطية الأفكار الرئيسية، وقصيرة بما يناسب التنقل."}, {q:"هل توجد فترة تجريبية مجانية؟",a:"نعم. الخطة المجانية تشمل 5 كتب شهرياً. خطة Pro تأتي مع 7 أيام مجانية — دون الحاجة لبطاقة ائتمان."}];
+  return /*#__PURE__*/React.createElement("section", {className:"section",style:{paddingTop:0}}, /*#__PURE__*/React.createElement("div", {className:"wrap"}, /*#__PURE__*/React.createElement("div", {className:"section-head"}, /*#__PURE__*/React.createElement("div", {className:"eyebrow"}, "الأسئلة الشائعة"), /*#__PURE__*/React.createElement("h2", null, "أسئلة؟ ", /*#__PURE__*/React.createElement("em", null, "إليك الإجابات."))), /*#__PURE__*/React.createElement("div", {style:{maxWidth:720,margin:"0 auto"}}, items.map((item, i) => /*#__PURE__*/React.createElement("div", {key:i,style:{borderTop:"1px solid var(--line)",overflow:"hidden"}}, /*#__PURE__*/React.createElement("button", {onClick:()=>setOpen(open===i?null:i),style:{width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"20px 0",background:"none",border:"none",cursor:"pointer",textAlign:"left",color:"var(--text)",fontSize:16,fontWeight:600,fontFamily:"inherit",gap:16}}, item.q, /*#__PURE__*/React.createElement("span", {style:{color:"var(--green)",fontSize:22,transform:open===i?"rotate(45deg)":"rotate(0)",transition:"transform .2s",flexShrink:0}}, "+")), open===i && /*#__PURE__*/React.createElement("div", {style:{paddingBottom:20,color:"var(--text-dim)",fontSize:15,lineHeight:1.7}}, item.a))))));
+}
 } /* ── DOWNLOAD ── */
 function Download() {
   const AppleIcon = () => /*#__PURE__*/React.createElement("svg", {
@@ -3679,7 +3644,7 @@ function Download() {
       lineHeight: 1,
       color: "#fff"
     }
-  }, "App Store")))), /*#__PURE__*/React.createElement("p", {
+  }, "App Store")))), /*#__PURE__*/React.createElement("div", {style:{marginTop:32,display:"flex",flexDirection:"column",alignItems:"center",gap:10}}, /*#__PURE__*/React.createElement("img", {src:"https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fthezehnapp.com%2Far%2F&bgcolor=03212e&color=ffffff&qzone=1",alt:"Scan to download Zehn",width:110,height:110,style:{borderRadius:10,border:"1px solid rgba(255,255,255,.12)"}}),/*#__PURE__*/React.createElement("div", {style:{fontSize:11,color:"var(--text-mute)",letterSpacing:".08em",textTransform:"uppercase",fontFamily:"'JetBrains Mono',monospace"}}, "امسح للتنزيل")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 20,
       fontSize: 13,
@@ -3918,7 +3883,7 @@ function Footer() {
   }, "SafariGroup")))));
 } /* ── APP ── */
 function App() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(PressStrip, null), /*#__PURE__*/React.createElement(HowItWorks, null), /*#__PURE__*/React.createElement(Library, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(WhyZehn, null), /*#__PURE__*/React.createElement(Pricing, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Download, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>
