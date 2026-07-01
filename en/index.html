@@ -626,10 +626,16 @@
         }
 
         @media(max-width:600px) {
-            .feat-grid { grid-template-columns: 1fr !important; }
+            .feat-grid { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; padding:4px 4px 24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+            .feat-grid::-webkit-scrollbar { display:none; }
+            .feat-grid > div { scroll-snap-align:start; flex:0 0 82vw !important; min-width:0; }
             .section { padding: 56px 0 !important; }
             .section-head { margin-bottom: 36px !important; }
             .wrap { padding-left: 18px !important; padding-right: 18px !important; }
+            /* Testimonials horizontal snap on mobile */
+            .test-grid { display:flex !important; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding:4px 4px 24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+            .test-grid::-webkit-scrollbar { display:none; }
+            .test-grid > div { scroll-snap-align:start; flex:0 0 82vw !important; min-width:0; }
         }
     </style>
 
@@ -3041,6 +3047,7 @@ function Testimonials() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
   }, "From our learners"), /*#__PURE__*/React.createElement("h2", null, "Real growth. ", /*#__PURE__*/React.createElement("em", null, "15 minutes at a time."))), /*#__PURE__*/React.createElement("div", {
+    className: "test-grid",
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
