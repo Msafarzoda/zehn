@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get Zehn — Download for iOS &amp; Android</title>
+  <meta name="description" content="Download Zehn for iOS or Android — learn a book in 15 minutes." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://thezehnapp.com/get/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" /></noscript>
+
+  <script>
+    (function() {
+      var ua = navigator.userAgent || navigator.vendor || '';
+      var APP_STORE = 'https://apps.apple.com/app/id6759160035';
+      var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en';
+
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      // iPadOS 13+ reports as Mac — catch touch-enabled Macs too
+      var isIPadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+      var isAndroid = /Android/.test(ua);
+
+      if (isIOS || isIPadOS) {
+        window.location.replace(APP_STORE);
+      } else if (isAndroid) {
+        window.location.replace(GOOGLE_PLAY);
+      }
+      // else: desktop / unknown — fall through to the page below
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0;url=/en/" /></noscript>
+
+  <style>
+    :root {
+      --ink: #03212E;
+      --text: #EAF3F8;
+      --text-dim: rgba(234,243,248,.70);
+      --text-mute: rgba(234,243,248,.55);
+      --green: #82FF7F;
+      --line: rgba(255,255,255,.08);
+      --line-2: rgba(255,255,255,.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--ink);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+    .grid-decor {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+      opacity: .5;
+      pointer-events: none;
+    }
+    .glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 600px 400px at center, rgba(130,255,127,.10), transparent 65%);
+      pointer-events: none;
+    }
+    .card {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo-mark {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    p.sub {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      max-width: 320px;
+      margin: 0 auto 32px;
+    }
+    .stores {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 26px;
+      border-radius: 16px;
+      background: #0a0a0a;
+      border: 1px solid var(--line-2);
+      text-decoration: none;
+      width: 100%;
+      max-width: 260px;
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+    .store-btn:hover {
+      border-color: rgba(255,255,255,.32);
+      background: #111;
+      transform: translateY(-2px);
+    }
+    .store-btn svg { color: #fff; flex-shrink: 0; }
+    .store-btn .txt { text-align: left; display: flex; flex-direction: column; }
+    .store-btn .txt .top {
+      font-size: 11px;
+      color: rgba(255,255,255,.5);
+      line-height: 1;
+      margin-bottom: 3px;
+      display: block;
+    }
+    .store-btn .txt .bottom {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      display: block;
+    }
+    .qr {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .qr img {
+      border-radius: 10px;
+      border: 1px solid var(--line-2);
+    }
+    .qr span {
+      font-size: 11px;
+      color: var(--text-mute);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-decor"></div>
+  <div class="glow"></div>
+
+  <div class="card">
+    <svg class="logo-mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="400" height="400" rx="108" fill="#03212E"/>
+      <g transform="translate(60, 60) scale(11.6)">
+        <rect x="3" y="4" width="18" height="3.4" rx="1.7" fill="#ffffff"/>
+        <rect x="3" y="10.3" width="18" height="3.4" rx="1.7" fill="#ffffff" transform="rotate(-32 12 12)"/>
+        <rect x="3" y="16.6" width="18" height="3.4" rx="1.7" fill="#ffffff"/>
+      </g>
+    </svg>
+
+    <span class="eyebrow">Get The App</span>
+    <h1>Learn a book in 15 minutes.</h1>
+    <p class="sub">Choose your platform to download Zehn — bite-sized audio books for ambitious learners.</p>
+
+    <div class="stores">
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en" aria-label="Get Zehn on Google Play">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199 2.807 1.626a1 1 0 0 1 0 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"/></svg>
+        <span class="txt"><span class="top">Get it on</span><span class="bottom">Google Play</span></span>
+      </a>
+      <a class="store-btn" href="https://apps.apple.com/app/id6759160035" aria-label="Download Zehn on the App Store">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <span class="txt"><span class="top">Download on the</span><span class="bottom">App Store</span></span>
+      </a>
+    </div>
+
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fthezehnapp.com%2Fget%2F&bgcolor=03212e&color=ffffff&qzone=1" alt="Scan to download Zehn" width="110" height="110" />
+      <span>Scan to download</span>
+    </div>
+  </div>
+</body>
+</html>
