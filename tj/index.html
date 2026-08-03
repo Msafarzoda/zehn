@@ -10,7 +10,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EK4PL0CGRY');
+  gtag('config', 'G-EK4PL0CGRY');gtag('config','G-HM5D01TP2C');
 </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -237,7 +237,7 @@
             right: 0;
             z-index: 50;
             padding: 16px 0;
-            transition: background .3s, backdrop-filter .3s, border-color .3s;
+            transition: background .3s, backdrop-filter .3s, border-color .3s, transform .3s ease;
             border-bottom: 1px solid transparent
         }
         
@@ -246,6 +246,10 @@
             backdrop-filter: blur(20px) saturate(140%);
             border-bottom-color: var(--line)
         }
+        .nav.nav-hidden {
+            transform: translateY(-100%);
+        }
+
         
         .nav-row {
             display: flex;
@@ -2108,13 +2112,21 @@ function GoalsScreen() {
 } /* ── NAV ── */
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
+  const [hidden, setHidden] = React.useState(false);
+  const lastY = React.useRef(0);
   React.useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", h);
+    const h = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      if (y > lastY.current + 5) setHidden(true);
+      else if (y < lastY.current - 5) setHidden(false);
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", h, {passive: true});
     return () => window.removeEventListener("scroll", h);
   }, []);
   return /*#__PURE__*/React.createElement("nav", {
-    className: "nav " + (scrolled ? "scrolled" : "")
+    className: "nav " + (scrolled ? "scrolled" : "") + (hidden ? " nav-hidden" : "")
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap nav-row"
   }, /*#__PURE__*/React.createElement("a", {
@@ -3601,6 +3613,9 @@ function Download() {
     rel: "noopener",
     style: storeBtnStyle,
     "aria-label": "Get Zehn on Google Play",
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "download_section", lang: "tj"});
+    },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
       e.currentTarget.style.background = "#111";
@@ -3635,6 +3650,9 @@ function Download() {
     rel: "noopener",
     style: storeBtnStyle,
     "aria-label": "Download Zehn on the App Store",
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "download_section", lang: "tj"});
+    },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
       e.currentTarget.style.background = "#111";
@@ -3695,6 +3713,9 @@ function Footer() {
     }, {
       t: "FAQ",
       u: "/en/faq"
+    }, {
+      t: "Шарикон",
+      u: "/affiliates/"
     }]
   }, {
     h: "Дастгирӣ",

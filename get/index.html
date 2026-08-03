@@ -14,6 +14,14 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" /></noscript>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EK4PL0CGRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EK4PL0CGRY');
+    gtag('config', 'G-HM5D01TP2C');
+  </script>
   <script>
     (function() {
       var ua = navigator.userAgent || navigator.vendor || '';
@@ -25,10 +33,22 @@
       var isIPadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
       var isAndroid = /Android/.test(ua);
 
-      if (isIOS || isIPadOS) {
-        window.location.replace(APP_STORE);
-      } else if (isAndroid) {
-        window.location.replace(GOOGLE_PLAY);
+      var platform = (isIOS || isIPadOS) ? 'ios' : (isAndroid ? 'android' : null);
+      var target = platform === 'ios' ? APP_STORE : (platform === 'android' ? GOOGLE_PLAY : null);
+
+      if (target) {
+        var redirected = false;
+        var doRedirect = function() {
+          if (redirected) return;
+          redirected = true;
+          window.location.replace(target);
+        };
+        gtag('event', 'download_redirect', {
+          platform: platform,
+          event_callback: doRedirect,
+          event_timeout: 300
+        });
+        setTimeout(doRedirect, 300);
       }
       // else: desktop / unknown — fall through to the page below
     })();
