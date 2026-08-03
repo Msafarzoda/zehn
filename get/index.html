@@ -25,8 +25,17 @@
   <script>
     (function() {
       var ua = navigator.userAgent || navigator.vendor || '';
-      var APP_STORE = 'https://apps.apple.com/app/id6759160035';
-      var GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en';
+      var APP_STORE_BASE = 'https://apps.apple.com/app/id6759160035';
+      var GOOGLE_PLAY_BASE = 'https://play.google.com/store/apps/details?id=com.audiobook.zehn&hl=en';
+
+      var params = new URLSearchParams(window.location.search);
+      var utm = {
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_content: params.get('utm_content') || '',
+        utm_term: params.get('utm_term') || ''
+      };
 
       var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
       // iPadOS 13+ reports as Mac — catch touch-enabled Macs too
@@ -34,7 +43,19 @@
       var isAndroid = /Android/.test(ua);
 
       var platform = (isIOS || isIPadOS) ? 'ios' : (isAndroid ? 'android' : null);
-      var target = platform === 'ios' ? APP_STORE : (platform === 'android' ? GOOGLE_PLAY : null);
+
+      var target = null;
+      if (platform === 'ios') {
+        target = APP_STORE_BASE;
+      } else if (platform === 'android') {
+        // Play Install Referrer — read by the app's Firebase SDK after install,
+        // once Firebase is integrated in the Android app itself.
+        var referrerParts = [];
+        for (var key in utm) {
+          if (utm[key]) referrerParts.push(key + '=' + encodeURIComponent(utm[key]));
+        }
+        target = GOOGLE_PLAY_BASE + (referrerParts.length ? '&referrer=' + encodeURIComponent(referrerParts.join('&')) : '');
+      }
 
       if (target) {
         var redirected = false;
@@ -43,11 +64,11 @@
           redirected = true;
           window.location.replace(target);
         };
-        gtag('event', 'download_redirect', {
+        gtag('event', 'download_redirect', Object.assign({
           platform: platform,
           event_callback: doRedirect,
           event_timeout: 300
-        });
+        }, utm));
         setTimeout(doRedirect, 300);
       }
       // else: desktop / unknown — fall through to the page below

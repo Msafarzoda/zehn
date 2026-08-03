@@ -36,6 +36,8 @@
     <link rel="alternate" hreflang="ar"        href="https://thezehnapp.com/ar/" />
     <link rel="alternate" hreflang="ru"        href="https://thezehnapp.com/ru/" />
     <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/tj/" />
+    <link rel="alternate" hreflang="hi"        href="https://thezehnapp.com/hindi/" />
+    <link rel="alternate" hreflang="ur"        href="https://thezehnapp.com/urdu/" />
     <link rel="alternate" hreflang="x-default" href="https://thezehnapp.com/en/" />
 
     <!-- Icons & Manifest -->
@@ -290,6 +292,49 @@
             .nav-links {
                 display: none
             }
+        }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+        @media(max-width:860px) {
+            .nav-hamburger {
+                display: flex;
+            }
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            padding: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(3,33,46,.98);
+            backdrop-filter: blur(20px) saturate(140%);
+            border-bottom: 1px solid var(--line);
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            padding: 13px 16px;
+            border-radius: 10px;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 15px;
+            transition: background .15s, color .15s;
+        }
+        .mobile-menu a:hover {
+            background: rgba(255,255,255,.05);
+            color: var(--text);
         }
         /* buttons */
         
@@ -2114,6 +2159,7 @@ function GoalsScreen() {
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const lastY = React.useRef(0);
   React.useEffect(() => {
     const h = () => {
@@ -2126,6 +2172,7 @@ function Nav() {
     window.addEventListener("scroll", h, {passive: true});
     return () => window.removeEventListener("scroll", h);
   }, []);
+  const closeMobile = () => setMobileOpen(false);
   return /*#__PURE__*/React.createElement("nav", {
     className: "nav " + (scrolled ? "scrolled" : "") + (hidden ? " nav-hidden" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -2154,7 +2201,41 @@ function Nav() {
     style: {
       padding: "10px 16px"
     }
-  }, "Download Now"))));
+  }, "Download Now"), /*#__PURE__*/React.createElement("button", {
+    className: "nav-hamburger",
+    "aria-label": "Toggle menu",
+    "aria-expanded": mobileOpen,
+    onClick: () => setMobileOpen(!mobileOpen)
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round"
+  }, mobileOpen ? /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18M6 6l12 12"
+  }) : /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18M3 12h18M3 18h18"
+  }))))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-menu " + (mobileOpen ? "open" : "")
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#features",
+    onClick: closeMobile
+  }, "Features"), /*#__PURE__*/React.createElement("a", {
+    href: "#how-it-works",
+    onClick: closeMobile
+  }, "How It Works"), /*#__PURE__*/React.createElement("a", {
+    href: "/books/",
+    onClick: closeMobile
+  }, "Library"), /*#__PURE__*/React.createElement("a", {
+    href: "#pricing",
+    onClick: closeMobile
+  }, "Pricing"), /*#__PURE__*/React.createElement("a", {
+    href: "/blog/",
+    onClick: closeMobile
+  }, "Blog")));
 } /* ── HERO ── */
 function Hero() {
   return /*#__PURE__*/React.createElement("section", {
@@ -2196,7 +2277,7 @@ function Hero() {
     className: "chip"
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), " Now in 4 languages \xB7 8,000+ books"), /*#__PURE__*/React.createElement("h1", {
+  }), " Now in 6 languages \xB7 8,000+ books"), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontSize: "clamp(44px,6.4vw,82px)",
       fontWeight: 800,
@@ -2235,6 +2316,9 @@ function Hero() {
     className: "btn btn-dark",
     style: {
       padding: "13px 20px"
+    },
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "hero", utm_source: "website_hero", lang: "en"});
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "17",
@@ -2250,6 +2334,9 @@ function Hero() {
     className: "btn btn-dark",
     style: {
       padding: "13px 20px"
+    },
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "hero", utm_source: "website_hero", lang: "en"});
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "17",
@@ -2304,7 +2391,7 @@ function Hero() {
     v: "15 min",
     l: "avg. book"
   }, {
-    v: "4",
+    v: "6",
     l: "languages"
   }].map(k => /*#__PURE__*/React.createElement("div", {
     key: k.l
@@ -2925,7 +3012,7 @@ function Library() {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
-  }, "The Library"), /*#__PURE__*/React.createElement("h2", null, "8,000+ books across ", /*#__PURE__*/React.createElement("em", null, "every topic.")), /*#__PURE__*/React.createElement("p", null, "From leadership to stoicism, personal finance to deep focus \u2014 if it's worth knowing, Zehn has a book for it. Available in English, Arabic, Russian, and Tajik.")), /*#__PURE__*/React.createElement("div", {
+  }, "The Library"), /*#__PURE__*/React.createElement("h2", null, "8,000+ books across ", /*#__PURE__*/React.createElement("em", null, "every topic.")), /*#__PURE__*/React.createElement("p", null, "From leadership to stoicism, personal finance to deep focus \u2014 if it's worth knowing, Zehn has a book for it. Available in English, Arabic, Russian, Tajik, Hindi, and Urdu.")), /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "center",
       marginBottom: 48
@@ -3588,7 +3675,7 @@ function Download() {
     style: storeBtnStyle,
     "aria-label": "Get Zehn on Google Play",
     onClick: () => {
-      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "download_section", lang: "en"});
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "download_section", utm_source: "website_download_section", lang: "en"});
     },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
@@ -3625,7 +3712,7 @@ function Download() {
     style: storeBtnStyle,
     "aria-label": "Download Zehn on the App Store",
     onClick: () => {
-      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "download_section", lang: "en"});
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "download_section", utm_source: "website_download_section", lang: "en"});
     },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
@@ -3661,7 +3748,7 @@ function Download() {
       fontSize: 13,
       color: "var(--text-mute)"
     }
-  }, "Free to start \xB7 Cancel anytime \xB7 Available in English, Arabic, Russian & Tajik")))));
+  }, "Free to start \xB7 Cancel anytime \xB7 Available in English, Arabic, Russian, Tajik, Hindi & Urdu")))));
 } /* ── FOOTER ── */
 function Footer() {
   const cols = [{
@@ -3741,7 +3828,7 @@ function Footer() {
       maxWidth: 300,
       lineHeight: 1.55
     }
-  }, "Learn a book in 15 minutes. Bite-sized audio books for ambitious learners. Available in English, Arabic, Russian & Tajik."), /*#__PURE__*/React.createElement("div", {
+  }, "Learn a book in 15 minutes. Bite-sized audio books for ambitious learners. Available in English, Arabic, Russian, Tajik, Hindi & Urdu."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 18,
       display: "flex",
@@ -3908,10 +3995,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.c
         <svg class="lp-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
       </div>
       <div class="lang-picker-menu" role="listbox" id="lpMenu" aria-label="Language options">
-        <a href="/en/" class="active" role="option">English</a>
+                <a href="/en/" class="active" role="option">English</a>
         <a href="/ar" onclick="sessionStorage.removeItem('zehn-lang')" role="option">العربية</a>
         <a href="/ru" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Русский</a>
         <a href="/tj" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Тоҷикӣ</a>
+        <a href="/hindi" onclick="sessionStorage.removeItem('zehn-lang')" role="option">हिन्दी</a>
+        <a href="/urdu" onclick="sessionStorage.removeItem('zehn-lang')" role="option">اردو</a>
       </div>
     </div>
     <script>

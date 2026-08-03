@@ -35,6 +35,8 @@
     <link rel="alternate" hreflang="ar"        href="https://thezehnapp.com/ar/" />
     <link rel="alternate" hreflang="ru"        href="https://thezehnapp.com/ru/" />
     <link rel="alternate" hreflang="tg"        href="https://thezehnapp.com/tj/" />
+    <link rel="alternate" hreflang="hi"        href="https://thezehnapp.com/hindi/" />
+    <link rel="alternate" hreflang="ur"        href="https://thezehnapp.com/urdu/" />
     <link rel="alternate" hreflang="x-default" href="https://thezehnapp.com/en/" />
 
     <!-- Icons & Manifest -->
@@ -289,6 +291,49 @@
             .nav-links {
                 display: none
             }
+        }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+        @media(max-width:860px) {
+            .nav-hamburger {
+                display: flex;
+            }
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            padding: 12px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(3,33,46,.98);
+            backdrop-filter: blur(20px) saturate(140%);
+            border-bottom: 1px solid var(--line);
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            padding: 13px 16px;
+            border-radius: 10px;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 15px;
+            transition: background .15s, color .15s;
+        }
+        .mobile-menu a:hover {
+            background: rgba(255,255,255,.05);
+            color: var(--text);
         }
         /* buttons */
         
@@ -2113,6 +2158,7 @@ function GoalsScreen() {
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const lastY = React.useRef(0);
   React.useEffect(() => {
     const h = () => {
@@ -2125,6 +2171,7 @@ function Nav() {
     window.addEventListener("scroll", h, {passive: true});
     return () => window.removeEventListener("scroll", h);
   }, []);
+  const closeMobile = () => setMobileOpen(false);
   return /*#__PURE__*/React.createElement("nav", {
     className: "nav " + (scrolled ? "scrolled" : "") + (hidden ? " nav-hidden" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -2153,7 +2200,41 @@ function Nav() {
     style: {
       padding: "10px 16px"
     }
-  }, "Зеркаш кунед"))));
+  }, "Зеркаш кунед"), /*#__PURE__*/React.createElement("button", {
+    className: "nav-hamburger",
+    "aria-label": "Toggle menu",
+    "aria-expanded": mobileOpen,
+    onClick: () => setMobileOpen(!mobileOpen)
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round"
+  }, mobileOpen ? /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18M6 6l12 12"
+  }) : /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18M3 12h18M3 18h18"
+  }))))), /*#__PURE__*/React.createElement("div", {
+    className: "mobile-menu " + (mobileOpen ? "open" : "")
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#features",
+    onClick: closeMobile
+  }, "Хусусиятҳо"), /*#__PURE__*/React.createElement("a", {
+    href: "#how-it-works",
+    onClick: closeMobile
+  }, "Чӣ тавр кор мекунад"), /*#__PURE__*/React.createElement("a", {
+    href: "/books/",
+    onClick: closeMobile
+  }, "Китобхона"), /*#__PURE__*/React.createElement("a", {
+    href: "#pricing",
+    onClick: closeMobile
+  }, "Нарх"), /*#__PURE__*/React.createElement("a", {
+    href: "/tj/blog/",
+    onClick: closeMobile
+  }, "Блог")));
 } /* ── HERO ── */
 function Hero() {
   return /*#__PURE__*/React.createElement("section", {
@@ -2195,7 +2276,7 @@ function Hero() {
     className: "chip"
   }, /*#__PURE__*/React.createElement("span", {
     className: "dot"
-  }), " Now in 4 languages \xB7 8,000+ books"), /*#__PURE__*/React.createElement("h1", {
+  }), " Ҳоло бо 6 забон \xB7 беш аз 8,000 китоб"), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontSize: "clamp(44px,6.4vw,82px)",
       fontWeight: 800,
@@ -2234,6 +2315,9 @@ function Hero() {
     className: "btn btn-dark",
     style: {
       padding: "13px 20px"
+    },
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "hero", utm_source: "website_hero", lang: "tj"});
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "17",
@@ -2249,6 +2333,9 @@ function Hero() {
     className: "btn btn-dark",
     style: {
       padding: "13px 20px"
+    },
+    onClick: () => {
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "hero", utm_source: "website_hero", lang: "tj"});
     }
   }, /*#__PURE__*/React.createElement("svg", {
     width: "17",
@@ -2303,7 +2390,7 @@ function Hero() {
     v: "15 min",
     l: "миёнаи китоб"
   }, {
-    v: "4",
+    v: "6",
     l: "забон"
   }].map(k => /*#__PURE__*/React.createElement("div", {
     key: k.l
@@ -2951,7 +3038,7 @@ function Library() {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
     className: "eyebrow"
-  }, "Китобхона"), /*#__PURE__*/React.createElement("h2", null, "Беш аз 8,000 китоб дар ", /*#__PURE__*/React.createElement("em", null, "ҳар мавзӯъ.")), /*#__PURE__*/React.createElement("p", null, "Аз раҳбарӣ то молияи шахсӣ, аз стоицизм то тамаркузи чуқур \u2014 агар донистан арзиш дорад, дар Zehn китобе ҳаст. Дастрас ба тоҷикӣ, арабӣ, русӣ ва англисӣ.")), /*#__PURE__*/React.createElement("div", {
+  }, "Китобхона"), /*#__PURE__*/React.createElement("h2", null, "Беш аз 8,000 китоб дар ", /*#__PURE__*/React.createElement("em", null, "ҳар мавзӯъ.")), /*#__PURE__*/React.createElement("p", null, "Аз раҳбарӣ то молияи шахсӣ, аз стоицизм то тамаркузи чуқур \u2014 агар донистан арзиш дорад, дар Zehn китобе ҳаст. Дастрас ба тоҷикӣ, арабӣ, русӣ, англисӣ, ҳиндӣ ва урду.")), /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "center",
       marginBottom: 48
@@ -3614,7 +3701,7 @@ function Download() {
     style: storeBtnStyle,
     "aria-label": "Get Zehn on Google Play",
     onClick: () => {
-      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "download_section", lang: "tj"});
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "android", location: "download_section", utm_source: "website_download_section", lang: "tj"});
     },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
@@ -3651,7 +3738,7 @@ function Download() {
     style: storeBtnStyle,
     "aria-label": "Download Zehn on the App Store",
     onClick: () => {
-      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "download_section", lang: "tj"});
+      if (typeof gtag === "function") gtag("event", "download_click", {platform: "ios", location: "download_section", utm_source: "website_download_section", lang: "tj"});
     },
     onMouseEnter: e => {
       e.currentTarget.style.borderColor = "rgba(255,255,255,.32)";
@@ -3687,7 +3774,7 @@ function Download() {
       fontSize: 13,
       color: "var(--text-mute)"
     }
-  }, "Free to start \xB7 Cancel anytime \xB7 Available in English, Arabic, Russian & Tajik")))));
+  }, "Ройгон оғоз кунед \xB7 Ҳар вақт бекор кунед \xB7 Дастрас ба англисӣ, арабӣ, русӣ, тоҷикӣ, ҳиндӣ ва урду")))));
 } /* ── FOOTER ── */
 function Footer() {
   const cols = [{
@@ -3767,7 +3854,7 @@ function Footer() {
       maxWidth: 300,
       lineHeight: 1.55
     }
-  }, "Learn a book in 15 minutes. Bite-sized audio books for ambitious learners. Available in English, Arabic, Russian & Tajik."), /*#__PURE__*/React.createElement("div", {
+  }, "Дар 15 дақиқа китобе биёмӯзед. Китобҳои аудиои мухтасар барои омӯзандагони бошавқ. Дастрас ба англисӣ, арабӣ, русӣ, тоҷикӣ, ҳиндӣ ва урду."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 18,
       display: "flex",
@@ -3930,14 +4017,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.c
     <div class="lang-picker" id="lp">
       <div class="lang-picker-btn" id="lpBtn" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language" aria-controls="lpMenu">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        English
+        Тоҷикӣ
         <svg class="lp-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
       </div>
       <div class="lang-picker-menu" role="listbox" id="lpMenu" aria-label="Language options">
-        <a href="/en/" class="active" role="option">English</a>
+                <a href="/en/" onclick="sessionStorage.removeItem('zehn-lang')" role="option">English</a>
         <a href="/ar" onclick="sessionStorage.removeItem('zehn-lang')" role="option">العربية</a>
         <a href="/ru" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Русский</a>
-        <a href="/tj" onclick="sessionStorage.removeItem('zehn-lang')" role="option">Тоҷикӣ</a>
+        <a href="/tj" class="active" role="option">Тоҷикӣ</a>
+        <a href="/hindi" onclick="sessionStorage.removeItem('zehn-lang')" role="option">हिन्दी</a>
+        <a href="/urdu" onclick="sessionStorage.removeItem('zehn-lang')" role="option">اردو</a>
       </div>
     </div>
     <script>
