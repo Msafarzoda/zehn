@@ -66,10 +66,11 @@
         };
         gtag('event', 'download_redirect', Object.assign({
           platform: platform,
+          transport_type: 'beacon',
           event_callback: doRedirect,
-          event_timeout: 300
+          event_timeout: 1000
         }, utm));
-        setTimeout(doRedirect, 300);
+        setTimeout(doRedirect, 1000);
       }
       // else: desktop / unknown — fall through to the page below
     })();
