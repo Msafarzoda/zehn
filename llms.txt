@@ -24,6 +24,8 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [FAQ](https://thezehnapp.com/en/faq/)
 - [Blog](https://thezehnapp.com/blog/)
 - [Support](https://thezehnapp.com/en/support/)
+- [Zehn vs Blinkist](https://thezehnapp.com/en/blinkist-alternative/): comparison, also in [Russian](https://thezehnapp.com/ru/blinkist-alternative/) and [Arabic](https://thezehnapp.com/ar/blinkist-alternative/)
+- [Zehn vs Headway](https://thezehnapp.com/en/headway-alternative/): comparison, also in [Russian](https://thezehnapp.com/ru/headway-alternative/) and [Arabic](https://thezehnapp.com/ar/headway-alternative/)
 
 ## English book summaries
 
