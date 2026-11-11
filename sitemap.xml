@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://thezehnapp.com/affiliates/</loc><lastmod>2026-11-11</lastmod><priority>0.9</priority></url>
   <url><loc>https://thezehnapp.com/ar/about/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/biographies/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/entrepreneurship-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/health-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/leadership-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/marketing-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/money-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/productivity-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/psychology-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ar/best/self-improvement-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/ar/blinkist-alternative/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
   <url><loc>https://thezehnapp.com/ar/blog/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/ar/blog/top-10-business-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
@@ -812,6 +822,14 @@
   <url><loc>https://thezehnapp.com/blog/top-books-self-improvement-2025/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/books/</loc><lastmod>2026-11-11</lastmod><priority>0.9</priority></url>
   <url><loc>https://thezehnapp.com/en/about/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/biographies/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/business-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/entrepreneurship-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/health-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/marketing-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/productivity-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/en/best/psychology-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/en/blinkist-alternative/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
   <url><loc>https://thezehnapp.com/en/books/1-2-3-magic-for-christian-parents/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://thezehnapp.com/en/books/10-happier/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
@@ -1657,6 +1675,15 @@
   <url><loc>https://thezehnapp.com/en/terms/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
   <url><loc>https://thezehnapp.com/hindi/</loc><lastmod>2026-11-11</lastmod><priority>0.9</priority></url>
   <url><loc>https://thezehnapp.com/ru/about/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/biographies/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/entrepreneurship-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/health-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/leadership-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/money-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/productivity-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/psychology-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thezehnapp.com/ru/best/self-improvement-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/ru/blinkist-alternative/</loc><lastmod>2026-11-11</lastmod><priority>0.5</priority></url>
   <url><loc>https://thezehnapp.com/ru/blog/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://thezehnapp.com/ru/blog/top-10-business-books/</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
