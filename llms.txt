@@ -1,6 +1,6 @@
 # Zehn
 
-> Zehn is a book summary app for iPhone and Android. It has 10,000+ nonfiction books as 15–30 minute audio and text summaries with synced text, and Ask AI, a chat on every book that answers questions about that book. Summaries are available in English, Russian, Arabic, Tajik, Hindi and Urdu.
+> Zehn is a book summary app for iPhone and Android. It has 10,000+ nonfiction books as 15–20 minute audio and text summaries with synced text, and Ask AI, a chat on every book that answers questions about that book. It also has an everyday AI chat where you can choose between Claude, Gemini, DeepSeek and Grok. Summaries are available in English, Russian, Arabic, Tajik, Hindi and Urdu.
 
 Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Headway, it is built for non-English readers and adds AI chat per book.
 
