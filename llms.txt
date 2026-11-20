@@ -12,14 +12,15 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 ## Book summary catalogs
 
 - [All books](https://thezehnapp.com/books/): every summary, filter by language and category
-- [English book summaries](https://thezehnapp.com/en/books/): 834 summaries by category
-- [Russian book summaries](https://thezehnapp.com/ru/books/): 737 summaries by category
-- [Arabic book summaries](https://thezehnapp.com/ar/books/): 788 summaries by category
+- [English book summaries](https://thezehnapp.com/en/books/): 826 summaries by category
+- [Russian book summaries](https://thezehnapp.com/ru/books/): 736 summaries by category
+- [Arabic book summaries](https://thezehnapp.com/ar/books/): 784 summaries by category
 - [Tajik book summaries](https://thezehnapp.com/tg/books/): 37 summaries by category
 - [Urdu book summaries](https://thezehnapp.com/urdu/books/): 2 summaries by category
 
 ## Pages
 
+- [Zehn at a glance](https://thezehnapp.com/en/facts/): key facts (what it is, who makes it, languages, library size, store links), also in [Russian](https://thezehnapp.com/ru/facts/) and [Arabic](https://thezehnapp.com/ar/facts/)
 - [About](https://thezehnapp.com/en/about/)
 - [FAQ](https://thezehnapp.com/en/faq/)
 - [Blog](https://thezehnapp.com/blog/)
@@ -250,7 +251,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [Getting to Zero: How to Work through Conflict in Your High-Stakes Relationships](https://thezehnapp.com/en/books/getting-to-zero-how-to-work-through-conflict-in-your-high-stakes-relationships/): 8 min summary, by Jayson Gaddis
 - [Girl Boss](https://thezehnapp.com/en/books/girl-boss-2540/): 15 min summary, by Sophia Amoruso
 - [Give and Take](https://thezehnapp.com/en/books/give-and-take/): 28 min summary, by Adam grant
-- [Give and Take](https://thezehnapp.com/en/books/give-and-take-2666/): 25 min summary, by Adam grant
 - [Go Pro](https://thezehnapp.com/en/books/go-pro/): 16 min summary, by Eric Worre
 - [Going Infinite](https://thezehnapp.com/en/books/going-infinite/): 16 min summary, by Michael Lewis
 - [Good Economics for Hard Times](https://thezehnapp.com/en/books/good-economics-for-hard-times/): 25 min summary, by Abhijit V. Banerjee, PhD, Esther Duflo, PhD
@@ -338,7 +338,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [If you’re So smart, why Aren’t You Happy?](https://thezehnapp.com/en/books/if-you-re-so-smart-why-aren-t-you-happy/): 12 min summary, by Raj Raghunathan
 - [Ikigai](https://thezehnapp.com/en/books/ikigai/): 16 min summary, by Hector Garcia, Francesc Miralles
 - [Imperfect Courage](https://thezehnapp.com/en/books/imperfect-courage/): 12 min summary, by Jessica Honegger
-- [Imperfect Courage](https://thezehnapp.com/en/books/imperfect-courage-2563/): 15 min summary, by Jessica Honegger
 - [Impossible to Possible](https://thezehnapp.com/en/books/impossible-to-possible/): 13 min summary, by R C Bhargava
 - [In Search of Excellence](https://thezehnapp.com/en/books/in-search-of-excellence/): 22 min summary, by Thomas J. Peters, Robert H. Waterman
 - [Influence](https://thezehnapp.com/en/books/influence/): 25 min summary, by Robert B. Cialdini
@@ -425,10 +424,8 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [Never Eat Alone](https://thezehnapp.com/en/books/never-eat-alone/): 21 min summary, by Keith Ferrazzi, Tahl Raz
 - [Never Enough](https://thezehnapp.com/en/books/never-enough/): 23 min summary, by Andrew Wilkinson
 - [Never Get a Real Job](https://thezehnapp.com/en/books/never-get-a-real-job/): 32 min summary, by Scott Gerber, Sean Pratt
-- [Never Get a Real Job](https://thezehnapp.com/en/books/never-get-a-real-job-2673/): 23 min summary, by Scott Gerber, Sean Pratt
 - [Never Lead Alone](https://thezehnapp.com/en/books/never-lead-alone/): 24 min summary, by Keith Ferrazzi, Tahl Raz
 - [Never Split the Difference](https://thezehnapp.com/en/books/never-split-the-difference/): 12 min summary, by Chris Voss
-- [Never Split the Difference](https://thezehnapp.com/en/books/never-split-the-difference-2225/): 17 min summary, by Chris Voss
 - [Nexus](https://thezehnapp.com/en/books/nexus/): 17 min summary, by Yuval Noah Harari
 - [Nice Girls Don't Get the Corner Office](https://thezehnapp.com/en/books/nice-girls-don-t-get-the-corner-office/): 16 min summary, by Lois P. Frankl
 - [Nice Girls Don't Get the Corner Office](https://thezehnapp.com/en/books/nice-girls-don-t-get-the-corner-office-2660/): 15 min summary, by Lois P. Frankel, Phd
@@ -577,8 +574,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [The 4-Hour Body](https://thezehnapp.com/en/books/the-4-hour-body/): 17 min summary, by Timothy Ferris
 - [The 4-Hour Workweek](https://thezehnapp.com/en/books/the-4-hour-workweek/): 18 min summary, by Timothy Ferriss
 - [The 48 Laws of Power](https://thezehnapp.com/en/books/the-48-laws-of-power/): 26 min summary, by Robert Greene
-- [The 48 Laws of Power](https://thezehnapp.com/en/books/the-48-laws-of-power-2653/): 26 min summary, by Robert Greene
-- [The 48 Laws of Power](https://thezehnapp.com/en/books/the-48-laws-of-power-2930/): 25 min summary, by Robert Greene
 - [The 5 AM Club](https://thezehnapp.com/en/books/the-5-am-club/): 17 min summary, by Robin Sharma
 - [The 5 Elements of Effective Thinking](https://thezehnapp.com/en/books/the-5-elements-of-effective-thinking/): 17 min summary, by Edward B. Burger, Michael Starbird
 - [The 5 Languages of Appreciation in the Workplace](https://thezehnapp.com/en/books/the-5-languages-of-appreciation-in-the-workplace/): 15 min summary, by Gary Chapman, PhD, Paul White, PhD
@@ -612,7 +607,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [The Black Swan](https://thezehnapp.com/en/books/the-black-swan/): 26 min summary, by Nassim Nicholas Taled, PhD
 - [The Blue Zones](https://thezehnapp.com/en/books/the-blue-zones/): 18 min summary, by Dan Buettner
 - [The Body Keeps The Score](https://thezehnapp.com/en/books/the-body-keeps-the-score/): 23 min summary, by Bessel Van Der Kolk
-- [The Body Keeps the Score](https://thezehnapp.com/en/books/the-body-keeps-the-score-1175/): 15 min summary, by Bessel van der Kolk
 - [The Bogleheads' Guide to Investing](https://thezehnapp.com/en/books/the-bogleheads-guide-to-investing/): 25 min summary, by Mel Lindauer, Taylor Larimore, Michael LeBoeuf
 - [The Book of Joy](https://thezehnapp.com/en/books/the-book-of-joy/): 19 min summary, by Dalai Lama, Desmond Tutu, Douglas Abrams
 - [The Book of Why](https://thezehnapp.com/en/books/the-book-of-why/): 15 min summary, by Judea Pearl and Dana MacKenzie
@@ -799,7 +793,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [Treating Pornography Addiction](https://thezehnapp.com/en/books/treating-pornography-addiction/): 14 min summary, by Kevin B. Skinner
 - [Tribes](https://thezehnapp.com/en/books/tribes/): 23 min summary, by Seth Godin
 - [Trump. The Art of the Deal](https://thezehnapp.com/en/books/trump-the-art-of-the-deal/): 13 min summary, by Donald J. Trump, Tony Schwartz
-- [Trump: The Art of the Deal](https://thezehnapp.com/en/books/trump-the-art-of-the-deal-2934/): 24 min summary, by Donald J. Trump, Tony Schwartz
 - [Turning the Flywheel](https://thezehnapp.com/en/books/turning-the-flywheel/): 16 min summary, by Jim Collins
 - [Two Awesome Hours](https://thezehnapp.com/en/books/two-awesome-hours/): 15 min summary, by Josh Davis, PhD.
 - [ULTRA Learning](https://thezehnapp.com/en/books/ultra-learning/): 16 min summary, by Scott H. Young
@@ -876,7 +869,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [15 секретов управления временем, которые знают успешные люди](https://thezehnapp.com/ru/books/15/): 17 min summary, by Кевин Круз
 - [22 непреложных закона маркетинга](https://thezehnapp.com/ru/books/22/): 17 min summary, by Эл Райс, Джек Траут
 - [33 стратегии войны](https://thezehnapp.com/ru/books/33/): 20 min summary, by Robert Greene
-- [33 стратегии войны](https://thezehnapp.com/ru/books/33-2034/): 20 min summary, by Robert Greene
 - [365 дней без экрана](https://thezehnapp.com/ru/books/365-1769/): 21 min summary, by Dee Lee
 - [5 элементов эффективного мышления](https://thezehnapp.com/ru/books/book-1344/): 17 min summary, by Эдвард Б. Бёргер, Майкл Старберд
 - [5 языков признательности на рабочем месте](https://thezehnapp.com/ru/books/book-1345/): 17 min summary, by Гэри Чепмен, PhD, Пол Уайт, PhD
@@ -1869,7 +1861,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [الشركة الناشئة الخالية من الهدر](https://thezehnapp.com/ar/books/book-1363/): 24 min summary, by Eric Ries
 - [الشركة الناشئة الرشيقة](https://thezehnapp.com/ar/books/book-1630/): 22 min summary, by Eric RIes
 - [الشيء الصعب حول الأشياء الصعبة](https://thezehnapp.com/ar/books/book-1364/): 16 min summary, by Ben Horowitz
-- [الشيء الصعب حول الأشياء الصعبة](https://thezehnapp.com/ar/books/book-1635/): 29 min summary, by Ben Horowitz
 - [الشيء الواحد](https://thezehnapp.com/ar/books/book-2467/): 20 min summary, by Gary Keller, Jay Papasan
 - [الصداقة الكبيرة](https://thezehnapp.com/ar/books/book-1575/): 21 min summary, by Aminatou Sow, Ann Friedman
 - [الصراحة الجذرية](https://thezehnapp.com/ar/books/book-1421/): 19 min summary, by Kim Scott
@@ -2245,7 +2236,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [كيف تتحدث فيصغي إليك المراهقون، وتصغي فيتحدث إليك المراهقون](https://thezehnapp.com/ar/books/book-879/): 24 min summary, by أديل فابر
 - [كيف تتحدث فيصغي الصغار إليك وتصغي إليهم فيتحدثون إليك](https://thezehnapp.com/ar/books/book-877/): 17 min summary, by أديل فابر
 - [كيف تتحدث لكي يستمع إليك الأطفال](https://thezehnapp.com/ar/books/book-1636/): 24 min summary, by Adele Faber
-- [كيف تتحدث لكي يستمع إليك الأطفال](https://thezehnapp.com/ar/books/book-1637/): 22 min summary, by Adele Faber
 - [كيف تتداول يومياً لتعيش منه](https://thezehnapp.com/ar/books/book-2327/): 19 min summary, by Andrew Aziz, PhD
 - [كيف تتقاعد سعيداً](https://thezehnapp.com/ar/books/book-2328/): 20 min summary, by Ernie J. Zelinski
 - [كيف تتقن فن البيع](https://thezehnapp.com/ar/books/book-2296/): 22 min summary, by Tom Hopkins
@@ -2277,7 +2267,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [لا تأكل وحدك أبداً](https://thezehnapp.com/ar/books/book-1474/): 22 min summary, by Keith Ferrazzi
 - [لا تتنازل أبداً عن النصف](https://thezehnapp.com/ar/books/book-2226/): 22 min summary, by Chris Voss
 - [لا تحصل على وظيفة حقيقية أبداً](https://thezehnapp.com/ar/books/book-1472/): 18 min summary, by Scott Gerber
-- [لا تقود وحدك أبدا](https://thezehnapp.com/ar/books/book-1471/): 18 min summary, by Keith Ferrazzi
 - [لا تقود وحدك أبدًا](https://thezehnapp.com/ar/books/book-1390/): 17 min summary, by Keith Ferrazzi
 - [لا تُفكّر كثيراً](https://thezehnapp.com/ar/books/book-2397/): 21 min summary, by Anne Bogel
 - [لا داعي للجنون في العمل](https://thezehnapp.com/ar/books/book-2589/): 21 min summary, by Jason Fried, David Heinemeier Hansson
@@ -2338,7 +2327,6 @@ Zehn (pronounced "Zen") is made by Safari Group. Compared with Blinkist and Head
 - [معركة كل رجل](https://thezehnapp.com/ar/books/book-2220/): 19 min summary, by Stephen Arterburn and Fred Stoeker with Mike Yorkey
 - [معززات الإمكانيات](https://thezehnapp.com/ar/books/book-1373/): 17 min summary, by Liz Wiseman, MBA, Greg McKeown, MBA
 - [معضلة المبتكر](https://thezehnapp.com/ar/books/book-1527/): 22 min summary, by Clayton Christensen
-- [معضلة المبتكر](https://thezehnapp.com/ar/books/book-1633/): 21 min summary, by Clayton Christensen
 - [معيار البيتكوين](https://thezehnapp.com/ar/books/book-2617/): 22 min summary, by Saifedean Ammous, PhD
 - [مفارقة الأمعاء والدماغ](https://thezehnapp.com/ar/books/book-2512/): 23 min summary, by Steven R. Gundry
 - [مفارقة طول العمر](https://thezehnapp.com/ar/books/book-2207/): 20 min summary, by Steven Gundry
