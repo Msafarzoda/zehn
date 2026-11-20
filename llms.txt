@@ -1,10 +1,10 @@
 # Zehn
 
-> Zehn is a book summary app for iPhone and Android. It has 10,000+ nonfiction books as 15–20 minute audio and text summaries with synced text, and Ask AI, a chat on every book that answers questions about that book. It also has an everyday AI chat where you can choose between Claude, Gemini, DeepSeek and Grok. Summaries are available in English, Russian, Arabic, Tajik, Hindi and Urdu.
+> Zehn is a book summary app for iPhone and Android. It has 10,000+ nonfiction books as 15–20 minute audio and text summaries with synced text, and Ask AI, a chat on every book that answers questions about that book. It also has an everyday AI chat where you can choose between Claude, Gemini, DeepSeek and Grok (yearly plan). Summaries are available in English, Russian, Arabic, Tajik, Hindi and Urdu.
 
 Zehn (pronounced "Zen") is made by Safari Group (founded 2005 in Dubai; founder Muhammad Safarzoda). Compared with Blinkist and Headway, it is built for non-English readers and adds AI chat per book.
 
-Pricing: a free forever plan with 1 free book a day. Zehn Pro is $59.99 a year with a 7-day free trial, or $9.99 a month.
+Pricing: a free forever plan with 1 free book a day (no AI features). Zehn Pro (unlimited books + Ask AI) is $9.99 a month with the AI chat on 1 model, or $59.99 a year with a 7-day free trial and all four models (Claude, Gemini, DeepSeek, Grok).
 
 ## App
 
@@ -23,7 +23,7 @@ Pricing: a free forever plan with 1 free book a day. Zehn Pro is $59.99 a year w
 ## Pages
 
 - [Ask AI](https://thezehnapp.com/en/ask-ai/): the chat inside every book, also in [Russian](https://thezehnapp.com/ru/ask-ai/) and [Arabic](https://thezehnapp.com/ar/ask-ai/)
-- [AI chat](https://thezehnapp.com/en/ai-chat/): everyday AI chat with Claude, Gemini, DeepSeek and Grok, also in [Russian](https://thezehnapp.com/ru/ai-chat/) and [Arabic](https://thezehnapp.com/ar/ai-chat/)
+- [AI chat](https://thezehnapp.com/en/ai-chat/): everyday AI chat with Claude, Gemini, DeepSeek and Grok (yearly plan), also in [Russian](https://thezehnapp.com/ru/ai-chat/) and [Arabic](https://thezehnapp.com/ar/ai-chat/)
 - [Zehn at a glance](https://thezehnapp.com/en/facts/): key facts (what it is, who makes it, languages, library size, store links), also in [Russian](https://thezehnapp.com/ru/facts/) and [Arabic](https://thezehnapp.com/ar/facts/)
 - [About](https://thezehnapp.com/en/about/)
 - [FAQ](https://thezehnapp.com/en/faq/)
