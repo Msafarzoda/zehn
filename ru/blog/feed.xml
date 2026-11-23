@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Блог Zehn</title>
+<link>https://thezehnapp.com/ru/blog/</link>
+<description>Подборки книг и статьи о чтении от Zehn — приложения с саммари книг и «Спросить ИИ».</description>
+<language>ru</language>
+<lastBuildDate>Fri, 20 Nov 2026 08:00:00 +0000</lastBuildDate>
+<atom:link href="https://thezehnapp.com/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Краткое содержание книг на русском: где читать | Zehn</title>
+<link>https://thezehnapp.com/ru/blog/kratkoe-soderzhanie-knig/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ru/blog/kratkoe-soderzhanie-knig/</guid>
+<pubDate>Fri, 20 Nov 2026 08:00:00 +0000</pubDate>
+<description>Где читать и слушать краткое содержание книг на русском: форматы, на что смотреть при выборе и 7 книг для старта. Каждая за 15–20 минут.</description>
+</item>
+<item>
+<title>Саммари книг: что это и как читать больше | Zehn</title>
+<link>https://thezehnapp.com/ru/blog/sammari-knig/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ru/blog/sammari-knig/</guid>
+<pubDate>Fri, 20 Nov 2026 08:00:00 +0000</pubDate>
+<description>Что такое саммари книг, кому они подходят и как выбрать приложение. Плюс 7 саммари на русском, с которых стоит начать, по 15–20 минут.</description>
+</item>
+<item>
+<title>10 лучших книг по бизнесу: аудиосаммари | Zehn</title>
+<link>https://thezehnapp.com/ru/blog/top-10-business-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ru/blog/top-10-business-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>10 лучших бизнес-книг всех времён с аудиосаммари за 15–20 минут на Zehn: Rework, «Построенные навечно», «Дилемма инноватора» и другие.</description>
+</item>
+<item>
+<title>10 лучших книг по маркетингу и продажам | Zehn</title>
+<link>https://thezehnapp.com/ru/blog/top-10-marketing-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ru/blog/top-10-marketing-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>10 лучших книг по маркетингу, продажам и переговорам с аудиосаммари за 15–20 минут на Zehn: «СПИН-продажи», «Маркетинг RED» и другие.</description>
+</item>
+</channel>
+</rss>

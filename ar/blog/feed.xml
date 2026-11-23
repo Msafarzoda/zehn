@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>مدونة Zehn</title>
+<link>https://thezehnapp.com/ar/blog/</link>
+<description>قوائم كتب ومقالات عن القراءة من Zehn، تطبيق ملخصات الكتب مع «اسأل الذكاء الاصطناعي».</description>
+<language>ar</language>
+<lastBuildDate>Fri, 20 Nov 2026 08:00:00 +0000</lastBuildDate>
+<atom:link href="https://thezehnapp.com/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>كتب صوتية بالعربية أم ملخصات صوتية؟ | Zehn</title>
+<link>https://thezehnapp.com/ar/blog/audiobooks/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ar/blog/audiobooks/</guid>
+<pubDate>Fri, 20 Nov 2026 08:00:00 +0000</pubDate>
+<description>الفرق بين الكتب الصوتية والملخصات الصوتية، ومتى تختار كلاً منهما، و7 ملخصات صوتية بالعربية للبداية، 15–20 دقيقة لكل كتاب.</description>
+</item>
+<item>
+<title>ملخصات كتب بالعربية: كيف تقرأ أكثر في وقت أقل | Zehn</title>
+<link>https://thezehnapp.com/ar/blog/book-summaries/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ar/blog/book-summaries/</guid>
+<pubDate>Fri, 20 Nov 2026 08:00:00 +0000</pubDate>
+<description>ما هي ملخصات الكتب، ولمن تناسب، وكيف تختار تطبيقاً بالعربية. مع 7 ملخصات كتب بالعربية للبداية، 15–20 دقيقة لكل كتاب.</description>
+</item>
+<item>
+<title>أفضل 10 كتب في الأعمال والريادة مع ملخصاتها | Zehn</title>
+<link>https://thezehnapp.com/ar/blog/top-10-business-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ar/blog/top-10-business-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>أفضل 10 كتب في الأعمال والريادة مع ملخص صوتي لكل كتاب في 15–20 دقيقة على Zehn: صفر إلى واحد، قواعد العمل، ابتكار نماذج الأعمال.</description>
+</item>
+<item>
+<title>أفضل 10 كتب في التربية والأسرة مع ملخصاتها | Zehn</title>
+<link>https://thezehnapp.com/ar/blog/top-10-parenting-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/ar/blog/top-10-parenting-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>أفضل 10 كتب في تربية الأطفال وبناء الأسرة، كل كتاب متاح كملخص صوتي بالعربية في 15–20 دقيقة على Zehn.</description>
+</item>
+</channel>
+</rss>

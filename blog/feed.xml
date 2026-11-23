@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Zehn Blog</title>
+<link>https://thezehnapp.com/blog/</link>
+<description>Book lists and reading guides from Zehn, the book-summary app with Ask AI.</description>
+<language>en</language>
+<lastBuildDate>Fri, 20 Nov 2026 08:00:00 +0000</lastBuildDate>
+<atom:link href="https://thezehnapp.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Best Book Summary App for Arabic Speakers in 2026 | Zehn</title>
+<link>https://thezehnapp.com/blog/best-book-summary-app-arabic/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/best-book-summary-app-arabic/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>Book summaries in Arabic: how Blinkist, Headway and Zehn compare, and why Arabic readers were underserved until now.</description>
+</item>
+<item>
+<title>Atomic Habits Summary: The 4 Laws of Behavior Change | Zehn</title>
+<link>https://thezehnapp.com/blog/atomic-habits-summary/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/atomic-habits-summary/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>Atomic Habits by James Clear: the 4 laws of behavior change, habit stacking, the 2-minute rule and how 1% improvements compound.</description>
+</item>
+<item>
+<title>10 Best Communication &amp; Negotiation Books | Zehn</title>
+<link>https://thezehnapp.com/blog/top-10-communication-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/top-10-communication-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>The 10 best books on communication and negotiation, from Never Split the Difference to Crucial Conversations, each with a summary on Zehn.</description>
+</item>
+<item>
+<title>10 Best Finance &amp; Investing Books, With Summaries | Zehn</title>
+<link>https://thezehnapp.com/blog/top-10-finance-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/top-10-finance-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>The 10 best finance and investing books, from Rich Dad Poor Dad to Zero to One, each with a 15–20 minute audio and text summary on Zehn.</description>
+</item>
+<item>
+<title>10 Best Habit &amp; Productivity Books, With Summaries | Zehn</title>
+<link>https://thezehnapp.com/blog/top-10-habit-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/top-10-habit-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>The 10 best books on habits and productivity, from Atomic Habits to Deep Work, each with a 15–20 minute audio and text summary on Zehn.</description>
+</item>
+<item>
+<title>10 Best Leadership &amp; Strategy Books, With Summaries | Zehn</title>
+<link>https://thezehnapp.com/blog/top-10-leadership-books/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/top-10-leadership-books/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>The 10 best leadership and strategy books recommended by CEOs and commanders, each with a 15–20 minute audio and text summary on Zehn.</description>
+</item>
+<item>
+<title>10 Best Self-Improvement Books, With Summaries | Zehn</title>
+<link>https://thezehnapp.com/blog/top-books-self-improvement-2025/</link>
+<guid isPermaLink="true">https://thezehnapp.com/blog/top-books-self-improvement-2025/</guid>
+<pubDate>Tue, 01 Jul 2025 08:00:00 +0000</pubDate>
+<description>10 self-improvement books worth your time, each with a 15–20 minute audio and text summary on Zehn. No filler.</description>
+</item>
+</channel>
+</rss>
