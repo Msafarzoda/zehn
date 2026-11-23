@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://thezehnapp.com/sitemap.xml
+Sitemap: https://thezehnapp.com/sitemap-images.xml
