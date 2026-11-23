@@ -4,7 +4,7 @@
 
 Zehn (pronounced "Zen") is made by Safari Group (founded 2005 in Dubai; founder Muhammad Safarzoda). Compared with Blinkist and Headway, it is built for non-English readers and adds AI chat per book.
 
-Pricing: a free forever plan with 1 free book a day (no AI features). Zehn Pro (unlimited books, offline listening, Ask AI) is $9.99 a month with the AI chat on 1 model, or $59.99 a year with a 7-day free trial and all four models (Claude, Gemini, DeepSeek, Grok).
+Pricing: a free forever plan with 1 free book a day (no AI features). Zehn Pro (unlimited books, offline listening, Ask AI) is $9.99 a month with the AI chat on 1 model, or $36 a year with a 7-day free trial and all four models (Claude, Gemini, DeepSeek, Grok).
 
 ## App
 
