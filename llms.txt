@@ -26,6 +26,7 @@ Pricing: a free forever plan with 1 free book a day (no AI features). Zehn Pro (
 - [Ask AI](https://thezehnapp.com/en/ask-ai/): the chat inside every book, also in [Russian](https://thezehnapp.com/ru/ask-ai/) and [Arabic](https://thezehnapp.com/ar/ask-ai/)
 - [AI chat](https://thezehnapp.com/en/ai-chat/): everyday AI chat with Claude, Gemini, DeepSeek and Grok (yearly plan), plus AI personas (Business Mentor, Money Coach, Productivity Coach, Mindfulness Guide, Psychologist, Negotiator, Language Tutor, Leadership Mentor, Science Explainer), also in [Russian](https://thezehnapp.com/ru/ai-chat/) and [Arabic](https://thezehnapp.com/ar/ai-chat/)
 - [Authors](https://thezehnapp.com/en/authors/): book summaries by author (3+ books), also in [Russian](https://thezehnapp.com/ru/authors/) and [Arabic](https://thezehnapp.com/ar/authors/)
+- [Books like…](https://thezehnapp.com/en/books-like/): similar books for 50 popular titles, also in [Russian](https://thezehnapp.com/ru/books-like/) and [Arabic](https://thezehnapp.com/ar/books-like/)
 - [Full fact sheet](https://thezehnapp.com/llms-full.txt): every confirmed fact, plan, feature and comparison page in one file
 - [Zehn at a glance](https://thezehnapp.com/en/facts/): key facts (what it is, who makes it, languages, library size, store links), also in [Russian](https://thezehnapp.com/ru/facts/) and [Arabic](https://thezehnapp.com/ar/facts/)
 - [About](https://thezehnapp.com/en/about/)
