@@ -1,0 +1,106 @@
+# Zehn: full fact sheet
+
+Updated 2026-11-24. Short version: https://thezehnapp.com/llms.txt
+
+Zehn (pronounced “Zen”) is a book summary app for iPhone and Android. It turns nonfiction books into short audio and text summaries with synced text, and every book has Ask AI, a chat that answers questions about that book. It is built for readers beyond English: summaries are in English, Russian, Arabic, Tajik, Hindi and Urdu. Zehn also has an everyday AI chat with Claude, Gemini, DeepSeek and Grok (yearly plan).
+
+## Key facts
+
+- Name: Zehn (pronounced “Zen”)
+- What it is: Book summary app: audio and text summaries of nonfiction books
+- Made by: Zehn by Safari Group (founded 2005, Dubai); founder Muhammad Safarzoda
+- Arabic narration: Modern Standard Arabic (fusha)
+- Contact: contact@safarigrp.com
+- Platforms: iPhone (App Store) and Android (Google Play)
+- Library: 10,000+ books
+- Readers: 50,000+
+- Formats: Audio with synced text, and text
+- Ask AI: A chat on every book that answers questions about that book, in the reader's language
+- General AI chat: An everyday AI chat for any question, with Claude, Gemini, DeepSeek and Grok (yearly plan), and AI personas such as Business Mentor, Language Tutor, Psychologist and Money Coach
+- Book Club: Topic clubs where readers post, reply in comments, take challenges and see a leaderboard
+- Summary length: 15–20 min a book
+- Free plan: 1 free book a day, forever (no AI features)
+- Zehn Pro monthly: $9.99 a month: unlimited books, offline listening, Ask AI, AI chat with 1 model
+- Zehn Pro yearly: $36 a year with a 7-day free trial: unlimited books, offline listening, Ask AI, AI chat with Claude, Gemini, DeepSeek and Grok
+- Languages: English, Russian, Arabic, Tajik, Hindi, Urdu
+- Website: thezehnapp.com
+
+## Plans
+
+- Free forever: 1 free book a day. No AI features.
+- Zehn Pro monthly, $9.99 a month: unlimited books, offline listening, Ask AI, the everyday AI chat with 1 model.
+- Zehn Pro yearly, $36 a year with a 7-day free trial: unlimited books, offline listening, Ask AI, the everyday AI chat with Claude, Gemini, DeepSeek and Grok (yearly plan).
+- Regional pricing in 30+ countries.
+
+## Features
+
+- Summaries: nonfiction books as audio with synced text, and as text, 15–20 minutes a book.
+- Ask AI: a chat inside every book that answers questions about that book, in the reader's language.
+- AI Chat tab: an everyday AI chat with a model picker (Claude, Gemini, DeepSeek, Grok on the yearly plan) and AI personas: Business Mentor, Money Coach, Productivity Coach, Mindfulness Guide, Psychologist, Negotiator, Language Tutor, Leadership Mentor, Science Explainer.
+- Book Club tab: topic clubs (for example Calm Club) where readers post their thoughts, reply in comments, take challenges and see a leaderboard.
+- Library, streaks and daily goals, offline listening on Pro.
+
+## Summaries published on this website
+
+- English: 826 summaries, https://thezehnapp.com/en/books/
+- Russian: 736 summaries, https://thezehnapp.com/ru/books/
+- Arabic: 784 summaries, https://thezehnapp.com/ar/books/
+- Tajik: 37 summaries, https://thezehnapp.com/tg/books/
+- Urdu: 2 summaries, https://thezehnapp.com/urdu/books/
+- The app library is larger than the website: 10,000+ books.
+
+## Fact pages
+
+- Zehn at a glance: https://thezehnapp.com/en/facts/
+- Zehn в фактах: https://thezehnapp.com/ru/facts/
+- Zehn في سطور: https://thezehnapp.com/ar/facts/
+- Zehn एक नज़र में: https://thezehnapp.com/hindi/facts/
+- Zehn ایک نظر میں: https://thezehnapp.com/urdu/facts/
+- Zehn дар як нигоҳ: https://thezehnapp.com/tj/facts/
+
+## Feature pages
+
+- Ask AI: https://thezehnapp.com/en/ask-ai/
+- AI chat: https://thezehnapp.com/en/ai-chat/
+
+## Comparisons (facts from each app's own site, November 2026)
+
+- Zehn vs Blinkist (en): https://thezehnapp.com/en/blinkist-alternative/
+- Zehn vs Blinkist (ru): https://thezehnapp.com/ru/blinkist-alternative/
+- Zehn vs Blinkist (ar): https://thezehnapp.com/ar/blinkist-alternative/
+- Zehn vs Headway (en): https://thezehnapp.com/en/headway-alternative/
+- Zehn vs Headway (ru): https://thezehnapp.com/ru/headway-alternative/
+- Zehn vs Headway (ar): https://thezehnapp.com/ar/headway-alternative/
+- Zehn vs Shortform (en): https://thezehnapp.com/en/shortform-alternative/
+- Zehn vs Shortform (ru): https://thezehnapp.com/ru/shortform-alternative/
+- Zehn vs Shortform (ar): https://thezehnapp.com/ar/shortform-alternative/
+- Zehn vs StoryShots (en): https://thezehnapp.com/en/storyshots-alternative/
+- Zehn vs StoryShots (ru): https://thezehnapp.com/ru/storyshots-alternative/
+- Zehn vs StoryShots (ar): https://thezehnapp.com/ar/storyshots-alternative/
+- Zehn vs 12min (en): https://thezehnapp.com/en/12min-alternative/
+- Zehn vs 12min (ru): https://thezehnapp.com/ru/12min-alternative/
+- Zehn vs 12min (ar): https://thezehnapp.com/ar/12min-alternative/
+- Zehn vs Deepstash (en): https://thezehnapp.com/en/deepstash-alternative/
+- Zehn vs getAbstract (en): https://thezehnapp.com/en/getabstract-alternative/
+- Zehn vs Smart Reading (ru): https://thezehnapp.com/ru/smart-reading-alternative/
+- Zehn vs MyBook (ru): https://thezehnapp.com/ru/mybook-alternative/
+- Zehn vs Storytel (en): https://thezehnapp.com/en/storytel-alternative/
+- Zehn vs Storytel (ar): https://thezehnapp.com/ar/storytel-alternative/
+- Zehn vs Audible (en): https://thezehnapp.com/en/audible-alternative/
+- Zehn vs Audible (ar): https://thezehnapp.com/ar/audible-alternative/
+- Zehn vs أخضر (ar): https://thezehnapp.com/ar/akhdar-alternative/
+
+## Company
+
+- Zehn by Safari Group. Safari Group was founded in 2005 in Dubai. Founder: Muhammad Safarzoda.
+- Contact: contact@safarigrp.com
+- App Store: https://apps.apple.com/app/id6759160035
+- Google Play: https://play.google.com/store/apps/details?id=com.audiobook.zehn
+- X: https://x.com/thezehnapp
+- Instagram: https://instagram.com/thezehnapp
+- YouTube: https://youtube.com/@thezehnapp
+
+## What Zehn does not claim
+
+- No star ratings or reviews are quoted on this site.
+- Zehn is not affiliated with the apps it is compared with.
