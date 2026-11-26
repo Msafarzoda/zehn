@@ -1,6 +1,6 @@
 # Zehn: full fact sheet
 
-Updated 2026-11-24. Short version: https://thezehnapp.com/llms.txt
+Updated 2026-11-26. Short version: https://thezehnapp.com/llms.txt
 
 Zehn (pronounced “Zen”) is a book summary app for iPhone and Android. It turns nonfiction books into short audio and text summaries with synced text, and every book has Ask AI, a chat that answers questions about that book. It is built for readers beyond English: summaries are in English, Russian, Arabic, Tajik, Hindi and Urdu. Zehn also has an everyday AI chat with Claude, Gemini, DeepSeek and Grok (yearly plan).
 
