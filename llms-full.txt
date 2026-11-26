@@ -68,9 +68,13 @@ Zehn (pronounced “Zen”) is a book summary app for iPhone and Android. It tur
 - Zehn vs Blinkist (en): https://thezehnapp.com/en/blinkist-alternative/
 - Zehn vs Blinkist (ru): https://thezehnapp.com/ru/blinkist-alternative/
 - Zehn vs Blinkist (ar): https://thezehnapp.com/ar/blinkist-alternative/
+- Zehn vs Blinkist (hi): https://thezehnapp.com/hindi/blinkist-alternative/
+- Zehn vs Blinkist (ur): https://thezehnapp.com/urdu/blinkist-alternative/
 - Zehn vs Headway (en): https://thezehnapp.com/en/headway-alternative/
 - Zehn vs Headway (ru): https://thezehnapp.com/ru/headway-alternative/
 - Zehn vs Headway (ar): https://thezehnapp.com/ar/headway-alternative/
+- Zehn vs Headway (hi): https://thezehnapp.com/hindi/headway-alternative/
+- Zehn vs Headway (ur): https://thezehnapp.com/urdu/headway-alternative/
 - Zehn vs Shortform (en): https://thezehnapp.com/en/shortform-alternative/
 - Zehn vs Shortform (ru): https://thezehnapp.com/ru/shortform-alternative/
 - Zehn vs Shortform (ar): https://thezehnapp.com/ar/shortform-alternative/
